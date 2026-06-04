@@ -46,6 +46,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Location = new System.Drawing.Point(45, 170);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(249, 15);
@@ -55,6 +56,7 @@
             // SignInlinkLabel
             // 
             this.SignInlinkLabel.AutoSize = true;
+            this.SignInlinkLabel.BackColor = System.Drawing.Color.Transparent;
             this.SignInlinkLabel.Location = new System.Drawing.Point(191, 369);
             this.SignInlinkLabel.Name = "SignInlinkLabel";
             this.SignInlinkLabel.Size = new System.Drawing.Size(67, 15);
@@ -66,6 +68,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Location = new System.Drawing.Point(30, 90);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(264, 15);
@@ -75,6 +78,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Location = new System.Drawing.Point(88, 369);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(97, 15);
@@ -124,6 +128,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Location = new System.Drawing.Point(89, 263);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 15);
@@ -133,6 +138,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Location = new System.Drawing.Point(51, 202);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(90, 15);
@@ -142,6 +148,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Location = new System.Drawing.Point(81, 129);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 15);
@@ -151,6 +158,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Location = new System.Drawing.Point(66, 50);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 15);

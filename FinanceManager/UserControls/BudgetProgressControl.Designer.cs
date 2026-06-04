@@ -67,7 +67,8 @@
             // 
             this.buttonLoadBudget.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonLoadBudget.AutoSize = true;
-            this.buttonLoadBudget.Location = new System.Drawing.Point(796, 151);
+            this.buttonLoadBudget.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonLoadBudget.Location = new System.Drawing.Point(812, 151);
             this.buttonLoadBudget.Name = "buttonLoadBudget";
             this.buttonLoadBudget.Size = new System.Drawing.Size(98, 46);
             this.buttonLoadBudget.TabIndex = 27;
@@ -78,7 +79,8 @@
             // buttonSaveBudget
             // 
             this.buttonSaveBudget.AutoSize = true;
-            this.buttonSaveBudget.Location = new System.Drawing.Point(316, 289);
+            this.buttonSaveBudget.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonSaveBudget.Location = new System.Drawing.Point(330, 310);
             this.buttonSaveBudget.Name = "buttonSaveBudget";
             this.buttonSaveBudget.Size = new System.Drawing.Size(102, 30);
             this.buttonSaveBudget.TabIndex = 26;
@@ -89,15 +91,17 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(50, 297);
+            this.label19.BackColor = System.Drawing.Color.Transparent;
+            this.label19.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label19.Location = new System.Drawing.Point(30, 321);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(82, 15);
+            this.label19.Size = new System.Drawing.Size(109, 20);
             this.label19.TabIndex = 16;
             this.label19.Text = "修改预算：";
             // 
             // textBoxBudget
             // 
-            this.textBoxBudget.Location = new System.Drawing.Point(145, 292);
+            this.textBoxBudget.Location = new System.Drawing.Point(147, 316);
             this.textBoxBudget.Name = "textBoxBudget";
             this.textBoxBudget.Size = new System.Drawing.Size(100, 25);
             this.textBoxBudget.TabIndex = 18;
@@ -105,6 +109,7 @@
             // panel10
             // 
             this.panel10.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel10.BackColor = System.Drawing.Color.Transparent;
             this.panel10.Controls.Add(this.gridSuggest);
             this.panel10.Controls.Add(this.buttonSaveBudget);
             this.panel10.Controls.Add(this.labelSuggestion);
@@ -113,13 +118,13 @@
             this.panel10.Controls.Add(this.label18);
             this.panel10.Location = new System.Drawing.Point(509, 245);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(486, 341);
+            this.panel10.Size = new System.Drawing.Size(486, 366);
             this.panel10.TabIndex = 25;
             // 
             // gridSuggest
             // 
             this.gridSuggest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridSuggest.Location = new System.Drawing.Point(26, 96);
+            this.gridSuggest.Location = new System.Drawing.Point(26, 109);
             this.gridSuggest.Name = "gridSuggest";
             this.gridSuggest.RowHeadersWidth = 51;
             this.gridSuggest.RowTemplate.Height = 27;
@@ -128,7 +133,9 @@
             // 
             // labelSuggestion
             // 
-            this.labelSuggestion.Location = new System.Drawing.Point(23, 35);
+            this.labelSuggestion.BackColor = System.Drawing.Color.Transparent;
+            this.labelSuggestion.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelSuggestion.Location = new System.Drawing.Point(22, 48);
             this.labelSuggestion.Name = "labelSuggestion";
             this.labelSuggestion.Size = new System.Drawing.Size(395, 42);
             this.labelSuggestion.TabIndex = 1;
@@ -137,16 +144,18 @@
             // label18
             // 
             this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.Transparent;
+            this.label18.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label18.Location = new System.Drawing.Point(143, 11);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(188, 15);
+            this.label18.Size = new System.Drawing.Size(249, 20);
             this.label18.TabIndex = 0;
             this.label18.Text = "预算建议（开启AI后可用）";
             // 
             // gridWarn
             // 
             this.gridWarn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridWarn.Location = new System.Drawing.Point(91, 208);
+            this.gridWarn.Location = new System.Drawing.Point(94, 230);
             this.gridWarn.Name = "gridWarn";
             this.gridWarn.RowHeadersWidth = 51;
             this.gridWarn.RowTemplate.Height = 27;
@@ -156,15 +165,18 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(164, 173);
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label17.Location = new System.Drawing.Point(155, 188);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(67, 15);
+            this.label17.Size = new System.Drawing.Size(89, 20);
             this.label17.TabIndex = 0;
             this.label17.Text = "预警信息";
             // 
             // panel8
             // 
             this.panel8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel8.BackColor = System.Drawing.Color.Transparent;
             this.panel8.Controls.Add(this.gridWarn);
             this.panel8.Controls.Add(this.label17);
             this.panel8.Controls.Add(this.labelPercent);
@@ -174,50 +186,59 @@
             this.panel8.Controls.Add(this.progBudget);
             this.panel8.Controls.Add(this.labelSpent);
             this.panel8.Controls.Add(this.labelBudget);
+            this.panel8.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.panel8.Location = new System.Drawing.Point(40, 245);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(412, 341);
+            this.panel8.Size = new System.Drawing.Size(412, 366);
             this.panel8.TabIndex = 23;
             // 
             // labelPercent
             // 
             this.labelPercent.AutoSize = true;
-            this.labelPercent.Location = new System.Drawing.Point(352, 86);
+            this.labelPercent.BackColor = System.Drawing.Color.Transparent;
+            this.labelPercent.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelPercent.Location = new System.Drawing.Point(350, 96);
             this.labelPercent.Name = "labelPercent";
-            this.labelPercent.Size = new System.Drawing.Size(39, 15);
+            this.labelPercent.Size = new System.Drawing.Size(49, 20);
             this.labelPercent.TabIndex = 14;
             this.labelPercent.Text = "NaN%";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.Transparent;
+            this.label20.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label20.Location = new System.Drawing.Point(164, 11);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(67, 15);
+            this.label20.Size = new System.Drawing.Size(89, 20);
             this.label20.TabIndex = 13;
             this.label20.Text = "预算概览";
             // 
             // labelDailyAvg
             // 
             this.labelDailyAvg.AutoSize = true;
-            this.labelDailyAvg.Location = new System.Drawing.Point(238, 133);
+            this.labelDailyAvg.BackColor = System.Drawing.Color.Transparent;
+            this.labelDailyAvg.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelDailyAvg.Location = new System.Drawing.Point(238, 144);
             this.labelDailyAvg.Name = "labelDailyAvg";
-            this.labelDailyAvg.Size = new System.Drawing.Size(121, 15);
+            this.labelDailyAvg.Size = new System.Drawing.Size(159, 20);
             this.labelDailyAvg.TabIndex = 12;
             this.labelDailyAvg.Text = "日均可用：￥NaN";
             // 
             // labelRemain
             // 
             this.labelRemain.AutoSize = true;
-            this.labelRemain.Location = new System.Drawing.Point(61, 133);
+            this.labelRemain.BackColor = System.Drawing.Color.Transparent;
+            this.labelRemain.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelRemain.Location = new System.Drawing.Point(61, 144);
             this.labelRemain.Name = "labelRemain";
-            this.labelRemain.Size = new System.Drawing.Size(91, 15);
+            this.labelRemain.Size = new System.Drawing.Size(119, 20);
             this.labelRemain.TabIndex = 11;
             this.labelRemain.Text = "剩余：￥NaN";
             // 
             // progBudget
             // 
-            this.progBudget.Location = new System.Drawing.Point(7, 78);
+            this.progBudget.Location = new System.Drawing.Point(7, 96);
             this.progBudget.Name = "progBudget";
             this.progBudget.Size = new System.Drawing.Size(337, 23);
             this.progBudget.TabIndex = 10;
@@ -225,18 +246,22 @@
             // labelSpent
             // 
             this.labelSpent.AutoSize = true;
-            this.labelSpent.Location = new System.Drawing.Point(238, 35);
+            this.labelSpent.BackColor = System.Drawing.Color.Transparent;
+            this.labelSpent.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelSpent.Location = new System.Drawing.Point(238, 48);
             this.labelSpent.Name = "labelSpent";
-            this.labelSpent.Size = new System.Drawing.Size(106, 15);
+            this.labelSpent.Size = new System.Drawing.Size(139, 20);
             this.labelSpent.TabIndex = 9;
             this.labelSpent.Text = "已支出：￥NaN";
             // 
             // labelBudget
             // 
             this.labelBudget.AutoSize = true;
-            this.labelBudget.Location = new System.Drawing.Point(61, 35);
+            this.labelBudget.BackColor = System.Drawing.Color.Transparent;
+            this.labelBudget.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelBudget.Location = new System.Drawing.Point(51, 48);
             this.labelBudget.Name = "labelBudget";
-            this.labelBudget.Size = new System.Drawing.Size(91, 15);
+            this.labelBudget.Size = new System.Drawing.Size(119, 20);
             this.labelBudget.TabIndex = 8;
             this.labelBudget.Text = "预算：￥NaN";
             // 
@@ -244,95 +269,110 @@
             // 
             this.comboBoxMonth.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBoxMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxMonth.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBoxMonth.FormattingEnabled = true;
-            this.comboBoxMonth.Location = new System.Drawing.Point(642, 163);
+            this.comboBoxMonth.Location = new System.Drawing.Point(663, 159);
             this.comboBoxMonth.Name = "comboBoxMonth";
-            this.comboBoxMonth.Size = new System.Drawing.Size(121, 23);
+            this.comboBoxMonth.Size = new System.Drawing.Size(121, 28);
             this.comboBoxMonth.TabIndex = 22;
             // 
             // label16
             // 
             this.label16.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(584, 167);
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label16.Location = new System.Drawing.Point(588, 162);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(52, 15);
+            this.label16.Size = new System.Drawing.Size(69, 20);
             this.label16.TabIndex = 21;
             this.label16.Text = "月份：";
             // 
             // textBoxYear
             // 
             this.textBoxYear.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxYear.Location = new System.Drawing.Point(471, 161);
+            this.textBoxYear.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBoxYear.Location = new System.Drawing.Point(482, 157);
             this.textBoxYear.Name = "textBoxYear";
-            this.textBoxYear.Size = new System.Drawing.Size(100, 25);
+            this.textBoxYear.Size = new System.Drawing.Size(100, 30);
             this.textBoxYear.TabIndex = 20;
             // 
             // label15
             // 
             this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(416, 169);
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label15.Location = new System.Drawing.Point(407, 162);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(52, 15);
+            this.label15.Size = new System.Drawing.Size(69, 20);
             this.label15.TabIndex = 19;
             this.label15.Text = "年份：";
             // 
             // panel7
             // 
             this.panel7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel7.BackColor = System.Drawing.Color.Transparent;
             this.panel7.Controls.Add(this.radioButtonYearly);
             this.panel7.Controls.Add(this.radioButtonMonthly);
             this.panel7.Controls.Add(this.radioButtonDaily);
             this.panel7.Controls.Add(this.label14);
-            this.panel7.Location = new System.Drawing.Point(130, 156);
+            this.panel7.Location = new System.Drawing.Point(57, 151);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(254, 41);
+            this.panel7.Size = new System.Drawing.Size(327, 41);
             this.panel7.TabIndex = 17;
             // 
             // radioButtonYearly
             // 
             this.radioButtonYearly.AutoSize = true;
-            this.radioButtonYearly.Location = new System.Drawing.Point(178, 12);
+            this.radioButtonYearly.BackColor = System.Drawing.Color.Transparent;
+            this.radioButtonYearly.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.radioButtonYearly.Location = new System.Drawing.Point(218, 11);
             this.radioButtonYearly.Name = "radioButtonYearly";
-            this.radioButtonYearly.Size = new System.Drawing.Size(58, 19);
+            this.radioButtonYearly.Size = new System.Drawing.Size(70, 24);
             this.radioButtonYearly.TabIndex = 2;
             this.radioButtonYearly.TabStop = true;
             this.radioButtonYearly.Text = "年度";
-            this.radioButtonYearly.UseVisualStyleBackColor = true;
+            this.radioButtonYearly.UseVisualStyleBackColor = false;
             this.radioButtonYearly.CheckedChanged += new System.EventHandler(this.BudgetType_CheckedChanged);
             // 
             // radioButtonMonthly
             // 
             this.radioButtonMonthly.AutoSize = true;
+            this.radioButtonMonthly.BackColor = System.Drawing.Color.Transparent;
             this.radioButtonMonthly.Checked = true;
-            this.radioButtonMonthly.Location = new System.Drawing.Point(121, 11);
+            this.radioButtonMonthly.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.radioButtonMonthly.Location = new System.Drawing.Point(142, 11);
             this.radioButtonMonthly.Name = "radioButtonMonthly";
-            this.radioButtonMonthly.Size = new System.Drawing.Size(58, 19);
+            this.radioButtonMonthly.Size = new System.Drawing.Size(70, 24);
             this.radioButtonMonthly.TabIndex = 2;
             this.radioButtonMonthly.TabStop = true;
             this.radioButtonMonthly.Text = "月度";
-            this.radioButtonMonthly.UseVisualStyleBackColor = true;
+            this.radioButtonMonthly.UseVisualStyleBackColor = false;
             this.radioButtonMonthly.CheckedChanged += new System.EventHandler(this.BudgetType_CheckedChanged);
             // 
             // radioButtonDaily
             // 
             this.radioButtonDaily.AutoSize = true;
-            this.radioButtonDaily.Location = new System.Drawing.Point(59, 11);
+            this.radioButtonDaily.BackColor = System.Drawing.Color.Transparent;
+            this.radioButtonDaily.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.radioButtonDaily.Location = new System.Drawing.Point(66, 11);
             this.radioButtonDaily.Name = "radioButtonDaily";
-            this.radioButtonDaily.Size = new System.Drawing.Size(58, 19);
+            this.radioButtonDaily.Size = new System.Drawing.Size(70, 24);
             this.radioButtonDaily.TabIndex = 2;
             this.radioButtonDaily.TabStop = true;
             this.radioButtonDaily.Text = "日度";
-            this.radioButtonDaily.UseVisualStyleBackColor = true;
+            this.radioButtonDaily.UseVisualStyleBackColor = false;
             this.radioButtonDaily.CheckedChanged += new System.EventHandler(this.BudgetType_CheckedChanged);
             // 
             // label14
             // 
             this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label14.Location = new System.Drawing.Point(1, 11);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(52, 15);
+            this.label14.Size = new System.Drawing.Size(69, 20);
             this.label14.TabIndex = 1;
             this.label14.Text = "类型：";
             // 
@@ -340,6 +380,7 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("微软雅黑", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label5.Location = new System.Drawing.Point(33, 47);
             this.label5.Name = "label5";

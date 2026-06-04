@@ -89,7 +89,7 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.linkLabelDeepSeek);
             this.panel1.Controls.Add(this.buttonAISettings);
             this.panel1.Controls.Add(this.textBoxAIModel);
@@ -199,7 +199,7 @@
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.labelStatus);
             this.panel2.Controls.Add(this.buttonCheck);
             this.panel2.Controls.Add(this.textBoxCheck);
@@ -299,6 +299,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(633, 691);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

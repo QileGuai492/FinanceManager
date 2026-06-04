@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.labelStatsAi = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
@@ -98,6 +98,7 @@
             // 
             this.labelStatsAi.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelStatsAi.AutoSize = true;
+            this.labelStatsAi.BackColor = System.Drawing.Color.Transparent;
             this.labelStatsAi.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelStatsAi.Location = new System.Drawing.Point(165, 661);
             this.labelStatsAi.Name = "labelStatsAi";
@@ -109,6 +110,7 @@
             // 
             this.label31.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label31.AutoSize = true;
+            this.label31.BackColor = System.Drawing.Color.Transparent;
             this.label31.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label31.Location = new System.Drawing.Point(23, 661);
             this.label31.Name = "label31";
@@ -119,6 +121,7 @@
             // panel12
             // 
             this.panel12.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel12.BackColor = System.Drawing.Color.Transparent;
             this.panel12.Controls.Add(this.label29);
             this.panel12.Controls.Add(this.dtpBarTo);
             this.panel12.Controls.Add(this.dtpBarFrom);
@@ -136,6 +139,7 @@
             // 
             this.label29.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label29.AutoSize = true;
+            this.label29.BackColor = System.Drawing.Color.Transparent;
             this.label29.Location = new System.Drawing.Point(259, 162);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(22, 15);
@@ -162,6 +166,7 @@
             // 
             this.label32.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label32.AutoSize = true;
+            this.label32.BackColor = System.Drawing.Color.Transparent;
             this.label32.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label32.Location = new System.Drawing.Point(23, 34);
             this.label32.Name = "label32";
@@ -202,34 +207,36 @@
             // 
             // chartBarExpense
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chartBarExpense.ChartAreas.Add(chartArea5);
+            this.chartBarExpense.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.Name = "ChartArea1";
+            this.chartBarExpense.ChartAreas.Add(chartArea1);
             this.chartBarExpense.Dock = System.Windows.Forms.DockStyle.Right;
-            legend5.Name = "Legend1";
-            this.chartBarExpense.Legends.Add(legend5);
+            legend1.Name = "Legend1";
+            this.chartBarExpense.Legends.Add(legend1);
             this.chartBarExpense.Location = new System.Drawing.Point(266, 0);
             this.chartBarExpense.Name = "chartBarExpense";
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.chartBarExpense.Series.Add(series5);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartBarExpense.Series.Add(series1);
             this.chartBarExpense.Size = new System.Drawing.Size(232, 226);
             this.chartBarExpense.TabIndex = 1;
             this.chartBarExpense.Text = "chart1";
             // 
             // chartBarIncome
             // 
-            chartArea6.Name = "ChartArea1";
-            this.chartBarIncome.ChartAreas.Add(chartArea6);
+            this.chartBarIncome.BackColor = System.Drawing.Color.Transparent;
+            chartArea2.Name = "ChartArea1";
+            this.chartBarIncome.ChartAreas.Add(chartArea2);
             this.chartBarIncome.Dock = System.Windows.Forms.DockStyle.Left;
-            legend6.Name = "Legend1";
-            this.chartBarIncome.Legends.Add(legend6);
+            legend2.Name = "Legend1";
+            this.chartBarIncome.Legends.Add(legend2);
             this.chartBarIncome.Location = new System.Drawing.Point(0, 0);
             this.chartBarIncome.Name = "chartBarIncome";
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.chartBarIncome.Series.Add(series6);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartBarIncome.Series.Add(series2);
             this.chartBarIncome.Size = new System.Drawing.Size(234, 226);
             this.chartBarIncome.TabIndex = 0;
             this.chartBarIncome.Text = "chart1";
@@ -238,6 +245,7 @@
             // 
             this.label27.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label27.AutoSize = true;
+            this.label27.BackColor = System.Drawing.Color.Transparent;
             this.label27.Location = new System.Drawing.Point(38, 96);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(52, 15);
@@ -247,6 +255,7 @@
             // panel11
             // 
             this.panel11.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel11.BackColor = System.Drawing.Color.Transparent;
             this.panel11.Controls.Add(this.comboBoxSeason);
             this.panel11.Controls.Add(this.buttonPieCheck);
             this.panel11.Controls.Add(this.label23);
@@ -295,6 +304,7 @@
             // 
             this.label23.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.Color.Transparent;
             this.label23.Location = new System.Drawing.Point(175, 133);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(22, 15);
@@ -305,6 +315,7 @@
             // 
             this.labelMulYear.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelMulYear.AutoSize = true;
+            this.labelMulYear.BackColor = System.Drawing.Color.Transparent;
             this.labelMulYear.Location = new System.Drawing.Point(24, 128);
             this.labelMulYear.Name = "labelMulYear";
             this.labelMulYear.Size = new System.Drawing.Size(52, 15);
@@ -323,34 +334,36 @@
             // 
             // chartPieExpense
             // 
-            chartArea7.Name = "ChartArea1";
-            this.chartPieExpense.ChartAreas.Add(chartArea7);
+            this.chartPieExpense.BackColor = System.Drawing.Color.Transparent;
+            chartArea3.Name = "ChartArea1";
+            this.chartPieExpense.ChartAreas.Add(chartArea3);
             this.chartPieExpense.Dock = System.Windows.Forms.DockStyle.Right;
-            legend7.Name = "Legend1";
-            this.chartPieExpense.Legends.Add(legend7);
+            legend3.Name = "Legend1";
+            this.chartPieExpense.Legends.Add(legend3);
             this.chartPieExpense.Location = new System.Drawing.Point(287, 0);
             this.chartPieExpense.Name = "chartPieExpense";
-            series7.ChartArea = "ChartArea1";
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            this.chartPieExpense.Series.Add(series7);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chartPieExpense.Series.Add(series3);
             this.chartPieExpense.Size = new System.Drawing.Size(194, 193);
             this.chartPieExpense.TabIndex = 1;
             this.chartPieExpense.Text = "chart1";
             // 
             // chartPieIncome
             // 
-            chartArea8.Name = "ChartArea1";
-            this.chartPieIncome.ChartAreas.Add(chartArea8);
+            this.chartPieIncome.BackColor = System.Drawing.Color.Transparent;
+            chartArea4.Name = "ChartArea1";
+            this.chartPieIncome.ChartAreas.Add(chartArea4);
             this.chartPieIncome.Dock = System.Windows.Forms.DockStyle.Left;
-            legend8.Name = "Legend1";
-            this.chartPieIncome.Legends.Add(legend8);
+            legend4.Name = "Legend1";
+            this.chartPieIncome.Legends.Add(legend4);
             this.chartPieIncome.Location = new System.Drawing.Point(0, 0);
             this.chartPieIncome.Name = "chartPieIncome";
-            series8.ChartArea = "ChartArea1";
-            series8.Legend = "Legend1";
-            series8.Name = "Series1";
-            this.chartPieIncome.Series.Add(series8);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chartPieIncome.Series.Add(series4);
             this.chartPieIncome.Size = new System.Drawing.Size(178, 193);
             this.chartPieIncome.TabIndex = 0;
             this.chartPieIncome.Text = "chart1";
@@ -368,6 +381,7 @@
             // labelSRemain
             // 
             this.labelSRemain.AutoSize = true;
+            this.labelSRemain.BackColor = System.Drawing.Color.Transparent;
             this.labelSRemain.Location = new System.Drawing.Point(20, 63);
             this.labelSRemain.Name = "labelSRemain";
             this.labelSRemain.Size = new System.Drawing.Size(46, 15);
@@ -377,6 +391,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
+            this.label30.BackColor = System.Drawing.Color.Transparent;
             this.label30.Location = new System.Drawing.Point(22, 24);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(37, 15);
@@ -396,6 +411,7 @@
             // labelSExpense
             // 
             this.labelSExpense.AutoSize = true;
+            this.labelSExpense.BackColor = System.Drawing.Color.Transparent;
             this.labelSExpense.Location = new System.Drawing.Point(20, 63);
             this.labelSExpense.Name = "labelSExpense";
             this.labelSExpense.Size = new System.Drawing.Size(46, 15);
@@ -405,6 +421,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
+            this.label28.BackColor = System.Drawing.Color.Transparent;
             this.label28.Location = new System.Drawing.Point(22, 24);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(52, 15);
@@ -424,6 +441,7 @@
             // labelSIncome
             // 
             this.labelSIncome.AutoSize = true;
+            this.labelSIncome.BackColor = System.Drawing.Color.Transparent;
             this.labelSIncome.Location = new System.Drawing.Point(20, 63);
             this.labelSIncome.Name = "labelSIncome";
             this.labelSIncome.Size = new System.Drawing.Size(46, 15);
@@ -433,6 +451,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.Color.Transparent;
             this.label26.Location = new System.Drawing.Point(22, 24);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(52, 15);
@@ -463,6 +482,7 @@
             // 
             this.label25.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.Color.Transparent;
             this.label25.Location = new System.Drawing.Point(407, 80);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(37, 15);
@@ -473,6 +493,7 @@
             // 
             this.label24.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label24.AutoSize = true;
+            this.label24.BackColor = System.Drawing.Color.Transparent;
             this.label24.Location = new System.Drawing.Point(287, 80);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(37, 15);
@@ -507,6 +528,7 @@
             // 
             this.labelMSingleYear.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelMSingleYear.AutoSize = true;
+            this.labelMSingleYear.BackColor = System.Drawing.Color.Transparent;
             this.labelMSingleYear.Location = new System.Drawing.Point(24, 80);
             this.labelMSingleYear.Name = "labelMSingleYear";
             this.labelMSingleYear.Size = new System.Drawing.Size(37, 15);
@@ -528,6 +550,7 @@
             // 
             this.label22.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.Transparent;
             this.label22.Location = new System.Drawing.Point(24, 37);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(52, 15);
@@ -538,6 +561,7 @@
             // 
             this.label21.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.Transparent;
             this.label21.Font = new System.Drawing.Font("微软雅黑", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label21.Location = new System.Drawing.Point(28, 24);
             this.label21.Name = "label21";

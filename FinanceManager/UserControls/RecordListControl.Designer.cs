@@ -67,77 +67,92 @@
             // 
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(146, 228);
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label13.Location = new System.Drawing.Point(141, 228);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(52, 15);
+            this.label13.Size = new System.Drawing.Size(69, 20);
             this.label13.TabIndex = 26;
             this.label13.Text = "筛选：";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // panel6
             // 
             this.panel6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel6.BackColor = System.Drawing.Color.Transparent;
             this.panel6.Controls.Add(this.rdoCTIncome);
             this.panel6.Controls.Add(this.rdoCTExpense);
             this.panel6.Controls.Add(this.rdoCTAll);
             this.panel6.Location = new System.Drawing.Point(216, 216);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(215, 35);
+            this.panel6.Size = new System.Drawing.Size(286, 48);
             this.panel6.TabIndex = 25;
             // 
             // rdoCTIncome
             // 
             this.rdoCTIncome.AutoSize = true;
-            this.rdoCTIncome.Location = new System.Drawing.Point(141, 13);
+            this.rdoCTIncome.BackColor = System.Drawing.Color.Transparent;
+            this.rdoCTIncome.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.rdoCTIncome.Location = new System.Drawing.Point(194, 13);
             this.rdoCTIncome.Name = "rdoCTIncome";
-            this.rdoCTIncome.Size = new System.Drawing.Size(58, 19);
+            this.rdoCTIncome.Size = new System.Drawing.Size(70, 24);
             this.rdoCTIncome.TabIndex = 17;
             this.rdoCTIncome.TabStop = true;
             this.rdoCTIncome.Text = "收入";
-            this.rdoCTIncome.UseVisualStyleBackColor = true;
+            this.rdoCTIncome.UseVisualStyleBackColor = false;
             this.rdoCTIncome.CheckedChanged += new System.EventHandler(this.FilterType_CheckedChanged);
             // 
             // rdoCTExpense
             // 
             this.rdoCTExpense.AutoSize = true;
-            this.rdoCTExpense.Location = new System.Drawing.Point(73, 13);
+            this.rdoCTExpense.BackColor = System.Drawing.Color.Transparent;
+            this.rdoCTExpense.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.rdoCTExpense.Location = new System.Drawing.Point(102, 12);
             this.rdoCTExpense.Name = "rdoCTExpense";
-            this.rdoCTExpense.Size = new System.Drawing.Size(58, 19);
+            this.rdoCTExpense.Size = new System.Drawing.Size(70, 24);
             this.rdoCTExpense.TabIndex = 1;
             this.rdoCTExpense.TabStop = true;
             this.rdoCTExpense.Text = "支出";
-            this.rdoCTExpense.UseVisualStyleBackColor = true;
+            this.rdoCTExpense.UseVisualStyleBackColor = false;
             this.rdoCTExpense.CheckedChanged += new System.EventHandler(this.FilterType_CheckedChanged);
             // 
             // rdoCTAll
             // 
             this.rdoCTAll.AutoSize = true;
+            this.rdoCTAll.BackColor = System.Drawing.Color.Transparent;
             this.rdoCTAll.Checked = true;
-            this.rdoCTAll.Location = new System.Drawing.Point(4, 13);
+            this.rdoCTAll.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.rdoCTAll.Location = new System.Drawing.Point(12, 13);
             this.rdoCTAll.Name = "rdoCTAll";
-            this.rdoCTAll.Size = new System.Drawing.Size(58, 19);
+            this.rdoCTAll.Size = new System.Drawing.Size(70, 24);
             this.rdoCTAll.TabIndex = 0;
             this.rdoCTAll.TabStop = true;
             this.rdoCTAll.Text = "全部";
-            this.rdoCTAll.UseVisualStyleBackColor = true;
+            this.rdoCTAll.UseVisualStyleBackColor = false;
             this.rdoCTAll.CheckedChanged += new System.EventHandler(this.FilterType_CheckedChanged);
             // 
             // label12
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(185, 288);
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label12.Location = new System.Drawing.Point(162, 287);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(82, 15);
+            this.label12.Size = new System.Drawing.Size(109, 20);
             this.label12.TabIndex = 24;
             this.label12.Text = "具体分类：";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // comboBoxFilter
             // 
             this.comboBoxFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBoxFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxFilter.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBoxFilter.FormattingEnabled = true;
-            this.comboBoxFilter.Location = new System.Drawing.Point(273, 284);
+            this.comboBoxFilter.Location = new System.Drawing.Point(277, 284);
             this.comboBoxFilter.Name = "comboBoxFilter";
-            this.comboBoxFilter.Size = new System.Drawing.Size(121, 23);
+            this.comboBoxFilter.Size = new System.Drawing.Size(121, 28);
             this.comboBoxFilter.TabIndex = 23;
             this.comboBoxFilter.SelectedIndexChanged += new System.EventHandler(this.comboBoxFilter_SelectedIndexChanged);
             // 
@@ -156,48 +171,53 @@
             this.panelEditor.Controls.Add(this.label8);
             this.panelEditor.Controls.Add(this.textBoxMoney);
             this.panelEditor.Controls.Add(this.label7);
-            this.panelEditor.Location = new System.Drawing.Point(822, 228);
+            this.panelEditor.Location = new System.Drawing.Point(784, 228);
             this.panelEditor.Name = "panelEditor";
-            this.panelEditor.Size = new System.Drawing.Size(265, 352);
+            this.panelEditor.Size = new System.Drawing.Size(300, 352);
             this.panelEditor.TabIndex = 22;
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.rdoIncome);
             this.panel5.Controls.Add(this.rdoExpense);
-            this.panel5.Location = new System.Drawing.Point(92, 74);
+            this.panel5.Location = new System.Drawing.Point(95, 78);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(131, 29);
+            this.panel5.Size = new System.Drawing.Size(173, 46);
             this.panel5.TabIndex = 14;
             // 
             // rdoIncome
             // 
             this.rdoIncome.AutoSize = true;
-            this.rdoIncome.Location = new System.Drawing.Point(68, 4);
+            this.rdoIncome.BackColor = System.Drawing.Color.Transparent;
+            this.rdoIncome.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.rdoIncome.Location = new System.Drawing.Point(100, 9);
             this.rdoIncome.Name = "rdoIncome";
-            this.rdoIncome.Size = new System.Drawing.Size(58, 19);
+            this.rdoIncome.Size = new System.Drawing.Size(70, 24);
             this.rdoIncome.TabIndex = 13;
             this.rdoIncome.Text = "收入";
-            this.rdoIncome.UseVisualStyleBackColor = true;
+            this.rdoIncome.UseVisualStyleBackColor = false;
+            this.rdoIncome.CheckedChanged += new System.EventHandler(this.rdoIncome_CheckedChanged);
             // 
             // rdoExpense
             // 
             this.rdoExpense.AutoSize = true;
+            this.rdoExpense.BackColor = System.Drawing.Color.Transparent;
             this.rdoExpense.Checked = true;
-            this.rdoExpense.Location = new System.Drawing.Point(4, 5);
+            this.rdoExpense.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.rdoExpense.Location = new System.Drawing.Point(10, 9);
             this.rdoExpense.Name = "rdoExpense";
-            this.rdoExpense.Size = new System.Drawing.Size(58, 19);
+            this.rdoExpense.Size = new System.Drawing.Size(70, 24);
             this.rdoExpense.TabIndex = 12;
             this.rdoExpense.TabStop = true;
             this.rdoExpense.Text = "支出";
-            this.rdoExpense.UseVisualStyleBackColor = true;
+            this.rdoExpense.UseVisualStyleBackColor = false;
             this.rdoExpense.CheckedChanged += new System.EventHandler(this.rdoExpense_CheckedChanged);
             // 
             // buttonCancel
             // 
             this.buttonCancel.AutoSize = true;
             this.buttonCancel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonCancel.Location = new System.Drawing.Point(143, 296);
+            this.buttonCancel.Location = new System.Drawing.Point(174, 300);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 30);
             this.buttonCancel.TabIndex = 11;
@@ -209,7 +229,7 @@
             // 
             this.buttonSave.AutoSize = true;
             this.buttonSave.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonSave.Location = new System.Drawing.Point(25, 296);
+            this.buttonSave.Location = new System.Drawing.Point(45, 296);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(75, 37);
             this.buttonSave.TabIndex = 10;
@@ -220,79 +240,95 @@
             // textBoxNote
             // 
             this.textBoxNote.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBoxNote.Location = new System.Drawing.Point(80, 229);
+            this.textBoxNote.Location = new System.Drawing.Point(95, 230);
             this.textBoxNote.Name = "textBoxNote";
-            this.textBoxNote.Size = new System.Drawing.Size(140, 34);
+            this.textBoxNote.Size = new System.Drawing.Size(173, 34);
             this.textBoxNote.TabIndex = 9;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(22, 240);
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label11.Location = new System.Drawing.Point(22, 244);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(52, 15);
+            this.label11.Size = new System.Drawing.Size(69, 20);
             this.label11.TabIndex = 8;
             this.label11.Text = "备注：";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(81, 177);
+            this.dateTimePicker1.Location = new System.Drawing.Point(95, 181);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(142, 25);
+            this.dateTimePicker1.Size = new System.Drawing.Size(173, 30);
             this.dateTimePicker1.TabIndex = 7;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(22, 184);
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label10.Location = new System.Drawing.Point(22, 188);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(52, 15);
+            this.label10.Size = new System.Drawing.Size(69, 20);
             this.label10.TabIndex = 6;
             this.label10.Text = "日期：";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // comboBoxCategory
             // 
+            this.comboBoxCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCategory.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBoxCategory.FormattingEnabled = true;
-            this.comboBoxCategory.Location = new System.Drawing.Point(81, 126);
+            this.comboBoxCategory.Location = new System.Drawing.Point(95, 130);
             this.comboBoxCategory.Name = "comboBoxCategory";
-            this.comboBoxCategory.Size = new System.Drawing.Size(143, 35);
+            this.comboBoxCategory.Size = new System.Drawing.Size(173, 35);
             this.comboBoxCategory.TabIndex = 5;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(22, 138);
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label9.Location = new System.Drawing.Point(22, 137);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(52, 15);
+            this.label9.Size = new System.Drawing.Size(69, 20);
             this.label9.TabIndex = 4;
             this.label9.Text = "分类：";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(22, 83);
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label8.Location = new System.Drawing.Point(22, 87);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(52, 15);
+            this.label8.Size = new System.Drawing.Size(69, 20);
             this.label8.TabIndex = 3;
             this.label8.Text = "类型：";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // textBoxMoney
             // 
             this.textBoxMoney.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBoxMoney.Location = new System.Drawing.Point(80, 19);
+            this.textBoxMoney.Location = new System.Drawing.Point(95, 27);
             this.textBoxMoney.Name = "textBoxMoney";
-            this.textBoxMoney.Size = new System.Drawing.Size(140, 34);
+            this.textBoxMoney.Size = new System.Drawing.Size(173, 34);
             this.textBoxMoney.TabIndex = 1;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(22, 30);
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label7.Location = new System.Drawing.Point(22, 34);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 15);
+            this.label7.Size = new System.Drawing.Size(69, 20);
             this.label7.TabIndex = 0;
             this.label7.Text = "金额：";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // gridRecord
             // 
@@ -309,7 +345,8 @@
             // buttonDelete
             // 
             this.buttonDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonDelete.Location = new System.Drawing.Point(560, 258);
+            this.buttonDelete.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonDelete.Location = new System.Drawing.Point(560, 262);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(113, 45);
             this.buttonDelete.TabIndex = 20;
@@ -320,7 +357,7 @@
             // buttonNew
             // 
             this.buttonNew.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonNew.Location = new System.Drawing.Point(891, 118);
+            this.buttonNew.Location = new System.Drawing.Point(865, 117);
             this.buttonNew.Name = "buttonNew";
             this.buttonNew.Size = new System.Drawing.Size(126, 72);
             this.buttonNew.TabIndex = 19;
@@ -332,6 +369,7 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("微软雅黑", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label6.Location = new System.Drawing.Point(47, 16);
             this.label6.Name = "label6";
@@ -343,6 +381,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(65, 98);
             this.label1.Name = "label1";
@@ -363,7 +402,8 @@
             // 
             this.buttonAI.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonAI.AutoSize = true;
-            this.buttonAI.Location = new System.Drawing.Point(663, 137);
+            this.buttonAI.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonAI.Location = new System.Drawing.Point(670, 136);
             this.buttonAI.Name = "buttonAI";
             this.buttonAI.Size = new System.Drawing.Size(93, 34);
             this.buttonAI.TabIndex = 29;
@@ -386,6 +426,7 @@
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonNew);
             this.Controls.Add(this.label6);
+            this.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Name = "RecordListControl";
             this.Size = new System.Drawing.Size(1154, 680);
             this.Load += new System.EventHandler(this.RecordListControl_Load);

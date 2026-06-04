@@ -296,7 +296,7 @@ namespace FinanceManager.UserControls
         }
 
         /// <summary>从模板跳转：预填金额、分类、备注并打开编辑器</summary>
-        public void UseTemplate(TemplateEntity tpl)
+        public async void UseTemplate(TemplateEntity tpl)
         {
             panelEditor.Visible = true;
             _editingRecord = null;
@@ -305,6 +305,7 @@ namespace FinanceManager.UserControls
             rdoExpense.Checked = tpl.Type == RecordType.Expense;
             rdoIncome.Checked = tpl.Type == RecordType.Income;
             LoadCategories((int)tpl.Type);
+            await Task.Delay(50); // 等待分类下拉加载完成
             comboBoxCategory.SelectedValue = tpl.CategoryId;
             dateTimePicker1.Value = DateTime.Today;
             textBoxNote.Text = tpl.NoteTemplate ?? "";
@@ -402,6 +403,46 @@ namespace FinanceManager.UserControls
                 return allCats.Any(c => c.Name == match && c.Type == type) ? match : null;
             }
             catch { return null; }
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rdoIncome_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

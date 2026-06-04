@@ -63,7 +63,7 @@
             this.checkBoxReadOften.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkBoxReadOften.AutoSize = true;
             this.checkBoxReadOften.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.checkBoxReadOften.Location = new System.Drawing.Point(175, 43);
+            this.checkBoxReadOften.Location = new System.Drawing.Point(157, 37);
             this.checkBoxReadOften.Name = "checkBoxReadOften";
             this.checkBoxReadOften.Size = new System.Drawing.Size(124, 27);
             this.checkBoxReadOften.TabIndex = 0;
@@ -77,12 +77,12 @@
             this.gridTemplate.AllowUserToDeleteRows = false;
             this.gridTemplate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gridTemplate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridTemplate.Location = new System.Drawing.Point(131, 111);
+            this.gridTemplate.Location = new System.Drawing.Point(131, 108);
             this.gridTemplate.Name = "gridTemplate";
             this.gridTemplate.ReadOnly = true;
             this.gridTemplate.RowHeadersWidth = 51;
             this.gridTemplate.RowTemplate.Height = 27;
-            this.gridTemplate.Size = new System.Drawing.Size(585, 225);
+            this.gridTemplate.Size = new System.Drawing.Size(593, 225);
             this.gridTemplate.TabIndex = 1;
             this.gridTemplate.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridTemplate_CellDoubleClick);
             // 
@@ -91,7 +91,7 @@
             this.buttonAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonAdd.AutoSize = true;
             this.buttonAdd.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonAdd.Location = new System.Drawing.Point(222, 374);
+            this.buttonAdd.Location = new System.Drawing.Point(222, 391);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(112, 39);
             this.buttonAdd.TabIndex = 2;
@@ -104,7 +104,7 @@
             this.buttonUse.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonUse.AutoSize = true;
             this.buttonUse.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonUse.Location = new System.Drawing.Point(358, 374);
+            this.buttonUse.Location = new System.Drawing.Point(358, 391);
             this.buttonUse.Name = "buttonUse";
             this.buttonUse.Size = new System.Drawing.Size(112, 39);
             this.buttonUse.TabIndex = 3;
@@ -117,7 +117,7 @@
             this.buttonDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonDelete.AutoSize = true;
             this.buttonDelete.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonDelete.Location = new System.Drawing.Point(500, 374);
+            this.buttonDelete.Location = new System.Drawing.Point(500, 391);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(112, 39);
             this.buttonDelete.TabIndex = 4;
@@ -145,7 +145,7 @@
             this.panelEditor.Controls.Add(this.textBoxName);
             this.panelEditor.Controls.Add(this.label1);
             this.panelEditor.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.panelEditor.Location = new System.Drawing.Point(124, 439);
+            this.panelEditor.Location = new System.Drawing.Point(124, 456);
             this.panelEditor.Name = "panelEditor";
             this.panelEditor.Size = new System.Drawing.Size(622, 297);
             this.panelEditor.TabIndex = 5;
@@ -336,7 +336,7 @@
             this.labelTplCount.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelTplCount.AutoSize = true;
             this.labelTplCount.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelTplCount.Location = new System.Drawing.Point(507, 44);
+            this.labelTplCount.Location = new System.Drawing.Point(487, 41);
             this.labelTplCount.Name = "labelTplCount";
             this.labelTplCount.Size = new System.Drawing.Size(209, 23);
             this.labelTplCount.TabIndex = 6;
@@ -346,7 +346,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(854, 748);
+            this.ClientSize = new System.Drawing.Size(854, 782);
             this.Controls.Add(this.labelTplCount);
             this.Controls.Add(this.panelEditor);
             this.Controls.Add(this.buttonDelete);
