@@ -1,0 +1,24 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="FinanceManager.Common/FinanceManager.Common/FinanceManager.Common.csproj" Id="c1424aa9-8dfa-4c3b-a54e-95f873aef418">
+    <Platform Solution="*|x86" Project="x86" />
+  </Project>
+  <Project Path="FinanceManager.Data/FinanceManager.Data/FinanceManager.Data.csproj" Id="87d0681e-cf5c-42a2-a372-2d3747c0affb">
+    <Platform Solution="*|x86" Project="x86" />
+  </Project>
+  <Project Path="FinanceManager.Domain/FinanceManager.Domain/FinanceManager.Domain.csproj" Id="3fec1638-2bea-4318-94b3-6f5922afadee">
+    <Platform Solution="*|x86" Project="x86" />
+  </Project>
+  <Project Path="FinanceManager.Tests/FinanceManager.Tests/FinanceManager.Tests.csproj" Id="5142b16f-5f41-4ddb-a1bd-ff3d5efa6e2d">
+    <Platform Solution="*|x86" Project="x86" />
+  </Project>
+  <Project Path="FinanceManager.ViewModels/FinanceManager.ViewModels/FinanceManager.ViewModels.csproj" Id="1db1caab-59d7-483a-a072-2cbd5034ac90">
+    <Platform Solution="*|x86" Project="x86" />
+  </Project>
+  <Project Path="FinanceManager/FinanceManager.csproj" Id="76a92722-0b32-4e00-92a7-547e990283de">
+    <Platform Solution="*|x86" Project="x86" />
+  </Project>
+</Solution>
