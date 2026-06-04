@@ -84,7 +84,7 @@
             this.panel1.Controls.Add(this.dtpTo);
             this.panel1.Controls.Add(this.dtpFrom);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(85, 61);
+            this.panel1.Location = new System.Drawing.Point(70, 61);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(446, 414);
             this.panel1.TabIndex = 3;
@@ -250,7 +250,7 @@
             // 
             this.buttonInput.AutoSize = true;
             this.buttonInput.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonInput.Location = new System.Drawing.Point(30, 204);
+            this.buttonInput.Location = new System.Drawing.Point(22, 191);
             this.buttonInput.Name = "buttonInput";
             this.buttonInput.Size = new System.Drawing.Size(117, 35);
             this.buttonInput.TabIndex = 4;
@@ -260,11 +260,11 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(14, 127);
+            this.label1.Location = new System.Drawing.Point(14, 105);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(341, 74);
+            this.label1.Size = new System.Drawing.Size(361, 74);
             this.label1.TabIndex = 5;
-            this.label1.Text = "导入CSV格式要求：\r\n日期, 类型(支出/收入), 分类名称, 金额, 备注 \r\n（第一行为表头，导入时自动跳过）";
+            this.label1.Text = "导入CSV格式要求：\r\n\r\n日期, 类型(支出/收入), 分类名称, 金额, 备注 \r\n（第一行为表头，导入时自动跳过）";
             // 
             // panel3
             // 
@@ -276,7 +276,7 @@
             this.panel3.Controls.Add(this.buttonInput);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.labelPath);
-            this.panel3.Location = new System.Drawing.Point(537, 61);
+            this.panel3.Location = new System.Drawing.Point(522, 61);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(406, 414);
             this.panel3.TabIndex = 6;
@@ -293,7 +293,7 @@
             // 
             this.buttonTxt.AutoSize = true;
             this.buttonTxt.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonTxt.Location = new System.Drawing.Point(30, 346);
+            this.buttonTxt.Location = new System.Drawing.Point(22, 346);
             this.buttonTxt.Name = "buttonTxt";
             this.buttonTxt.Size = new System.Drawing.Size(117, 35);
             this.buttonTxt.TabIndex = 7;
@@ -327,7 +327,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1040, 566);
+            this.ClientSize = new System.Drawing.Size(1011, 566);
             this.Controls.Add(this.buttonDeleteAll);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);

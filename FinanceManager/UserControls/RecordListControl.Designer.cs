@@ -67,7 +67,7 @@
             // 
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(406, 202);
+            this.label13.Location = new System.Drawing.Point(146, 228);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(52, 15);
             this.label13.TabIndex = 26;
@@ -79,7 +79,7 @@
             this.panel6.Controls.Add(this.rdoCTIncome);
             this.panel6.Controls.Add(this.rdoCTExpense);
             this.panel6.Controls.Add(this.rdoCTAll);
-            this.panel6.Location = new System.Drawing.Point(476, 190);
+            this.panel6.Location = new System.Drawing.Point(216, 216);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(215, 35);
             this.panel6.TabIndex = 25;
@@ -125,7 +125,7 @@
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(438, 266);
+            this.label12.Location = new System.Drawing.Point(185, 288);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(82, 15);
             this.label12.TabIndex = 24;
@@ -135,7 +135,7 @@
             // 
             this.comboBoxFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBoxFilter.FormattingEnabled = true;
-            this.comboBoxFilter.Location = new System.Drawing.Point(526, 262);
+            this.comboBoxFilter.Location = new System.Drawing.Point(273, 284);
             this.comboBoxFilter.Name = "comboBoxFilter";
             this.comboBoxFilter.Size = new System.Drawing.Size(121, 23);
             this.comboBoxFilter.TabIndex = 23;
@@ -156,7 +156,7 @@
             this.panelEditor.Controls.Add(this.label8);
             this.panelEditor.Controls.Add(this.textBoxMoney);
             this.panelEditor.Controls.Add(this.label7);
-            this.panelEditor.Location = new System.Drawing.Point(44, 203);
+            this.panelEditor.Location = new System.Drawing.Point(822, 228);
             this.panelEditor.Name = "panelEditor";
             this.panelEditor.Size = new System.Drawing.Size(265, 352);
             this.panelEditor.TabIndex = 22;
@@ -298,7 +298,7 @@
             // 
             this.gridRecord.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gridRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridRecord.Location = new System.Drawing.Point(383, 318);
+            this.gridRecord.Location = new System.Drawing.Point(93, 335);
             this.gridRecord.Name = "gridRecord";
             this.gridRecord.RowHeadersWidth = 51;
             this.gridRecord.RowTemplate.Height = 27;
@@ -309,7 +309,7 @@
             // buttonDelete
             // 
             this.buttonDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonDelete.Location = new System.Drawing.Point(849, 235);
+            this.buttonDelete.Location = new System.Drawing.Point(560, 258);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(113, 45);
             this.buttonDelete.TabIndex = 20;
@@ -320,9 +320,9 @@
             // buttonNew
             // 
             this.buttonNew.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonNew.Location = new System.Drawing.Point(111, 125);
+            this.buttonNew.Location = new System.Drawing.Point(891, 118);
             this.buttonNew.Name = "buttonNew";
-            this.buttonNew.Size = new System.Drawing.Size(100, 45);
+            this.buttonNew.Size = new System.Drawing.Size(126, 72);
             this.buttonNew.TabIndex = 19;
             this.buttonNew.Text = "新增记录";
             this.buttonNew.UseVisualStyleBackColor = true;
@@ -333,7 +333,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("微软雅黑", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(37, 33);
+            this.label6.Location = new System.Drawing.Point(47, 16);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(129, 37);
             this.label6.TabIndex = 18;
@@ -344,7 +344,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(379, 80);
+            this.label1.Location = new System.Drawing.Point(65, 98);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(352, 24);
             this.label1.TabIndex = 27;
@@ -354,7 +354,7 @@
             // 
             this.textBoxAI.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxAI.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBoxAI.Location = new System.Drawing.Point(383, 118);
+            this.textBoxAI.Location = new System.Drawing.Point(69, 136);
             this.textBoxAI.Name = "textBoxAI";
             this.textBoxAI.Size = new System.Drawing.Size(579, 34);
             this.textBoxAI.TabIndex = 28;
@@ -363,7 +363,7 @@
             // 
             this.buttonAI.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonAI.AutoSize = true;
-            this.buttonAI.Location = new System.Drawing.Point(977, 119);
+            this.buttonAI.Location = new System.Drawing.Point(663, 137);
             this.buttonAI.Name = "buttonAI";
             this.buttonAI.Size = new System.Drawing.Size(93, 34);
             this.buttonAI.TabIndex = 29;
@@ -387,7 +387,7 @@
             this.Controls.Add(this.buttonNew);
             this.Controls.Add(this.label6);
             this.Name = "RecordListControl";
-            this.Size = new System.Drawing.Size(1133, 607);
+            this.Size = new System.Drawing.Size(1154, 680);
             this.Load += new System.EventHandler(this.RecordListControl_Load);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
