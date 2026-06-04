@@ -67,7 +67,7 @@
             // 
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(123, 247);
+            this.label13.Location = new System.Drawing.Point(406, 202);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(52, 15);
             this.label13.TabIndex = 26;
@@ -79,7 +79,7 @@
             this.panel6.Controls.Add(this.rdoCTIncome);
             this.panel6.Controls.Add(this.rdoCTExpense);
             this.panel6.Controls.Add(this.rdoCTAll);
-            this.panel6.Location = new System.Drawing.Point(193, 235);
+            this.panel6.Location = new System.Drawing.Point(476, 190);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(215, 35);
             this.panel6.TabIndex = 25;
@@ -125,7 +125,7 @@
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(468, 250);
+            this.label12.Location = new System.Drawing.Point(438, 266);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(82, 15);
             this.label12.TabIndex = 24;
@@ -135,7 +135,7 @@
             // 
             this.comboBoxFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBoxFilter.FormattingEnabled = true;
-            this.comboBoxFilter.Location = new System.Drawing.Point(556, 246);
+            this.comboBoxFilter.Location = new System.Drawing.Point(526, 262);
             this.comboBoxFilter.Name = "comboBoxFilter";
             this.comboBoxFilter.Size = new System.Drawing.Size(121, 23);
             this.comboBoxFilter.TabIndex = 23;
@@ -156,16 +156,16 @@
             this.panelEditor.Controls.Add(this.label8);
             this.panelEditor.Controls.Add(this.textBoxMoney);
             this.panelEditor.Controls.Add(this.label7);
-            this.panelEditor.Location = new System.Drawing.Point(126, 532);
+            this.panelEditor.Location = new System.Drawing.Point(44, 203);
             this.panelEditor.Name = "panelEditor";
-            this.panelEditor.Size = new System.Drawing.Size(551, 179);
+            this.panelEditor.Size = new System.Drawing.Size(265, 352);
             this.panelEditor.TabIndex = 22;
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.rdoIncome);
             this.panel5.Controls.Add(this.rdoExpense);
-            this.panel5.Location = new System.Drawing.Point(217, 23);
+            this.panel5.Location = new System.Drawing.Point(92, 74);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(131, 29);
             this.panel5.TabIndex = 14;
@@ -195,9 +195,11 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(307, 133);
+            this.buttonCancel.AutoSize = true;
+            this.buttonCancel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonCancel.Location = new System.Drawing.Point(143, 296);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancel.Size = new System.Drawing.Size(75, 30);
             this.buttonCancel.TabIndex = 11;
             this.buttonCancel.Text = "取消";
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -205,9 +207,11 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(140, 133);
+            this.buttonSave.AutoSize = true;
+            this.buttonSave.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonSave.Location = new System.Drawing.Point(25, 296);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(75, 23);
+            this.buttonSave.Size = new System.Drawing.Size(75, 37);
             this.buttonSave.TabIndex = 10;
             this.buttonSave.Text = "保存";
             this.buttonSave.UseVisualStyleBackColor = true;
@@ -215,15 +219,16 @@
             // 
             // textBoxNote
             // 
-            this.textBoxNote.Location = new System.Drawing.Point(362, 80);
+            this.textBoxNote.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBoxNote.Location = new System.Drawing.Point(80, 229);
             this.textBoxNote.Name = "textBoxNote";
-            this.textBoxNote.Size = new System.Drawing.Size(140, 25);
+            this.textBoxNote.Size = new System.Drawing.Size(140, 34);
             this.textBoxNote.TabIndex = 9;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(304, 82);
+            this.label11.Location = new System.Drawing.Point(22, 240);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(52, 15);
             this.label11.TabIndex = 8;
@@ -231,7 +236,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(81, 82);
+            this.dateTimePicker1.Location = new System.Drawing.Point(81, 177);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(142, 25);
             this.dateTimePicker1.TabIndex = 7;
@@ -239,7 +244,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(22, 89);
+            this.label10.Location = new System.Drawing.Point(22, 184);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(52, 15);
             this.label10.TabIndex = 6;
@@ -247,16 +252,17 @@
             // 
             // comboBoxCategory
             // 
+            this.comboBoxCategory.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBoxCategory.FormattingEnabled = true;
-            this.comboBoxCategory.Location = new System.Drawing.Point(398, 24);
+            this.comboBoxCategory.Location = new System.Drawing.Point(81, 126);
             this.comboBoxCategory.Name = "comboBoxCategory";
-            this.comboBoxCategory.Size = new System.Drawing.Size(121, 23);
+            this.comboBoxCategory.Size = new System.Drawing.Size(143, 35);
             this.comboBoxCategory.TabIndex = 5;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(354, 30);
+            this.label9.Location = new System.Drawing.Point(22, 138);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(52, 15);
             this.label9.TabIndex = 4;
@@ -265,7 +271,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(172, 27);
+            this.label8.Location = new System.Drawing.Point(22, 83);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 15);
             this.label8.TabIndex = 3;
@@ -273,9 +279,10 @@
             // 
             // textBoxMoney
             // 
-            this.textBoxMoney.Location = new System.Drawing.Point(66, 24);
+            this.textBoxMoney.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBoxMoney.Location = new System.Drawing.Point(80, 19);
             this.textBoxMoney.Name = "textBoxMoney";
-            this.textBoxMoney.Size = new System.Drawing.Size(100, 25);
+            this.textBoxMoney.Size = new System.Drawing.Size(140, 34);
             this.textBoxMoney.TabIndex = 1;
             // 
             // label7
@@ -291,20 +298,20 @@
             // 
             this.gridRecord.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gridRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridRecord.Location = new System.Drawing.Point(126, 330);
+            this.gridRecord.Location = new System.Drawing.Point(383, 318);
             this.gridRecord.Name = "gridRecord";
             this.gridRecord.RowHeadersWidth = 51;
             this.gridRecord.RowTemplate.Height = 27;
-            this.gridRecord.Size = new System.Drawing.Size(551, 170);
+            this.gridRecord.Size = new System.Drawing.Size(580, 226);
             this.gridRecord.TabIndex = 21;
             this.gridRecord.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridRecord_CellContentDoubleClick);
             // 
             // buttonDelete
             // 
             this.buttonDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonDelete.Location = new System.Drawing.Point(471, 289);
+            this.buttonDelete.Location = new System.Drawing.Point(849, 235);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(75, 23);
+            this.buttonDelete.Size = new System.Drawing.Size(113, 45);
             this.buttonDelete.TabIndex = 20;
             this.buttonDelete.Text = "删除选中";
             this.buttonDelete.UseVisualStyleBackColor = true;
@@ -313,9 +320,9 @@
             // buttonNew
             // 
             this.buttonNew.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonNew.Location = new System.Drawing.Point(249, 289);
+            this.buttonNew.Location = new System.Drawing.Point(111, 125);
             this.buttonNew.Name = "buttonNew";
-            this.buttonNew.Size = new System.Drawing.Size(75, 23);
+            this.buttonNew.Size = new System.Drawing.Size(100, 45);
             this.buttonNew.TabIndex = 19;
             this.buttonNew.Text = "新增记录";
             this.buttonNew.UseVisualStyleBackColor = true;
@@ -326,7 +333,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("微软雅黑", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(30, 70);
+            this.label6.Location = new System.Drawing.Point(37, 33);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(129, 37);
             this.label6.TabIndex = 18;
@@ -336,27 +343,29 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(123, 135);
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(379, 80);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(293, 15);
+            this.label1.Size = new System.Drawing.Size(352, 24);
             this.label1.TabIndex = 27;
-            this.label1.Text = "AI智能导入（建议每次只输入一条记录）：";
+            this.label1.Text = "AI智能添加（建议每次只输入一条记录）：";
             // 
             // textBoxAI
             // 
             this.textBoxAI.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxAI.Location = new System.Drawing.Point(126, 169);
+            this.textBoxAI.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBoxAI.Location = new System.Drawing.Point(383, 118);
             this.textBoxAI.Name = "textBoxAI";
-            this.textBoxAI.Size = new System.Drawing.Size(448, 25);
+            this.textBoxAI.Size = new System.Drawing.Size(579, 34);
             this.textBoxAI.TabIndex = 28;
             // 
             // buttonAI
             // 
             this.buttonAI.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonAI.AutoSize = true;
-            this.buttonAI.Location = new System.Drawing.Point(602, 169);
+            this.buttonAI.Location = new System.Drawing.Point(977, 119);
             this.buttonAI.Name = "buttonAI";
-            this.buttonAI.Size = new System.Drawing.Size(75, 25);
+            this.buttonAI.Size = new System.Drawing.Size(93, 34);
             this.buttonAI.TabIndex = 29;
             this.buttonAI.Text = "确定";
             this.buttonAI.UseVisualStyleBackColor = true;
@@ -378,7 +387,7 @@
             this.Controls.Add(this.buttonNew);
             this.Controls.Add(this.label6);
             this.Name = "RecordListControl";
-            this.Size = new System.Drawing.Size(840, 754);
+            this.Size = new System.Drawing.Size(1133, 607);
             this.Load += new System.EventHandler(this.RecordListControl_Load);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();

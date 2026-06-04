@@ -31,8 +31,10 @@ namespace FinanceManager.UserControls
             _connStr = connStr;
         }
 
+        /// <summary>设计器生成的 Load 事件，保留空壳</summary>
         private void StatisticsControl_Load(object sender, EventArgs e) { }
 
+        /// <summary>初始化统计控件：设置下拉选项、图表初始化、美化</summary>
         public void Init()
         {
             _statsVM = new StatisticsViewModel(
@@ -43,11 +45,15 @@ namespace FinanceManager.UserControls
             );
 
             this.Dock = DockStyle.Fill;
+            UiHelper.MakeGradient(this, UiHelper.SoftBlue, Color.White);
             // ===== 饼图区 =====
-            comboBoxPieScope.Items.AddRange(new[] { "日", "月", "季", "年", "多年" });
+            comboBoxPieScope.Items.AddRange(new[] { "日", "月", "季度", "年", "多年" });
             comboBoxPieScope.SelectedIndex = 1;
             for (int i = 1; i <= 12; i++) comboBoxPieMonth.Items.Add(i);
             for (int i = 1; i <= 31; i++) comboBoxPieDay.Items.Add(i);
+            comboBoxSeason.Items.AddRange(new[] { "第一季度", "第二季度", "第三季度", "第四季度" });
+            var q = (DateTime.Now.Month - 1) / 3;
+            comboBoxSeason.SelectedIndex = q;
             textBoxPieYear.Text = DateTime.Now.Year.ToString();
             comboBoxPieMonth.SelectedItem = DateTime.Now.Month;
             comboBoxPieDay.SelectedItem = DateTime.Now.Day;
@@ -83,21 +89,24 @@ namespace FinanceManager.UserControls
             AddColorBar(panelIncome, UiHelper.SuccessGreen);
             AddColorBar(panelExpense, UiHelper.DangerRed);
             AddColorBar(panelRemain, UiHelper.DeepBlue);
-            panelIncome.BackColor = UiHelper.CardWhite;
-            panelExpense.BackColor = UiHelper.CardWhite;
-            panelRemain.BackColor = UiHelper.CardWhite;
+            panelIncome.BackColor = UiHelper.BgLight;
+            panelExpense.BackColor = UiHelper.BgLight;
+            panelRemain.BackColor = UiHelper.BgLight;
         }
 
+        /// <summary>根据饼图范围选择，切换日/月/季度控件的显示和启用状态</summary>
         private void TogglePieControls()
         {
             var scope = comboBoxPieScope.SelectedItem?.ToString() ?? "";
             bool isDay = (scope == "日");
             bool isMonth = (scope == "日" || scope == "月");
+            bool isQuarter = (scope == "季度");
             bool isMulti = (scope == "多年");
 
-            comboBoxPieDay.Visible = isDay;
-            comboBoxPieMonth.Visible = isMonth;
-            textBoxPieYear.Visible = !isMulti;
+            comboBoxPieDay.Enabled = isDay;
+            comboBoxPieMonth.Enabled = isMonth;
+            comboBoxSeason.Enabled = isQuarter;
+            textBoxPieYear.Enabled = !isMulti;
             textBoxPieFromYear.Enabled = isMulti;
             textBoxPieToYear.Enabled = isMulti;
         }
@@ -107,7 +116,7 @@ namespace FinanceManager.UserControls
 
         // ===== 图表初始化辅助方法 =====
 
-        // 饼图绘制
+        /// <summary>初始化饼图：清空旧数据，创建 Series 和图例</summary>
         private void SetupPieChart(Chart chart)
         {
             chart.Series.Clear();
@@ -120,7 +129,7 @@ namespace FinanceManager.UserControls
             chart.Legends.Add(legend);
         }
 
-        // 条形图绘制
+        /// <summary>初始化条形图：清空旧数据，创建图例和 X 轴</summary>
         private void SetupBarChart(Chart chart)
         {
             chart.Series.Clear();
@@ -129,9 +138,14 @@ namespace FinanceManager.UserControls
             chart.ChartAreas.Clear();
             chart.ChartAreas.Add("area");
             chart.ChartAreas["area"].AxisX.Interval = 1;
+            var ax = chart.ChartAreas["area"].AxisX;
+            ax.ScrollBar.Enabled = true;
+            ax.ScrollBar.IsPositionedInside = false;
+            ax.ScaleView.Size = 8;
+                        ax.LabelStyle.Interval = 1;
         }
 
-        // 卡片左侧的颜色条
+        /// <summary>为统计卡片左侧添加颜色标识条</summary>
         private void AddColorBar(Panel pan, Color color)
         {
             var bar = new Panel
@@ -144,6 +158,7 @@ namespace FinanceManager.UserControls
             pan.Controls.Add(bar);
         }
 
+        /// <summary>饼图范围切换：根据选择（日/月/季/年/多年）调整控件状态</summary>
         private void comboBoxPieScope_SelectedIndexChanged(object sender, EventArgs e)
         {
             TogglePieControls();
@@ -151,11 +166,13 @@ namespace FinanceManager.UserControls
 
         // ====== 饼状图功能实现 ======
 
+        /// <summary>"查询"按钮：加载饼图数据</summary>
         private void buttonPieCheck_Click(object sender, EventArgs e)
         {
             ShowPieChart();
         }
 
+        /// <summary>加载饼图：查询分类统计 → 更新摘要卡片 → 绘制饼图 → 触发 AI 分析</summary>
         public async void ShowPieChart()
         {
             int year = int.TryParse(textBoxPieYear.Text, out var y) ? y : DateTime.Now.Year;
@@ -195,7 +212,7 @@ namespace FinanceManager.UserControls
             LoadStatsAi(from, to, totalIncome, totalExpense, incomeList, expenseList);
         }
 
-        // 根据选择的范围构造查询的日期区间
+        /// <summary>根据范围类型（日/月/季/年/多年）计算查询的起止日期</summary>
         private void GetPieDateRange(string scope, int year, int month, int day,
     out DateTime from, out DateTime to)
         {
@@ -207,9 +224,9 @@ namespace FinanceManager.UserControls
                 case "月":
                     from = new DateTime(year, month, 1);
                     to = from.AddMonths(1); break;
-                case "季":
-                    var q = (month - 1) / 3;
-                    from = new DateTime(year, q * 3 + 1, 1);
+                case "季度":
+                    var qIdx = comboBoxSeason.SelectedIndex; // 0=Q1, 1=Q2, 2=Q3, 3=Q4
+                    from = new DateTime(year, qIdx * 3 + 1, 1);
                     to = from.AddMonths(3); break;
                 case "年":
                     from = new DateTime(year, 1, 1);
@@ -222,6 +239,7 @@ namespace FinanceManager.UserControls
         }
 
         // 加载数据后更新饼图显示
+        /// <summary>更新饼图：Top5 分类 + 其他，设置图例和标签</summary>
         private void UpdatePieChart(Chart chart, string title,
     List<CategoryStatistics> stats, decimal total)
         {
@@ -259,7 +277,7 @@ namespace FinanceManager.UserControls
             }
         }
 
-        // 统计页面的AI分析建议
+        /// <summary>统计页 AI 分析：构建收支明细 Prompt → 调用 CallChatAsync → 显示结果</summary>
         private async void LoadStatsAi(DateTime from, DateTime to, decimal totalIncome, decimal totalExpense,
             List<CategoryStatistics> incomeList, List<CategoryStatistics> expenseList)
         {
@@ -299,34 +317,56 @@ namespace FinanceManager.UserControls
 
         // ====== 条形图功能实现 ======
 
+        /// <summary>"查询"按钮：加载条形图数据</summary>
         private void buttonBarCheck_Click(object sender, EventArgs e)
         {
             ShowBarChart();
         }
 
-        
+        /// <summary>加载条形图：根据范围类型自动计算起止日期</summary>
         public async void ShowBarChart()
         {
             var scope = comboBoxBarScope.SelectedItem.ToString();
-            var from = dtpBarFrom.Value.Date;
-            var to = dtpBarTo.Value.Date.AddDays(1);
+            var now = DateTime.Today;
+            DateTime from, to;
+
+            switch (scope)
+            {
+                case "日际":
+                    from = new DateTime(now.Year, now.Month, 1);
+                    to = from.AddMonths(1); break;
+                case "月际":
+                    from = new DateTime(now.Year, 1, 1);
+                    to = new DateTime(now.Year + 1, 1, 1); break;
+                case "季际":
+                    from = new DateTime(now.Year, 1, 1);
+                    to = new DateTime(now.Year + 1, 1, 1); break;
+                default: // 年际
+                    from = new DateTime(now.Year - 4, 1, 1);
+                    to = new DateTime(now.Year + 1, 1, 1); break;
+            }
 
             await UpdateBarChart(chartBarIncome, scope, from, to, 1);
             await UpdateBarChart(chartBarExpense, scope, from, to, 0);
         }
 
-        // 加载条形图数据并更新显示
+        /// <summary>加载条形图数据：按范围分段统计收支金额并绘制柱状图</summary>
+        private bool _isUpdatingBar;
         private async Task UpdateBarChart(Chart chart, string scope,
     DateTime from, DateTime to, int type)
         {
+            if (_isUpdatingBar) return;
+            _isUpdatingBar = true;
+            try
+            {
             chart.Titles.Clear();
             chart.Series.Clear();
             chart.Legends.Clear();
 
             var title = "年际";
-            if (scope == "日际") title = "日际";
-            else if (scope == "月际") title = "月际";
-            else if (scope == "季际") title = "季际";
+            if (scope == "日际") title = $"{from:yyyy年M月}日际";
+            else if (scope == "月际") title = $"{from:yyyy年}月际";
+            else if (scope == "季际") title = $"{from:yyyy年}季际";
             chart.Titles.Add(type == 1 ? $"{title}收入构成" : $"{title}支出构成");
             chart.Legends.Add("L");
             chart.Legends["L"].Docking = Docking.Bottom;
@@ -344,14 +384,14 @@ namespace FinanceManager.UserControls
                 {
                     case "日际":
                         next = cur.AddDays(1);
-                        label = cur.ToString("MM-dd"); break;
+                        label = cur.Day.ToString(); break;
                     case "月际":
                         next = new DateTime(cur.Year, cur.Month, 1).AddMonths(1);
-                        label = cur.ToString("yyyy-MM"); break;
+                        label = cur.Month.ToString(); break;
                     case "季际":
                         var q = (cur.Month - 1) / 3 + 1;
                         next = new DateTime(cur.Year, (q - 1) * 3 + 1, 1).AddMonths(3);
-                        label = $"{cur.Year}Q{q}"; break;
+                        label = $"第{q}季度"; break;
                     default: // 年际
                         next = new DateTime(cur.Year + 1, 1, 1);
                         label = cur.ToString("yyyy年"); break;
@@ -404,17 +444,37 @@ namespace FinanceManager.UserControls
                 var catStats = (await statsService.GetCategoryStatisticsAsync(
                     App.CurrentUserId, type, p.From, p.To)).ToList();
                 decimal otherAmt = 0;
+                // 每个周期先给所有系列加 0 点，确保 X 轴对齐
+                foreach (var s in seriesMap.Values)
+                    s.Points.Add(0).AxisLabel = p.Label;
+                otherSeries.Points.Add(0).AxisLabel = p.Label;
+
                 foreach (var cs in catStats.Where(cs => cs.Amount > 0))
                 {
                     if (top5Ids.Contains(cs.CategoryId) && seriesMap.ContainsKey(cs.CategoryName))
-                        seriesMap[cs.CategoryName].Points.Add((double)cs.Amount).AxisLabel = p.Label;
+                    {
+                        int idx = seriesMap[cs.CategoryName].Points.Count - 1;
+                        seriesMap[cs.CategoryName].Points[idx].SetValueY(cs.Amount);
+                    }
                     else
                         otherAmt += cs.Amount;
                 }
-                otherSeries.Points.Add((double)otherAmt).AxisLabel = p.Label;
+                int lastIdx = otherSeries.Points.Count - 1;
+                otherSeries.Points[lastIdx].SetValueY(otherAmt);
             }
 
             chart.ChartAreas["area"].AxisX.Interval = 1;
+
+            var ax = chart.ChartAreas["area"].AxisX;
+            ax.ScrollBar.Enabled = true;
+            ax.ScaleView.Size = 8;
+                        }
+            finally { _isUpdatingBar = false; }
+        }
+
+        private void comboBoxSeason_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ShowPieChart(); // 切换季度时自动刷新饼图
         }
     }
 }

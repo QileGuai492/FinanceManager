@@ -19,6 +19,7 @@ namespace FinanceManager.UserControls
         /// <summary>共享的 ViewModel（由 LoginForm 传入）</summary>
         private UserViewModel _viewModel;
 
+        /// <summary>构造函数：接收连接字符串，绑定按钮事件</summary>
         public RegisterControl(string connStr)
         {
             _connStr = connStr;

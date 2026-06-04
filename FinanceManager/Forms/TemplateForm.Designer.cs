@@ -62,9 +62,10 @@
             // 
             this.checkBoxReadOften.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkBoxReadOften.AutoSize = true;
-            this.checkBoxReadOften.Location = new System.Drawing.Point(143, 54);
+            this.checkBoxReadOften.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.checkBoxReadOften.Location = new System.Drawing.Point(175, 43);
             this.checkBoxReadOften.Name = "checkBoxReadOften";
-            this.checkBoxReadOften.Size = new System.Drawing.Size(89, 19);
+            this.checkBoxReadOften.Size = new System.Drawing.Size(124, 27);
             this.checkBoxReadOften.TabIndex = 0;
             this.checkBoxReadOften.Text = "只看常用";
             this.checkBoxReadOften.UseVisualStyleBackColor = true;
@@ -76,12 +77,12 @@
             this.gridTemplate.AllowUserToDeleteRows = false;
             this.gridTemplate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gridTemplate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridTemplate.Location = new System.Drawing.Point(129, 103);
+            this.gridTemplate.Location = new System.Drawing.Point(131, 111);
             this.gridTemplate.Name = "gridTemplate";
             this.gridTemplate.ReadOnly = true;
             this.gridTemplate.RowHeadersWidth = 51;
             this.gridTemplate.RowTemplate.Height = 27;
-            this.gridTemplate.Size = new System.Drawing.Size(472, 187);
+            this.gridTemplate.Size = new System.Drawing.Size(585, 225);
             this.gridTemplate.TabIndex = 1;
             this.gridTemplate.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridTemplate_CellDoubleClick);
             // 
@@ -89,9 +90,10 @@
             // 
             this.buttonAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonAdd.AutoSize = true;
-            this.buttonAdd.Location = new System.Drawing.Point(176, 334);
+            this.buttonAdd.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonAdd.Location = new System.Drawing.Point(222, 374);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(94, 39);
+            this.buttonAdd.Size = new System.Drawing.Size(112, 39);
             this.buttonAdd.TabIndex = 2;
             this.buttonAdd.Text = "新增模板";
             this.buttonAdd.UseVisualStyleBackColor = true;
@@ -101,9 +103,10 @@
             // 
             this.buttonUse.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonUse.AutoSize = true;
-            this.buttonUse.Location = new System.Drawing.Point(312, 334);
+            this.buttonUse.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonUse.Location = new System.Drawing.Point(358, 374);
             this.buttonUse.Name = "buttonUse";
-            this.buttonUse.Size = new System.Drawing.Size(94, 39);
+            this.buttonUse.Size = new System.Drawing.Size(112, 39);
             this.buttonUse.TabIndex = 3;
             this.buttonUse.Text = "使用模板";
             this.buttonUse.UseVisualStyleBackColor = true;
@@ -113,9 +116,10 @@
             // 
             this.buttonDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonDelete.AutoSize = true;
-            this.buttonDelete.Location = new System.Drawing.Point(454, 334);
+            this.buttonDelete.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonDelete.Location = new System.Drawing.Point(500, 374);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(94, 39);
+            this.buttonDelete.Size = new System.Drawing.Size(112, 39);
             this.buttonDelete.TabIndex = 4;
             this.buttonDelete.Text = "删除选中";
             this.buttonDelete.UseVisualStyleBackColor = true;
@@ -140,17 +144,19 @@
             this.panelEditor.Controls.Add(this.label2);
             this.panelEditor.Controls.Add(this.textBoxName);
             this.panelEditor.Controls.Add(this.label1);
-            this.panelEditor.Location = new System.Drawing.Point(129, 399);
+            this.panelEditor.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.panelEditor.Location = new System.Drawing.Point(124, 439);
             this.panelEditor.Name = "panelEditor";
-            this.panelEditor.Size = new System.Drawing.Size(479, 243);
+            this.panelEditor.Size = new System.Drawing.Size(622, 297);
             this.panelEditor.TabIndex = 5;
             // 
             // checkBoxOften
             // 
             this.checkBoxOften.AutoSize = true;
-            this.checkBoxOften.Location = new System.Drawing.Point(47, 163);
+            this.checkBoxOften.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.checkBoxOften.Location = new System.Drawing.Point(98, 132);
             this.checkBoxOften.Name = "checkBoxOften";
-            this.checkBoxOften.Size = new System.Drawing.Size(89, 19);
+            this.checkBoxOften.Size = new System.Drawing.Size(124, 27);
             this.checkBoxOften.TabIndex = 17;
             this.checkBoxOften.Text = "设为常用";
             this.checkBoxOften.UseVisualStyleBackColor = true;
@@ -158,7 +164,8 @@
             // buttonCancel
             // 
             this.buttonCancel.AutoSize = true;
-            this.buttonCancel.Location = new System.Drawing.Point(269, 188);
+            this.buttonCancel.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonCancel.Location = new System.Drawing.Point(376, 240);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(94, 37);
             this.buttonCancel.TabIndex = 16;
@@ -169,7 +176,8 @@
             // buttonSave
             // 
             this.buttonSave.AutoSize = true;
-            this.buttonSave.Location = new System.Drawing.Point(112, 188);
+            this.buttonSave.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonSave.Location = new System.Drawing.Point(159, 240);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(94, 37);
             this.buttonSave.TabIndex = 15;
@@ -179,17 +187,18 @@
             // 
             // textBoxCategory
             // 
-            this.textBoxCategory.Location = new System.Drawing.Point(319, 129);
+            this.textBoxCategory.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBoxCategory.Location = new System.Drawing.Point(412, 129);
             this.textBoxCategory.Name = "textBoxCategory";
-            this.textBoxCategory.Size = new System.Drawing.Size(100, 25);
+            this.textBoxCategory.Size = new System.Drawing.Size(149, 34);
             this.textBoxCategory.TabIndex = 14;
             this.textBoxCategory.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxCategory_KeyDown);
             // 
             // buttonAddCategory
             // 
-            this.buttonAddCategory.Location = new System.Drawing.Point(410, 78);
+            this.buttonAddCategory.Location = new System.Drawing.Point(558, 75);
             this.buttonAddCategory.Name = "buttonAddCategory";
-            this.buttonAddCategory.Size = new System.Drawing.Size(31, 23);
+            this.buttonAddCategory.Size = new System.Drawing.Size(42, 33);
             this.buttonAddCategory.TabIndex = 13;
             this.buttonAddCategory.Text = "+";
             this.buttonAddCategory.UseVisualStyleBackColor = true;
@@ -197,44 +206,49 @@
             // 
             // textBoxNote
             // 
-            this.textBoxNote.Location = new System.Drawing.Point(82, 126);
+            this.textBoxNote.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBoxNote.Location = new System.Drawing.Point(98, 180);
             this.textBoxNote.Name = "textBoxNote";
-            this.textBoxNote.Size = new System.Drawing.Size(117, 25);
+            this.textBoxNote.Size = new System.Drawing.Size(463, 34);
             this.textBoxNote.TabIndex = 12;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(29, 129);
+            this.label5.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.Location = new System.Drawing.Point(29, 183);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 15);
+            this.label5.Size = new System.Drawing.Size(79, 23);
             this.label5.TabIndex = 11;
             this.label5.Text = "备注：";
             // 
             // comboBoxCategory
             // 
+            this.comboBoxCategory.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBoxCategory.FormattingEnabled = true;
-            this.comboBoxCategory.Location = new System.Drawing.Point(283, 78);
+            this.comboBoxCategory.Location = new System.Drawing.Point(412, 75);
             this.comboBoxCategory.Name = "comboBoxCategory";
-            this.comboBoxCategory.Size = new System.Drawing.Size(121, 23);
+            this.comboBoxCategory.Size = new System.Drawing.Size(127, 31);
             this.comboBoxCategory.TabIndex = 9;
             this.comboBoxCategory.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategory_SelectedIndexChanged);
             // 
             // labelCat2
             // 
             this.labelCat2.AutoSize = true;
-            this.labelCat2.Location = new System.Drawing.Point(225, 132);
+            this.labelCat2.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelCat2.Location = new System.Drawing.Point(258, 132);
             this.labelCat2.Name = "labelCat2";
-            this.labelCat2.Size = new System.Drawing.Size(97, 15);
+            this.labelCat2.Size = new System.Drawing.Size(148, 23);
             this.labelCat2.TabIndex = 8;
             this.labelCat2.Text = "自定义分类：";
             // 
             // labelCat1
             // 
             this.labelCat1.AutoSize = true;
-            this.labelCat1.Location = new System.Drawing.Point(225, 83);
+            this.labelCat1.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelCat1.Location = new System.Drawing.Point(315, 83);
             this.labelCat1.Name = "labelCat1";
-            this.labelCat1.Size = new System.Drawing.Size(60, 15);
+            this.labelCat1.Size = new System.Drawing.Size(91, 23);
             this.labelCat1.TabIndex = 8;
             this.labelCat1.Text = "分类*：";
             // 
@@ -244,16 +258,17 @@
             this.panel1.Controls.Add(this.radioButtonIncome);
             this.panel1.Location = new System.Drawing.Point(81, 75);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(138, 36);
+            this.panel1.Size = new System.Drawing.Size(199, 36);
             this.panel1.TabIndex = 7;
             // 
             // radioButtonExpense
             // 
             this.radioButtonExpense.AutoSize = true;
             this.radioButtonExpense.Checked = true;
-            this.radioButtonExpense.Location = new System.Drawing.Point(7, 6);
+            this.radioButtonExpense.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.radioButtonExpense.Location = new System.Drawing.Point(17, 4);
             this.radioButtonExpense.Name = "radioButtonExpense";
-            this.radioButtonExpense.Size = new System.Drawing.Size(58, 19);
+            this.radioButtonExpense.Size = new System.Drawing.Size(77, 27);
             this.radioButtonExpense.TabIndex = 5;
             this.radioButtonExpense.TabStop = true;
             this.radioButtonExpense.Text = "支出";
@@ -263,9 +278,10 @@
             // radioButtonIncome
             // 
             this.radioButtonIncome.AutoSize = true;
-            this.radioButtonIncome.Location = new System.Drawing.Point(71, 5);
+            this.radioButtonIncome.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.radioButtonIncome.Location = new System.Drawing.Point(119, 5);
             this.radioButtonIncome.Name = "radioButtonIncome";
-            this.radioButtonIncome.Size = new System.Drawing.Size(58, 19);
+            this.radioButtonIncome.Size = new System.Drawing.Size(77, 27);
             this.radioButtonIncome.TabIndex = 6;
             this.radioButtonIncome.Text = "收入";
             this.radioButtonIncome.UseVisualStyleBackColor = true;
@@ -273,41 +289,45 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 83);
+            this.label3.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(3, 84);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 15);
+            this.label3.Size = new System.Drawing.Size(91, 23);
             this.label3.TabIndex = 4;
             this.label3.Text = "类型*：";
             // 
             // textBoxMoney
             // 
-            this.textBoxMoney.Location = new System.Drawing.Point(304, 20);
+            this.textBoxMoney.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBoxMoney.Location = new System.Drawing.Point(409, 20);
             this.textBoxMoney.Name = "textBoxMoney";
-            this.textBoxMoney.Size = new System.Drawing.Size(115, 25);
+            this.textBoxMoney.Size = new System.Drawing.Size(152, 34);
             this.textBoxMoney.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(225, 23);
+            this.label2.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(315, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 15);
+            this.label2.Size = new System.Drawing.Size(79, 23);
             this.label2.TabIndex = 2;
             this.label2.Text = "金额：";
             // 
             // textBoxName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(81, 20);
+            this.textBoxName.Location = new System.Drawing.Point(142, 20);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(118, 25);
+            this.textBoxName.Size = new System.Drawing.Size(138, 34);
             this.textBoxName.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(29, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 15);
+            this.label1.Size = new System.Drawing.Size(91, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "名称*：";
             // 
@@ -315,9 +335,10 @@
             // 
             this.labelTplCount.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelTplCount.AutoSize = true;
-            this.labelTplCount.Location = new System.Drawing.Point(395, 58);
+            this.labelTplCount.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelTplCount.Location = new System.Drawing.Point(507, 44);
             this.labelTplCount.Name = "labelTplCount";
-            this.labelTplCount.Size = new System.Drawing.Size(138, 15);
+            this.labelTplCount.Size = new System.Drawing.Size(209, 23);
             this.labelTplCount.TabIndex = 6;
             this.labelTplCount.Text = "模板数量：NaN/Max";
             // 
@@ -325,7 +346,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(762, 669);
+            this.ClientSize = new System.Drawing.Size(854, 748);
             this.Controls.Add(this.labelTplCount);
             this.Controls.Add(this.panelEditor);
             this.Controls.Add(this.buttonDelete);
@@ -333,6 +354,7 @@
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.gridTemplate);
             this.Controls.Add(this.checkBoxReadOften);
+            this.MaximizeBox = false;
             this.Name = "TemplateForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "模板管理";

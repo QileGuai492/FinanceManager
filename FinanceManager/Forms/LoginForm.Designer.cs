@@ -158,9 +158,10 @@
             this.Title.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Title.AutoSize = true;
-            this.Title.Location = new System.Drawing.Point(157, 41);
+            this.Title.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Title.Location = new System.Drawing.Point(163, 41);
             this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(127, 15);
+            this.Title.Size = new System.Drawing.Size(194, 23);
             this.Title.TabIndex = 2;
             this.Title.Text = "欢迎回来，请登录";
             // 

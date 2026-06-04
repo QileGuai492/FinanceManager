@@ -84,7 +84,7 @@
             this.panNav.Dock = System.Windows.Forms.DockStyle.Left;
             this.panNav.Location = new System.Drawing.Point(0, 0);
             this.panNav.Name = "panNav";
-            this.panNav.Size = new System.Drawing.Size(150, 533);
+            this.panNav.Size = new System.Drawing.Size(150, 973);
             this.panNav.TabIndex = 0;
             // 
             // logo
@@ -102,7 +102,7 @@
             // 
             this.btnDashboard.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDashboard.Location = new System.Drawing.Point(0, 221);
+            this.btnDashboard.Location = new System.Drawing.Point(0, 661);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(150, 39);
             this.btnDashboard.TabIndex = 0;
@@ -114,7 +114,7 @@
             // 
             this.btnRecord.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnRecord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecord.Location = new System.Drawing.Point(0, 260);
+            this.btnRecord.Location = new System.Drawing.Point(0, 700);
             this.btnRecord.Name = "btnRecord";
             this.btnRecord.Size = new System.Drawing.Size(150, 39);
             this.btnRecord.TabIndex = 0;
@@ -126,7 +126,7 @@
             // 
             this.btnStatistics.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnStatistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStatistics.Location = new System.Drawing.Point(0, 299);
+            this.btnStatistics.Location = new System.Drawing.Point(0, 739);
             this.btnStatistics.Name = "btnStatistics";
             this.btnStatistics.Size = new System.Drawing.Size(150, 39);
             this.btnStatistics.TabIndex = 0;
@@ -138,7 +138,7 @@
             // 
             this.btnBudget.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnBudget.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBudget.Location = new System.Drawing.Point(0, 338);
+            this.btnBudget.Location = new System.Drawing.Point(0, 778);
             this.btnBudget.Name = "btnBudget";
             this.btnBudget.Size = new System.Drawing.Size(150, 39);
             this.btnBudget.TabIndex = 0;
@@ -150,7 +150,7 @@
             // 
             this.btnTemplate.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnTemplate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTemplate.Location = new System.Drawing.Point(0, 377);
+            this.btnTemplate.Location = new System.Drawing.Point(0, 817);
             this.btnTemplate.Name = "btnTemplate";
             this.btnTemplate.Size = new System.Drawing.Size(150, 39);
             this.btnTemplate.TabIndex = 0;
@@ -162,7 +162,7 @@
             // 
             this.btnData.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnData.Location = new System.Drawing.Point(0, 416);
+            this.btnData.Location = new System.Drawing.Point(0, 856);
             this.btnData.Name = "btnData";
             this.btnData.Size = new System.Drawing.Size(150, 39);
             this.btnData.TabIndex = 0;
@@ -174,7 +174,7 @@
             // 
             this.btnSettings.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSettings.Location = new System.Drawing.Point(0, 455);
+            this.btnSettings.Location = new System.Drawing.Point(0, 895);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(150, 39);
             this.btnSettings.TabIndex = 0;
@@ -188,7 +188,7 @@
             this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.ForeColor = System.Drawing.Color.Tomato;
-            this.btnLogout.Location = new System.Drawing.Point(0, 494);
+            this.btnLogout.Location = new System.Drawing.Point(0, 934);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(150, 39);
             this.btnLogout.TabIndex = 0;
@@ -202,12 +202,12 @@
             this.panContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panContainer.Location = new System.Drawing.Point(150, 0);
             this.panContainer.Name = "panContainer";
-            this.panContainer.Size = new System.Drawing.Size(879, 533);
+            this.panContainer.Size = new System.Drawing.Size(1314, 973);
             this.panContainer.TabIndex = 1;
             // 
             // panelDashBoard
             // 
-            this.panelDashBoard.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelDashBoard.AutoSize = true;
             this.panelDashBoard.Controls.Add(this.chartExpense);
             this.panelDashBoard.Controls.Add(this.chartIncome);
             this.panelDashBoard.Controls.Add(this.panel1);
@@ -215,9 +215,10 @@
             this.panelDashBoard.Controls.Add(this.panel2);
             this.panelDashBoard.Controls.Add(this.labelDate);
             this.panelDashBoard.Controls.Add(this.labelWelcome);
-            this.panelDashBoard.Location = new System.Drawing.Point(48, -20);
+            this.panelDashBoard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDashBoard.Location = new System.Drawing.Point(0, 0);
             this.panelDashBoard.Name = "panelDashBoard";
-            this.panelDashBoard.Size = new System.Drawing.Size(819, 568);
+            this.panelDashBoard.Size = new System.Drawing.Size(1314, 973);
             this.panelDashBoard.TabIndex = 0;
             // 
             // chartExpense
@@ -227,13 +228,13 @@
             this.chartExpense.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartExpense.Legends.Add(legend1);
-            this.chartExpense.Location = new System.Drawing.Point(412, 308);
+            this.chartExpense.Location = new System.Drawing.Point(710, 494);
             this.chartExpense.Name = "chartExpense";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chartExpense.Series.Add(series1);
-            this.chartExpense.Size = new System.Drawing.Size(195, 196);
+            this.chartExpense.Size = new System.Drawing.Size(483, 392);
             this.chartExpense.TabIndex = 6;
             this.chartExpense.Text = "chart1";
             // 
@@ -244,13 +245,13 @@
             this.chartIncome.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.chartIncome.Legends.Add(legend2);
-            this.chartIncome.Location = new System.Drawing.Point(150, 308);
+            this.chartIncome.Location = new System.Drawing.Point(155, 494);
             this.chartIncome.Name = "chartIncome";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.chartIncome.Series.Add(series2);
-            this.chartIncome.Size = new System.Drawing.Size(195, 196);
+            this.chartIncome.Size = new System.Drawing.Size(483, 392);
             this.chartIncome.TabIndex = 6;
             this.chartIncome.Text = "chart1";
             // 
@@ -259,9 +260,9 @@
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.Controls.Add(this._lblIncomeValue);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(30, 133);
+            this.panel1.Location = new System.Drawing.Point(88, 253);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(248, 120);
+            this.panel1.Size = new System.Drawing.Size(270, 175);
             this.panel1.TabIndex = 5;
             // 
             // _lblIncomeValue
@@ -270,9 +271,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this._lblIncomeValue.AutoSize = true;
-            this._lblIncomeValue.Location = new System.Drawing.Point(28, 41);
+            this._lblIncomeValue.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this._lblIncomeValue.Location = new System.Drawing.Point(73, 76);
             this._lblIncomeValue.Name = "_lblIncomeValue";
-            this._lblIncomeValue.Size = new System.Drawing.Size(52, 15);
+            this._lblIncomeValue.Size = new System.Drawing.Size(106, 30);
             this._lblIncomeValue.TabIndex = 0;
             this._lblIncomeValue.Text = "收入值";
             // 
@@ -282,9 +284,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 9);
+            this.label1.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(91, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 15);
+            this.label1.Size = new System.Drawing.Size(133, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "本月收入";
             // 
@@ -293,26 +296,28 @@
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel3.Controls.Add(this._lblBalanceValue);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(528, 133);
+            this.panel3.Location = new System.Drawing.Point(898, 253);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(262, 120);
+            this.panel3.Size = new System.Drawing.Size(295, 175);
             this.panel3.TabIndex = 2;
             // 
             // _lblBalanceValue
             // 
             this._lblBalanceValue.AutoSize = true;
-            this._lblBalanceValue.Location = new System.Drawing.Point(28, 41);
+            this._lblBalanceValue.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this._lblBalanceValue.Location = new System.Drawing.Point(92, 76);
             this._lblBalanceValue.Name = "_lblBalanceValue";
-            this._lblBalanceValue.Size = new System.Drawing.Size(52, 15);
+            this._lblBalanceValue.Size = new System.Drawing.Size(106, 30);
             this._lblBalanceValue.TabIndex = 0;
             this._lblBalanceValue.Text = "结余值";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(41, 9);
+            this.label3.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(104, 15);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 15);
+            this.label3.Size = new System.Drawing.Size(133, 30);
             this.label3.TabIndex = 0;
             this.label3.Text = "本月结余";
             // 
@@ -321,26 +326,28 @@
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.Controls.Add(this._lblExpenseValue);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(284, 133);
+            this.panel2.Location = new System.Drawing.Point(482, 253);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(238, 120);
+            this.panel2.Size = new System.Drawing.Size(290, 175);
             this.panel2.TabIndex = 2;
             // 
             // _lblExpenseValue
             // 
             this._lblExpenseValue.AutoSize = true;
-            this._lblExpenseValue.Location = new System.Drawing.Point(31, 41);
+            this._lblExpenseValue.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this._lblExpenseValue.Location = new System.Drawing.Point(73, 76);
             this._lblExpenseValue.Name = "_lblExpenseValue";
-            this._lblExpenseValue.Size = new System.Drawing.Size(52, 15);
+            this._lblExpenseValue.Size = new System.Drawing.Size(106, 30);
             this._lblExpenseValue.TabIndex = 0;
             this._lblExpenseValue.Text = "支出值";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(48, 9);
+            this.label2.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(73, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 15);
+            this.label2.Size = new System.Drawing.Size(133, 30);
             this.label2.TabIndex = 0;
             this.label2.Text = "本月支出";
             // 
@@ -348,9 +355,10 @@
             // 
             this.labelDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelDate.AutoSize = true;
-            this.labelDate.Location = new System.Drawing.Point(49, 74);
+            this.labelDate.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelDate.Location = new System.Drawing.Point(60, 166);
             this.labelDate.Name = "labelDate";
-            this.labelDate.Size = new System.Drawing.Size(121, 15);
+            this.labelDate.Size = new System.Drawing.Size(201, 25);
             this.labelDate.TabIndex = 1;
             this.labelDate.Text = "今天是 年 月 日";
             // 
@@ -358,9 +366,10 @@
             // 
             this.labelWelcome.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelWelcome.AutoSize = true;
-            this.labelWelcome.Location = new System.Drawing.Point(27, 26);
+            this.labelWelcome.Font = new System.Drawing.Font("宋体", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelWelcome.Location = new System.Drawing.Point(31, 89);
             this.labelWelcome.Name = "labelWelcome";
-            this.labelWelcome.Size = new System.Drawing.Size(143, 15);
+            this.labelWelcome.Size = new System.Drawing.Size(351, 37);
             this.labelWelcome.TabIndex = 0;
             this.labelWelcome.Text = "欢迎回来，{用户名}";
             // 
@@ -368,7 +377,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1029, 533);
+            this.ClientSize = new System.Drawing.Size(1464, 973);
             this.Controls.Add(this.panContainer);
             this.Controls.Add(this.panNav);
             this.Name = "MainForm";
@@ -377,6 +386,7 @@
             this.panNav.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.panContainer.ResumeLayout(false);
+            this.panContainer.PerformLayout();
             this.panelDashBoard.ResumeLayout(false);
             this.panelDashBoard.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartExpense)).EndInit();

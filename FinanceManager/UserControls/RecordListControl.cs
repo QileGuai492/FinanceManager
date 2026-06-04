@@ -37,16 +37,15 @@ namespace FinanceManager.UserControls
         /// <summary>防止 DoFilterGrid 并发重入</summary>
         private bool _isFiltering;
 
+        /// <summary>构造函数：接收连接字符串，初始化 UI 控件</summary>
         public RecordListControl(string connStr)
         {
             _connStr = connStr;
             InitializeComponent();
         }
 
-        private void RecordListControl_Load(object sender, EventArgs e)
-        {
-
-        }
+        /// <summary>窗体加载事件（设计器生成，保留空壳）</summary>
+        private void RecordListControl_Load(object sender, EventArgs e) { }
 
         /// <summary>供 MainForm 调用的初始化入口</summary>
         public void Init()
@@ -60,6 +59,7 @@ namespace FinanceManager.UserControls
             );
 
             this.Dock = DockStyle.Fill;
+            UiHelper.MakeGradient(this, UiHelper.SoftBlue, Color.White);
             panelEditor.Visible = false;
             gridRecord.AutoGenerateColumns = false;
             gridRecord.Columns.Add("colDate", "日期");
@@ -83,8 +83,9 @@ namespace FinanceManager.UserControls
             RefreshRecordGrid();
         }
 
-        // ===== 编辑面板 =====
+        // ===== 编辑面板（新增/编辑/删除记账记录）=====
 
+        /// <summary>"新增"按钮：打开编辑面板，默认支出模式</summary>
         private void buttonNew_Click(object sender, EventArgs e)
         {
             panelEditor.BackColor = Color.White;
@@ -98,17 +99,20 @@ namespace FinanceManager.UserControls
             buttonSave.Text = "保存";
         }
 
+        /// <summary>收支类型切换：支出=0，收入=1，重载分类下拉</summary>
         private void rdoExpense_CheckedChanged(object sender, EventArgs e)
         {
             LoadCategories(rdoExpense.Checked ? 0 : 1);
         }
 
+        /// <summary>"取消"按钮：隐藏编辑面板</summary>
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             panelEditor.Visible = false;
             _editingRecord = null;
         }
 
+        /// <summary>"保存"按钮：校验金额和分类 → 新增或更新记录</summary>
         private async void buttonSave_Click(object sender, EventArgs e)
         {
             if (!decimal.TryParse(textBoxMoney.Text, out var amt) || amt <= 0)
@@ -154,6 +158,7 @@ namespace FinanceManager.UserControls
             RecordChanged?.Invoke();
         }
 
+        /// <summary>双击记录行：填充编辑面板，进入编辑模式</summary>
         private void gridRecord_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (gridRecord.CurrentRow == null) return;
@@ -173,6 +178,7 @@ namespace FinanceManager.UserControls
             buttonSave.Text = "更新";
         }
 
+        /// <summary>"删除"按钮：确认后删除选中记录</summary>
         private async void buttonDelete_Click(object sender, EventArgs e)
         {
             if (gridRecord.CurrentRow == null) return;
@@ -187,6 +193,7 @@ namespace FinanceManager.UserControls
 
         // ===== 分类加载 =====
 
+        /// <summary>加载指定类型的分类到编辑器下拉框</summary>
         private async void LoadCategories(int type)
         {
             var cats = await new CategoryService(new CategoryRepository(_connStr))
@@ -196,8 +203,9 @@ namespace FinanceManager.UserControls
             comboBoxCategory.ValueMember = "Id";
         }
 
-        // ===== 筛选 =====
+        // ===== 筛选（全部/支出/收入 + 分类下拉）=====
 
+        /// <summary>筛选类型切换：重载分类下拉并触发重新查询</summary>
         private async void FilterType_CheckedChanged(object sender, EventArgs e)
         {
             var rb = sender as RadioButton;
@@ -232,6 +240,7 @@ namespace FinanceManager.UserControls
             await DoFilterGrid();
         }
 
+        /// <summary>分类筛选下拉切换：更新筛选项并重新查询</summary>
         private async void comboBoxFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBoxFilter.SelectedValue is int val)
@@ -240,6 +249,7 @@ namespace FinanceManager.UserControls
             await DoFilterGrid();
         }
 
+        /// <summary>执行筛选查询：按类型+分类过滤记录，刷新 DataGridView，防并发重入</summary>
         private async Task DoFilterGrid()
         {
             if (_isFiltering) return;
@@ -271,6 +281,7 @@ namespace FinanceManager.UserControls
             finally { _isFiltering = false; }
         }
 
+        /// <summary>刷新记录表格（异步调用 DoFilterGrid）</summary>
         private async void RefreshRecordGrid()
         {
             await DoFilterGrid();

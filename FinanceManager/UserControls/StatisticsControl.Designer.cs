@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.labelStatsAi = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
@@ -54,6 +54,7 @@
             this.chartBarIncome = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label27 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.comboBoxSeason = new System.Windows.Forms.ComboBox();
             this.buttonPieCheck = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
             this.labelMulYear = new System.Windows.Forms.Label();
@@ -97,9 +98,10 @@
             // 
             this.labelStatsAi.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelStatsAi.AutoSize = true;
-            this.labelStatsAi.Location = new System.Drawing.Point(163, 669);
+            this.labelStatsAi.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelStatsAi.Location = new System.Drawing.Point(165, 661);
             this.labelStatsAi.Name = "labelStatsAi";
-            this.labelStatsAi.Size = new System.Drawing.Size(53, 15);
+            this.labelStatsAi.Size = new System.Drawing.Size(88, 25);
             this.labelStatsAi.TabIndex = 9;
             this.labelStatsAi.Text = "AI建议";
             // 
@@ -125,16 +127,16 @@
             this.panel12.Controls.Add(this.comboBoxBarScope);
             this.panel12.Controls.Add(this.panel17);
             this.panel12.Controls.Add(this.label27);
-            this.panel12.Location = new System.Drawing.Point(607, 95);
+            this.panel12.Location = new System.Drawing.Point(597, 95);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(537, 512);
+            this.panel12.Size = new System.Drawing.Size(543, 538);
             this.panel12.TabIndex = 7;
             // 
             // label29
             // 
             this.label29.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(327, 95);
+            this.label29.Location = new System.Drawing.Point(259, 162);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(22, 15);
             this.label29.TabIndex = 13;
@@ -143,35 +145,36 @@
             // dtpBarTo
             // 
             this.dtpBarTo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dtpBarTo.Location = new System.Drawing.Point(355, 88);
+            this.dtpBarTo.Location = new System.Drawing.Point(301, 155);
             this.dtpBarTo.Name = "dtpBarTo";
-            this.dtpBarTo.Size = new System.Drawing.Size(134, 25);
+            this.dtpBarTo.Size = new System.Drawing.Size(165, 25);
             this.dtpBarTo.TabIndex = 12;
             // 
             // dtpBarFrom
             // 
             this.dtpBarFrom.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dtpBarFrom.Location = new System.Drawing.Point(187, 88);
+            this.dtpBarFrom.Location = new System.Drawing.Point(71, 155);
             this.dtpBarFrom.Name = "dtpBarFrom";
-            this.dtpBarFrom.Size = new System.Drawing.Size(134, 25);
+            this.dtpBarFrom.Size = new System.Drawing.Size(170, 25);
             this.dtpBarFrom.TabIndex = 12;
             // 
             // label32
             // 
             this.label32.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(50, 57);
+            this.label32.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label32.Location = new System.Drawing.Point(23, 34);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(67, 15);
+            this.label32.Size = new System.Drawing.Size(115, 33);
             this.label32.TabIndex = 11;
             this.label32.Text = "收支变化";
             // 
             // buttonBarCheck
             // 
             this.buttonBarCheck.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonBarCheck.Location = new System.Drawing.Point(316, 143);
+            this.buttonBarCheck.Location = new System.Drawing.Point(232, 81);
             this.buttonBarCheck.Name = "buttonBarCheck";
-            this.buttonBarCheck.Size = new System.Drawing.Size(75, 23);
+            this.buttonBarCheck.Size = new System.Drawing.Size(103, 44);
             this.buttonBarCheck.TabIndex = 10;
             this.buttonBarCheck.Text = "查询";
             this.buttonBarCheck.UseVisualStyleBackColor = true;
@@ -180,10 +183,11 @@
             // comboBoxBarScope
             // 
             this.comboBoxBarScope.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBoxBarScope.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxBarScope.FormattingEnabled = true;
-            this.comboBoxBarScope.Location = new System.Drawing.Point(98, 89);
+            this.comboBoxBarScope.Location = new System.Drawing.Point(91, 93);
             this.comboBoxBarScope.Name = "comboBoxBarScope";
-            this.comboBoxBarScope.Size = new System.Drawing.Size(72, 23);
+            this.comboBoxBarScope.Size = new System.Drawing.Size(112, 23);
             this.comboBoxBarScope.TabIndex = 8;
             // 
             // panel17
@@ -191,42 +195,42 @@
             this.panel17.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel17.Controls.Add(this.chartBarExpense);
             this.panel17.Controls.Add(this.chartBarIncome);
-            this.panel17.Location = new System.Drawing.Point(23, 221);
+            this.panel17.Location = new System.Drawing.Point(26, 234);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(487, 226);
+            this.panel17.Size = new System.Drawing.Size(498, 226);
             this.panel17.TabIndex = 7;
             // 
             // chartBarExpense
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartBarExpense.ChartAreas.Add(chartArea1);
+            chartArea5.Name = "ChartArea1";
+            this.chartBarExpense.ChartAreas.Add(chartArea5);
             this.chartBarExpense.Dock = System.Windows.Forms.DockStyle.Right;
-            legend1.Name = "Legend1";
-            this.chartBarExpense.Legends.Add(legend1);
-            this.chartBarExpense.Location = new System.Drawing.Point(258, 0);
+            legend5.Name = "Legend1";
+            this.chartBarExpense.Legends.Add(legend5);
+            this.chartBarExpense.Location = new System.Drawing.Point(266, 0);
             this.chartBarExpense.Name = "chartBarExpense";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartBarExpense.Series.Add(series1);
-            this.chartBarExpense.Size = new System.Drawing.Size(229, 226);
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            this.chartBarExpense.Series.Add(series5);
+            this.chartBarExpense.Size = new System.Drawing.Size(232, 226);
             this.chartBarExpense.TabIndex = 1;
             this.chartBarExpense.Text = "chart1";
             // 
             // chartBarIncome
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartBarIncome.ChartAreas.Add(chartArea2);
+            chartArea6.Name = "ChartArea1";
+            this.chartBarIncome.ChartAreas.Add(chartArea6);
             this.chartBarIncome.Dock = System.Windows.Forms.DockStyle.Left;
-            legend2.Name = "Legend1";
-            this.chartBarIncome.Legends.Add(legend2);
+            legend6.Name = "Legend1";
+            this.chartBarIncome.Legends.Add(legend6);
             this.chartBarIncome.Location = new System.Drawing.Point(0, 0);
             this.chartBarIncome.Name = "chartBarIncome";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartBarIncome.Series.Add(series2);
-            this.chartBarIncome.Size = new System.Drawing.Size(225, 226);
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.chartBarIncome.Series.Add(series6);
+            this.chartBarIncome.Size = new System.Drawing.Size(234, 226);
             this.chartBarIncome.TabIndex = 0;
             this.chartBarIncome.Text = "chart1";
             // 
@@ -234,7 +238,7 @@
             // 
             this.label27.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(45, 92);
+            this.label27.Location = new System.Drawing.Point(38, 96);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(52, 15);
             this.label27.TabIndex = 0;
@@ -243,6 +247,7 @@
             // panel11
             // 
             this.panel11.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel11.Controls.Add(this.comboBoxSeason);
             this.panel11.Controls.Add(this.buttonPieCheck);
             this.panel11.Controls.Add(this.label23);
             this.panel11.Controls.Add(this.labelMulYear);
@@ -262,15 +267,25 @@
             this.panel11.Controls.Add(this.label22);
             this.panel11.Location = new System.Drawing.Point(35, 95);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(556, 512);
+            this.panel11.Size = new System.Drawing.Size(556, 538);
             this.panel11.TabIndex = 6;
+            // 
+            // comboBoxSeason
+            // 
+            this.comboBoxSeason.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSeason.FormattingEnabled = true;
+            this.comboBoxSeason.Location = new System.Drawing.Point(176, 77);
+            this.comboBoxSeason.Name = "comboBoxSeason";
+            this.comboBoxSeason.Size = new System.Drawing.Size(100, 23);
+            this.comboBoxSeason.TabIndex = 11;
+            this.comboBoxSeason.SelectedIndexChanged += new System.EventHandler(this.comboBoxSeason_SelectedIndexChanged);
             // 
             // buttonPieCheck
             // 
             this.buttonPieCheck.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonPieCheck.Location = new System.Drawing.Point(448, 97);
+            this.buttonPieCheck.Location = new System.Drawing.Point(339, 116);
             this.buttonPieCheck.Name = "buttonPieCheck";
-            this.buttonPieCheck.Size = new System.Drawing.Size(75, 23);
+            this.buttonPieCheck.Size = new System.Drawing.Size(114, 48);
             this.buttonPieCheck.TabIndex = 10;
             this.buttonPieCheck.Text = "查询";
             this.buttonPieCheck.UseVisualStyleBackColor = true;
@@ -280,7 +295,7 @@
             // 
             this.label23.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(238, 97);
+            this.label23.Location = new System.Drawing.Point(175, 133);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(22, 15);
             this.label23.TabIndex = 9;
@@ -290,7 +305,7 @@
             // 
             this.labelMulYear.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelMulYear.AutoSize = true;
-            this.labelMulYear.Location = new System.Drawing.Point(112, 92);
+            this.labelMulYear.Location = new System.Drawing.Point(24, 128);
             this.labelMulYear.Name = "labelMulYear";
             this.labelMulYear.Size = new System.Drawing.Size(52, 15);
             this.labelMulYear.TabIndex = 8;
@@ -301,42 +316,42 @@
             this.panel16.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel16.Controls.Add(this.chartPieExpense);
             this.panel16.Controls.Add(this.chartPieIncome);
-            this.panel16.Location = new System.Drawing.Point(54, 283);
+            this.panel16.Location = new System.Drawing.Point(27, 316);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(432, 193);
+            this.panel16.Size = new System.Drawing.Size(481, 193);
             this.panel16.TabIndex = 7;
             // 
             // chartPieExpense
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chartPieExpense.ChartAreas.Add(chartArea3);
+            chartArea7.Name = "ChartArea1";
+            this.chartPieExpense.ChartAreas.Add(chartArea7);
             this.chartPieExpense.Dock = System.Windows.Forms.DockStyle.Right;
-            legend3.Name = "Legend1";
-            this.chartPieExpense.Legends.Add(legend3);
-            this.chartPieExpense.Location = new System.Drawing.Point(238, 0);
+            legend7.Name = "Legend1";
+            this.chartPieExpense.Legends.Add(legend7);
+            this.chartPieExpense.Location = new System.Drawing.Point(287, 0);
             this.chartPieExpense.Name = "chartPieExpense";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartPieExpense.Series.Add(series3);
+            series7.ChartArea = "ChartArea1";
+            series7.Legend = "Legend1";
+            series7.Name = "Series1";
+            this.chartPieExpense.Series.Add(series7);
             this.chartPieExpense.Size = new System.Drawing.Size(194, 193);
             this.chartPieExpense.TabIndex = 1;
             this.chartPieExpense.Text = "chart1";
             // 
             // chartPieIncome
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chartPieIncome.ChartAreas.Add(chartArea4);
+            chartArea8.Name = "ChartArea1";
+            this.chartPieIncome.ChartAreas.Add(chartArea8);
             this.chartPieIncome.Dock = System.Windows.Forms.DockStyle.Left;
-            legend4.Name = "Legend1";
-            this.chartPieIncome.Legends.Add(legend4);
+            legend8.Name = "Legend1";
+            this.chartPieIncome.Legends.Add(legend8);
             this.chartPieIncome.Location = new System.Drawing.Point(0, 0);
             this.chartPieIncome.Name = "chartPieIncome";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chartPieIncome.Series.Add(series4);
-            this.chartPieIncome.Size = new System.Drawing.Size(166, 193);
+            series8.ChartArea = "ChartArea1";
+            series8.Legend = "Legend1";
+            series8.Name = "Series1";
+            this.chartPieIncome.Series.Add(series8);
+            this.chartPieIncome.Size = new System.Drawing.Size(178, 193);
             this.chartPieIncome.TabIndex = 0;
             this.chartPieIncome.Text = "chart1";
             // 
@@ -345,7 +360,7 @@
             this.panelRemain.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelRemain.Controls.Add(this.labelSRemain);
             this.panelRemain.Controls.Add(this.label30);
-            this.panelRemain.Location = new System.Drawing.Point(336, 143);
+            this.panelRemain.Location = new System.Drawing.Point(362, 182);
             this.panelRemain.Name = "panelRemain";
             this.panelRemain.Size = new System.Drawing.Size(105, 108);
             this.panelRemain.TabIndex = 6;
@@ -373,7 +388,7 @@
             this.panelExpense.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelExpense.Controls.Add(this.labelSExpense);
             this.panelExpense.Controls.Add(this.label28);
-            this.panelExpense.Location = new System.Drawing.Point(210, 143);
+            this.panelExpense.Location = new System.Drawing.Point(210, 182);
             this.panelExpense.Name = "panelExpense";
             this.panelExpense.Size = new System.Drawing.Size(105, 108);
             this.panelExpense.TabIndex = 6;
@@ -401,7 +416,7 @@
             this.panelIncome.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelIncome.Controls.Add(this.labelSIncome);
             this.panelIncome.Controls.Add(this.label26);
-            this.panelIncome.Location = new System.Drawing.Point(89, 143);
+            this.panelIncome.Location = new System.Drawing.Point(61, 182);
             this.panelIncome.Name = "panelIncome";
             this.panelIncome.Size = new System.Drawing.Size(105, 108);
             this.panelIncome.TabIndex = 6;
@@ -427,26 +442,28 @@
             // comboBoxPieDay
             // 
             this.comboBoxPieDay.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBoxPieDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPieDay.FormattingEnabled = true;
-            this.comboBoxPieDay.Location = new System.Drawing.Point(380, 57);
+            this.comboBoxPieDay.Location = new System.Drawing.Point(450, 77);
             this.comboBoxPieDay.Name = "comboBoxPieDay";
-            this.comboBoxPieDay.Size = new System.Drawing.Size(55, 23);
+            this.comboBoxPieDay.Size = new System.Drawing.Size(75, 23);
             this.comboBoxPieDay.TabIndex = 5;
             // 
             // comboBoxPieMonth
             // 
             this.comboBoxPieMonth.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBoxPieMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPieMonth.FormattingEnabled = true;
-            this.comboBoxPieMonth.Location = new System.Drawing.Point(304, 57);
+            this.comboBoxPieMonth.Location = new System.Drawing.Point(330, 77);
             this.comboBoxPieMonth.Name = "comboBoxPieMonth";
-            this.comboBoxPieMonth.Size = new System.Drawing.Size(41, 23);
+            this.comboBoxPieMonth.Size = new System.Drawing.Size(73, 23);
             this.comboBoxPieMonth.TabIndex = 5;
             // 
             // label25
             // 
             this.label25.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(351, 60);
+            this.label25.Location = new System.Drawing.Point(407, 80);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(37, 15);
             this.label25.TabIndex = 4;
@@ -456,7 +473,7 @@
             // 
             this.label24.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(275, 60);
+            this.label24.Location = new System.Drawing.Point(287, 80);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(37, 15);
             this.label24.TabIndex = 4;
@@ -465,32 +482,32 @@
             // textBoxPieToYear
             // 
             this.textBoxPieToYear.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxPieToYear.Location = new System.Drawing.Point(265, 88);
+            this.textBoxPieToYear.Location = new System.Drawing.Point(210, 124);
             this.textBoxPieToYear.Name = "textBoxPieToYear";
-            this.textBoxPieToYear.Size = new System.Drawing.Size(62, 25);
+            this.textBoxPieToYear.Size = new System.Drawing.Size(91, 25);
             this.textBoxPieToYear.TabIndex = 3;
             // 
             // textBoxPieFromYear
             // 
             this.textBoxPieFromYear.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxPieFromYear.Location = new System.Drawing.Point(170, 88);
+            this.textBoxPieFromYear.Location = new System.Drawing.Point(82, 124);
             this.textBoxPieFromYear.Name = "textBoxPieFromYear";
-            this.textBoxPieFromYear.Size = new System.Drawing.Size(62, 25);
+            this.textBoxPieFromYear.Size = new System.Drawing.Size(84, 25);
             this.textBoxPieFromYear.TabIndex = 3;
             // 
             // textBoxPieYear
             // 
             this.textBoxPieYear.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxPieYear.Location = new System.Drawing.Point(210, 55);
+            this.textBoxPieYear.Location = new System.Drawing.Point(66, 75);
             this.textBoxPieYear.Name = "textBoxPieYear";
-            this.textBoxPieYear.Size = new System.Drawing.Size(62, 25);
+            this.textBoxPieYear.Size = new System.Drawing.Size(89, 25);
             this.textBoxPieYear.TabIndex = 3;
             // 
             // labelMSingleYear
             // 
             this.labelMSingleYear.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelMSingleYear.AutoSize = true;
-            this.labelMSingleYear.Location = new System.Drawing.Point(183, 60);
+            this.labelMSingleYear.Location = new System.Drawing.Point(24, 80);
             this.labelMSingleYear.Name = "labelMSingleYear";
             this.labelMSingleYear.Size = new System.Drawing.Size(37, 15);
             this.labelMSingleYear.TabIndex = 2;
@@ -499,10 +516,11 @@
             // comboBoxPieScope
             // 
             this.comboBoxPieScope.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBoxPieScope.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPieScope.FormattingEnabled = true;
-            this.comboBoxPieScope.Location = new System.Drawing.Point(101, 57);
+            this.comboBoxPieScope.Location = new System.Drawing.Point(74, 34);
             this.comboBoxPieScope.Name = "comboBoxPieScope";
-            this.comboBoxPieScope.Size = new System.Drawing.Size(76, 23);
+            this.comboBoxPieScope.Size = new System.Drawing.Size(92, 23);
             this.comboBoxPieScope.TabIndex = 1;
             this.comboBoxPieScope.SelectedIndexChanged += new System.EventHandler(this.comboBoxPieScope_SelectedIndexChanged);
             // 
@@ -510,7 +528,7 @@
             // 
             this.label22.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(51, 60);
+            this.label22.Location = new System.Drawing.Point(24, 37);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(52, 15);
             this.label22.TabIndex = 0;
@@ -529,8 +547,7 @@
             // 
             // StatisticsControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.labelStatsAi);
             this.Controls.Add(this.label31);
             this.Controls.Add(this.panel12);
@@ -602,5 +619,6 @@
         private System.Windows.Forms.ComboBox comboBoxPieScope;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.ComboBox comboBoxSeason;
     }
 }

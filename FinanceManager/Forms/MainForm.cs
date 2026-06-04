@@ -57,8 +57,10 @@ namespace FinanceManager.Forms
         private void MainForm_Load(object sender, EventArgs e)
         {
             this.Text = "AI个人财务管理系统";
-            this.Size = new Size(1100, 700);
-            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Size = new Size(1350, 800);
+            this.StartPosition = FormStartPosition.Manual;
+            var area = Screen.PrimaryScreen.WorkingArea;
+            this.Location = new Point((area.Width - this.Width) / 2, (area.Height - this.Height) / 2 - 10);
             this.BackColor = UiHelper.BgLight;
             this.AutoSize = true;
             logo.Image = Properties.Resources.logo;
@@ -104,7 +106,8 @@ namespace FinanceManager.Forms
 
             // ===== 初始化各个 Panel 的内容 =====
             ShowPanel(panelDashBoard);
-            RefreshDashboard();
+            UiHelper.MakeGradient(panelDashBoard, UiHelper.SoftBlue, Color.White);
+    RefreshDashboard();
         }
 
         /// <summary>切换内容区：隐藏上一个 Panel，显示目标 Panel</summary>
@@ -238,17 +241,12 @@ namespace FinanceManager.Forms
         {
             foreach (var p in new[] { panel1, panel2, panel3 })
             {
-                p.BackColor = UiHelper.CardWhite;
-                UiHelper.MakeRound(p, 8, UiHelper.CardWhite);
+                p.BackColor = UiHelper.BgLight;
+                UiHelper.MakeRound(p, 8, UiHelper.BgLight);
             }
             _lblIncomeValue.ForeColor = UiHelper.SuccessGreen;
             _lblExpenseValue.ForeColor = UiHelper.DangerRed;
             _lblBalanceValue.ForeColor = UiHelper.DeepBlue;
-            _lblIncomeValue.Font = new Font("微软雅黑", 20f, FontStyle.Bold);
-            _lblExpenseValue.Font = new Font("微软雅黑", 20f, FontStyle.Bold);
-            _lblBalanceValue.Font = new Font("微软雅黑", 20f, FontStyle.Bold);
-
-            labelWelcome.Font = new Font("微软雅黑", 14f, FontStyle.Bold);
             labelWelcome.ForeColor = UiHelper.TextDark;
         }
 

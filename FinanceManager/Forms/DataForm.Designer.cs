@@ -49,9 +49,9 @@
             this.buttonInput = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.buttonTxt = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
+            this.buttonTxt = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.buttonDeleteAll = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridRecords)).BeginInit();
@@ -84,7 +84,7 @@
             this.panel1.Controls.Add(this.dtpTo);
             this.panel1.Controls.Add(this.dtpFrom);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(70, 51);
+            this.panel1.Location = new System.Drawing.Point(85, 61);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(446, 414);
             this.panel1.TabIndex = 3;
@@ -276,20 +276,18 @@
             this.panel3.Controls.Add(this.buttonInput);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.labelPath);
-            this.panel3.Location = new System.Drawing.Point(522, 51);
+            this.panel3.Location = new System.Drawing.Point(537, 61);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(406, 414);
             this.panel3.TabIndex = 6;
             // 
-            // label6
+            // label8
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("微软雅黑", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(10, 6);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(129, 37);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "导入文件";
+            this.label8.Location = new System.Drawing.Point(14, 262);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(318, 70);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "导入txt格式要求：\r\n\r\n能分清记录条目，使用AI智能分析并解析为csv格式传入数据库";
             // 
             // buttonTxt
             // 
@@ -303,13 +301,15 @@
             this.buttonTxt.UseVisualStyleBackColor = true;
             this.buttonTxt.Click += new System.EventHandler(this.buttonTxt_Click);
             // 
-            // label8
+            // label6
             // 
-            this.label8.Location = new System.Drawing.Point(14, 262);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(318, 70);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "导入txt格式要求：\r\n\r\n能分清记录条目，使用AI智能分析并解析为csv格式传入数据库";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("微软雅黑", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.Location = new System.Drawing.Point(10, 6);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(129, 37);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "导入文件";
             // 
             // buttonDeleteAll
             // 
@@ -327,10 +327,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1010, 546);
+            this.ClientSize = new System.Drawing.Size(1040, 566);
             this.Controls.Add(this.buttonDeleteAll);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
             this.Name = "DataForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "数据管理";

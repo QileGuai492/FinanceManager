@@ -16,6 +16,8 @@ namespace FinanceManager.Helpers
         public static readonly Color DeepBlue = Color.FromArgb(0x2C, 0x3E, 0x80);
         /// <summary>浅蓝辅色 #3F51B5 — 按钮悬停态、选中态</summary>
         public static readonly Color LightBlue = Color.FromArgb(0x3F, 0x51, 0xB5);
+        /// <summary>极淡天蓝 #E3F2FD — 渐变起始色，柔和面板背景</summary>
+        public static readonly Color SoftBlue = Color.FromArgb(0xE3, 0xF2, 0xFD);
         /// <summary>深蓝激活色 #1A237E — 当前选中导航按钮</summary>
         public static readonly Color ActiveBlue = Color.FromArgb(0x1A, 0x23, 0x7E);
         /// <summary>成功绿 #4CAF50 — 收入金额、正常状态</summary>
@@ -144,6 +146,19 @@ namespace FinanceManager.Helpers
                 SelectionBackColor = Color.FromArgb(0xE8, 0xEA, 0xF6),
                 SelectionForeColor = TextDark,
                 Padding = new Padding(8, 0, 0, 0)
+            };
+        }
+
+        /// <summary>为 Panel 添加白→深蓝纵向渐变背景</summary>
+        public static void MakeGradient(Control control, Color fromColor, Color toColor, float angle = 90f)
+        {
+            control.Paint += (s, e) =>
+            {
+                using (var brush = new System.Drawing.Drawing2D.LinearGradientBrush(
+                    control.ClientRectangle, fromColor, toColor, angle))
+                {
+                    e.Graphics.FillRectangle(brush, control.ClientRectangle);
+                }
             };
         }
 

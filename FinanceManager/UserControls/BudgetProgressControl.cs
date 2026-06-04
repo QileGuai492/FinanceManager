@@ -28,12 +28,14 @@ namespace FinanceManager.UserControls
             _connStr = connStr;
         }
 
+        /// <summary>设计器生成的 Load 事件，保留空壳</summary>
         private void BudgetProgressControl_Load(object sender, EventArgs e) { }
 
-        // 初始化界面
+        /// <summary>初始化预算控件：创建 ViewModel、月份下拉、美化表格和按钮</summary>
         public void Init()
         {
             this.Dock = DockStyle.Fill;
+            UiHelper.MakeGradient(this, UiHelper.SoftBlue, Color.White);
             _budgetVM = new BudgetViewModel(
                 new BudgetService(
                     new BudgetRepository(_connStr),
@@ -55,14 +57,17 @@ namespace FinanceManager.UserControls
             gridSuggest.ReadOnly = true;
             UiHelper.StyleDataGridView(gridSuggest);
 
+            panel8.BackColor = UiHelper.BgLight;
+            panel10.BackColor = UiHelper.BgLight;
+
             // 按钮美化
             UiHelper.StyleButton(buttonSaveBudget, UiHelper.DeepBlue, Color.White);
             UiHelper.BindHover(buttonSaveBudget, UiHelper.DeepBlue, UiHelper.LightBlue);
-            UiHelper.StyleButton(buttonLoadBudget, UiHelper.SuccessGreen, Color.White);
-            UiHelper.BindHover(buttonLoadBudget, UiHelper.SuccessGreen, Color.FromArgb(0x66, 0xBB, 0x6A));
+            UiHelper.StyleButton(buttonLoadBudget, UiHelper.DeepBlue, Color.White);
+            UiHelper.BindHover(buttonLoadBudget, UiHelper.DeepBlue, UiHelper.LightBlue);
         }
 
-        // 刷新数据
+        /// <summary>刷新预算数据：加载当月收支 → 计算进度 → 加载预警和 AI 建议</summary>
         public async void RefreshData()
         {
             int year = int.TryParse(textBoxYear.Text, out var y) ? y : DateTime.Now.Year;
@@ -163,7 +168,7 @@ namespace FinanceManager.UserControls
             await LoadAiSuggestion(year, month);
         }
 
-        // 加载预算预警信息
+        /// <summary>加载分类预算预警：遍历各分类，超出 80% 显示警告，超出 100% 显示超支</summary>
         private async Task LoadWarnings(int year, int month, decimal totalBudget, decimal totalSpent)
         {
             var catService = new CategoryService(new CategoryRepository(_connStr));
@@ -214,7 +219,7 @@ namespace FinanceManager.UserControls
             }
         }
 
-        /// <summary>按月份查询分类统计，封装 GetCategoryStatisticsAsync 的日期范围构造</summary>
+        /// <summary>按月份查询支出分类统计，构造该月首末日期作为查询范围</summary>
         private async Task<IEnumerable<CategoryStatistics>> GetCategoryStatsForMonth(int year, int month)
         {
             var startDate = new DateTime(year, month, 1);
@@ -225,7 +230,7 @@ namespace FinanceManager.UserControls
                 .GetCategoryStatisticsAsync(App.CurrentUserId, 0, startDate, endDate);
         }
 
-        // 加载AI建议
+        /// <summary>加载 AI 预算建议：构建近 3 月历史数据 → 调用 AI 分析 → 显示建议</summary>
         private async Task LoadAiSuggestion(int year, int month)
         {
             var catService = new CategoryService(new CategoryRepository(_connStr));
@@ -314,21 +319,19 @@ namespace FinanceManager.UserControls
             }
         }
 
-        // 预算类型变化时，调整月份下拉可用性
+        /// <summary>预算类型切换：年度时禁用月份下拉</summary>
         private void BudgetType_CheckedChanged(object sender, EventArgs e)
         {
-            // 月度/年度时月份下拉可用，日度时也可用（取对应日期的月度预算 ÷ 天数）
             comboBoxMonth.Enabled = !radioButtonYearly.Checked;
         }
 
-
-        // 加载按钮
+        /// <summary>"加载"按钮：触发 RefreshData 重新加载预算数据</summary>
         private void buttonLoadBudget_Click(object sender, EventArgs e)
         {
             RefreshData();
         }
 
-        // 点击保存预算按钮，进行预算金额的验证和保存
+        /// <summary>"保存"按钮：校验金额 → 日度×当月天数/年度÷12 → 写入或更新数据库</summary>
         private async void buttonSaveBudget_Click(object sender, EventArgs e)
         {
 

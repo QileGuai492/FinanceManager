@@ -67,9 +67,9 @@
             // 
             this.buttonLoadBudget.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonLoadBudget.AutoSize = true;
-            this.buttonLoadBudget.Location = new System.Drawing.Point(762, 93);
+            this.buttonLoadBudget.Location = new System.Drawing.Point(796, 151);
             this.buttonLoadBudget.Name = "buttonLoadBudget";
-            this.buttonLoadBudget.Size = new System.Drawing.Size(75, 25);
+            this.buttonLoadBudget.Size = new System.Drawing.Size(98, 46);
             this.buttonLoadBudget.TabIndex = 27;
             this.buttonLoadBudget.Text = "加载";
             this.buttonLoadBudget.UseVisualStyleBackColor = true;
@@ -111,7 +111,7 @@
             this.panel10.Controls.Add(this.label19);
             this.panel10.Controls.Add(this.textBoxBudget);
             this.panel10.Controls.Add(this.label18);
-            this.panel10.Location = new System.Drawing.Point(538, 164);
+            this.panel10.Location = new System.Drawing.Point(509, 245);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(486, 341);
             this.panel10.TabIndex = 25;
@@ -174,7 +174,7 @@
             this.panel8.Controls.Add(this.progBudget);
             this.panel8.Controls.Add(this.labelSpent);
             this.panel8.Controls.Add(this.labelBudget);
-            this.panel8.Location = new System.Drawing.Point(69, 164);
+            this.panel8.Location = new System.Drawing.Point(40, 245);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(412, 341);
             this.panel8.TabIndex = 23;
@@ -243,8 +243,9 @@
             // comboBoxMonth
             // 
             this.comboBoxMonth.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBoxMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMonth.FormattingEnabled = true;
-            this.comboBoxMonth.Location = new System.Drawing.Point(602, 92);
+            this.comboBoxMonth.Location = new System.Drawing.Point(642, 163);
             this.comboBoxMonth.Name = "comboBoxMonth";
             this.comboBoxMonth.Size = new System.Drawing.Size(121, 23);
             this.comboBoxMonth.TabIndex = 22;
@@ -253,7 +254,7 @@
             // 
             this.label16.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(544, 96);
+            this.label16.Location = new System.Drawing.Point(584, 167);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(52, 15);
             this.label16.TabIndex = 21;
@@ -262,7 +263,7 @@
             // textBoxYear
             // 
             this.textBoxYear.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxYear.Location = new System.Drawing.Point(431, 90);
+            this.textBoxYear.Location = new System.Drawing.Point(471, 161);
             this.textBoxYear.Name = "textBoxYear";
             this.textBoxYear.Size = new System.Drawing.Size(100, 25);
             this.textBoxYear.TabIndex = 20;
@@ -271,7 +272,7 @@
             // 
             this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(376, 98);
+            this.label15.Location = new System.Drawing.Point(416, 169);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(52, 15);
             this.label15.TabIndex = 19;
@@ -284,7 +285,7 @@
             this.panel7.Controls.Add(this.radioButtonMonthly);
             this.panel7.Controls.Add(this.radioButtonDaily);
             this.panel7.Controls.Add(this.label14);
-            this.panel7.Location = new System.Drawing.Point(90, 85);
+            this.panel7.Location = new System.Drawing.Point(130, 156);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(254, 41);
             this.panel7.TabIndex = 17;
@@ -340,7 +341,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("微软雅黑", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(26, 22);
+            this.label5.Location = new System.Drawing.Point(33, 47);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(129, 37);
             this.label5.TabIndex = 15;
@@ -348,8 +349,7 @@
             // 
             // BudgetProgressControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.buttonLoadBudget);
             this.Controls.Add(this.panel10);
@@ -361,7 +361,7 @@
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.label5);
             this.Name = "BudgetProgressControl";
-            this.Size = new System.Drawing.Size(1027, 553);
+            this.Size = new System.Drawing.Size(1036, 671);
             this.Load += new System.EventHandler(this.BudgetProgressControl_Load);
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
