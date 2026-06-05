@@ -60,11 +60,11 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(104, 34);
+            this.label1.Location = new System.Drawing.Point(81, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 15);
+            this.label1.Size = new System.Drawing.Size(97, 15);
             this.label1.TabIndex = 0;
-            this.label1.Text = "用户名：";
+            this.label1.Text = "修改用户名：";
             // 
             // textBoxUsername
             // 
@@ -73,6 +73,7 @@
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(203, 25);
             this.textBoxUsername.TabIndex = 1;
+            this.textBoxUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxUsername_KeyDown);
             // 
             // buttonSaveName
             // 
@@ -150,6 +151,7 @@
             this.textBoxAPIKey.PasswordChar = '·';
             this.textBoxAPIKey.Size = new System.Drawing.Size(253, 25);
             this.textBoxAPIKey.TabIndex = 6;
+            this.textBoxAPIKey.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxAPIKey_KeyDown);
             // 
             // label8
             // 
@@ -242,6 +244,7 @@
             this.textBoxCheck.PasswordChar = '*';
             this.textBoxCheck.Size = new System.Drawing.Size(252, 25);
             this.textBoxCheck.TabIndex = 4;
+            this.textBoxCheck.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxCheck_KeyDown);
             // 
             // textBoxNew
             // 
@@ -250,6 +253,7 @@
             this.textBoxNew.PasswordChar = '*';
             this.textBoxNew.Size = new System.Drawing.Size(252, 25);
             this.textBoxNew.TabIndex = 4;
+            this.textBoxNew.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxNew_KeyDown);
             // 
             // textBoxOrgin
             // 
@@ -258,6 +262,7 @@
             this.textBoxOrgin.PasswordChar = '*';
             this.textBoxOrgin.Size = new System.Drawing.Size(251, 25);
             this.textBoxOrgin.TabIndex = 4;
+            this.textBoxOrgin.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxOrgin_KeyDown);
             // 
             // label7
             // 

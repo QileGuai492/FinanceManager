@@ -106,7 +106,7 @@
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(150, 39);
             this.btnDashboard.TabIndex = 0;
-            this.btnDashboard.Text = "仪表盘";
+            this.btnDashboard.Text = "首页";
             this.btnDashboard.UseVisualStyleBackColor = true;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
@@ -376,10 +376,10 @@
             this.labelWelcome.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelWelcome.AutoSize = true;
             this.labelWelcome.BackColor = System.Drawing.Color.Transparent;
-            this.labelWelcome.Font = new System.Drawing.Font("宋体", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelWelcome.Location = new System.Drawing.Point(31, 89);
+            this.labelWelcome.Font = new System.Drawing.Font("微软雅黑", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelWelcome.Location = new System.Drawing.Point(31, 67);
             this.labelWelcome.Name = "labelWelcome";
-            this.labelWelcome.Size = new System.Drawing.Size(351, 37);
+            this.labelWelcome.Size = new System.Drawing.Size(346, 50);
             this.labelWelcome.TabIndex = 0;
             this.labelWelcome.Text = "欢迎回来，{用户名}";
             // 

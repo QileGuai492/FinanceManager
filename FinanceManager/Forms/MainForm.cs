@@ -294,6 +294,8 @@ namespace FinanceManager.Forms
             {
                 form.ShowDialog();
             }
+            RefreshDashboard();
+            recordControl.RefreshData();
         }
 
         private void btnSettings_Click(object sender, EventArgs e)

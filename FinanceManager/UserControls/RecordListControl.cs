@@ -405,44 +405,15 @@ namespace FinanceManager.UserControls
             catch { return null; }
         }
 
-        private void label13_Click(object sender, EventArgs e)
+        // 编辑页金额输入完成按Enter触发保存按钮点击事件
+        private void textBoxMoney_KeyDown(object sender, KeyEventArgs e)
         {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rdoIncome_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // 阻止“ding”声
+                buttonSave_Click(sender, e);
+            }
+            else return;
         }
     }
 }

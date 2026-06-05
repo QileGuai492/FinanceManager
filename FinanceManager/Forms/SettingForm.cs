@@ -180,5 +180,58 @@ namespace FinanceManager.Forms
             config.Save();
             MessageBox.Show("AI配置保存成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        // ====== 设置页用户体验优化 =====
+
+        // 在用户名输入框按回车键触发保存操作，避免频繁点击按钮
+        private void textBoxUsername_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                buttonSaveName_Click(sender, e);
+            }
+            else return;
+        }
+
+        private void textBoxOrgin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                textBoxNew.Focus();
+            }
+            else return;
+        }
+
+        private void textBoxNew_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                textBoxCheck.Focus();
+            }
+            else return;
+        }
+
+        private void textBoxCheck_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                buttonCheck_Click(sender, e);
+            }
+            else return;
+        }
+
+        private void textBoxAPIKey_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                buttonAISettings_Click(sender, e);
+            }
+            else return;
+        }
     }
 }

@@ -74,7 +74,6 @@
             this.label13.Size = new System.Drawing.Size(69, 20);
             this.label13.TabIndex = 26;
             this.label13.Text = "筛选：";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // panel6
             // 
@@ -142,7 +141,6 @@
             this.label12.Size = new System.Drawing.Size(109, 20);
             this.label12.TabIndex = 24;
             this.label12.Text = "具体分类：";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // comboBoxFilter
             // 
@@ -196,7 +194,6 @@
             this.rdoIncome.TabIndex = 13;
             this.rdoIncome.Text = "收入";
             this.rdoIncome.UseVisualStyleBackColor = false;
-            this.rdoIncome.CheckedChanged += new System.EventHandler(this.rdoIncome_CheckedChanged);
             // 
             // rdoExpense
             // 
@@ -255,7 +252,6 @@
             this.label11.Size = new System.Drawing.Size(69, 20);
             this.label11.TabIndex = 8;
             this.label11.Text = "备注：";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // dateTimePicker1
             // 
@@ -274,7 +270,6 @@
             this.label10.Size = new System.Drawing.Size(69, 20);
             this.label10.TabIndex = 6;
             this.label10.Text = "日期：";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // comboBoxCategory
             // 
@@ -296,7 +291,6 @@
             this.label9.Size = new System.Drawing.Size(69, 20);
             this.label9.TabIndex = 4;
             this.label9.Text = "分类：";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label8
             // 
@@ -308,7 +302,6 @@
             this.label8.Size = new System.Drawing.Size(69, 20);
             this.label8.TabIndex = 3;
             this.label8.Text = "类型：";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // textBoxMoney
             // 
@@ -317,6 +310,7 @@
             this.textBoxMoney.Name = "textBoxMoney";
             this.textBoxMoney.Size = new System.Drawing.Size(173, 34);
             this.textBoxMoney.TabIndex = 1;
+            this.textBoxMoney.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxMoney_KeyDown);
             // 
             // label7
             // 
@@ -328,7 +322,6 @@
             this.label7.Size = new System.Drawing.Size(69, 20);
             this.label7.TabIndex = 0;
             this.label7.Text = "金额：";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // gridRecord
             // 
