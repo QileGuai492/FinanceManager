@@ -137,7 +137,7 @@ namespace FinanceManager.UserControls
             progBudget.ForeColor = remaining <= 10
                 ? Color.FromArgb(244, 67, 54)
                 : Color.FromArgb(33, 150, 243);
-            labelPercent.Text = $"{percent}%";
+            labelPercent.Text = $"{remaining}%";
 
             var remain = budgetAmount - spent;
             labelRemain.Text = remain > 0
