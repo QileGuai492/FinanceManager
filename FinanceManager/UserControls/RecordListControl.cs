@@ -79,7 +79,7 @@ namespace FinanceManager.UserControls
             UiHelper.StyleButton(buttonDelete, UiHelper.DangerRed, Color.White);
             UiHelper.BindHover(buttonDelete, UiHelper.DangerRed, Color.FromArgb(0xEF, 0x53, 0x50));
 
-            LoadCategories(0);
+            _ = LoadCategories(0);
             RefreshRecordGrid();
         }
 
@@ -93,7 +93,7 @@ namespace FinanceManager.UserControls
             _editingRecord = null;
             textBoxMoney.Clear();
             rdoExpense.Checked = true;
-            LoadCategories(0);  // 显式加载，避免 rdoExpense 已选中时不触发 CheckedChanged
+            _ = LoadCategories(0);  // 显式加载，避免 rdoExpense 已选中时不触发 CheckedChanged
             dateTimePicker1.Value = DateTime.Today;
             textBoxNote.Clear();
             buttonSave.Text = "保存";
@@ -102,7 +102,7 @@ namespace FinanceManager.UserControls
         /// <summary>收支类型切换：支出=0，收入=1，重载分类下拉</summary>
         private void rdoExpense_CheckedChanged(object sender, EventArgs e)
         {
-            LoadCategories(rdoExpense.Checked ? 0 : 1);
+            _ = LoadCategories(rdoExpense.Checked ? 0 : 1);
         }
 
         /// <summary>"取消"按钮：隐藏编辑面板</summary>
@@ -131,7 +131,7 @@ namespace FinanceManager.UserControls
                 await _recordVM.AddRecordAsync(new RecordEntity
                 {
                     Amount = type == RecordType.Expense ? -amt : amt,
-                    Currency = "CNY",
+                    Currency = App.CurrentUserCurrency,
                     Type = type,
                     CategoryId = (int)comboBoxCategory.SelectedValue,
                     Date = dateTimePicker1.Value,
@@ -171,7 +171,7 @@ namespace FinanceManager.UserControls
                 rdoExpense.Checked = true;
             else
                 rdoIncome.Checked = true;
-            LoadCategories((int)_editingRecord.Type);
+            _ = LoadCategories((int)_editingRecord.Type);
             comboBoxCategory.SelectedValue = _editingRecord.CategoryId;
             dateTimePicker1.Value = _editingRecord.Date;
             textBoxNote.Text = _editingRecord.Note ?? "";
@@ -194,7 +194,7 @@ namespace FinanceManager.UserControls
         // ===== 分类加载 =====
 
         /// <summary>加载指定类型的分类到编辑器下拉框</summary>
-        private async void LoadCategories(int type)
+        private async Task LoadCategories(int type)
         {
             var cats = await new CategoryService(new CategoryRepository(_connStr))
                 .GetCategoriesByTypeAsync(App.CurrentUserId, type);
@@ -304,8 +304,7 @@ namespace FinanceManager.UserControls
             textBoxMoney.Text = Math.Abs(tpl.DefaultAmount).ToString();
             rdoExpense.Checked = tpl.Type == RecordType.Expense;
             rdoIncome.Checked = tpl.Type == RecordType.Income;
-            LoadCategories((int)tpl.Type);
-            await Task.Delay(50); // 等待分类下拉加载完成
+            await LoadCategories((int)tpl.Type);
             comboBoxCategory.SelectedValue = tpl.CategoryId;
             dateTimePicker1.Value = DateTime.Today;
             textBoxNote.Text = tpl.NoteTemplate ?? "";
@@ -369,7 +368,7 @@ namespace FinanceManager.UserControls
                         await _recordVM.AddRecordAsync(new RecordEntity
                         { Date = date, Type = type, CategoryId = cat.Id,
                           Amount = type == RecordType.Expense ? -amt : amt,
-                          Currency = "CNY", Note = string.IsNullOrWhiteSpace(note) ? null : note,
+                          Currency = App.CurrentUserCurrency, Note = string.IsNullOrWhiteSpace(note) ? null : note,
                           UserId = App.CurrentUserId });
                         success++;
                     }

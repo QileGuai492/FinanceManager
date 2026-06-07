@@ -86,7 +86,7 @@ namespace FinanceManager.Tests.EdgeCase
         public async Task GetTotalAmountByTypeAsync_EmptyData_ReturnsZero()
         {
             RecordRepoMock.Setup(r => r.GetSumByTypeAndDateRangeAsync(
-                1, 0, It.IsAny<DateTime>(), It.IsAny<DateTime>()))
+                1, 0, It.IsAny<DateTime>(), It.IsAny<DateTime>(), null))
                 .ReturnsAsync(0m);
 
             var service = new RecordService(RecordRepoMock.Object);

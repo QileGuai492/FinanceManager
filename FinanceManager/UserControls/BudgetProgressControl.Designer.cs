@@ -155,11 +155,11 @@
             // gridWarn
             // 
             this.gridWarn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridWarn.Location = new System.Drawing.Point(94, 230);
+            this.gridWarn.Location = new System.Drawing.Point(22, 230);
             this.gridWarn.Name = "gridWarn";
             this.gridWarn.RowHeadersWidth = 51;
             this.gridWarn.RowTemplate.Height = 27;
-            this.gridWarn.Size = new System.Drawing.Size(202, 111);
+            this.gridWarn.Size = new System.Drawing.Size(355, 111);
             this.gridWarn.TabIndex = 1;
             // 
             // label17

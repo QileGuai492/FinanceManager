@@ -92,6 +92,10 @@ namespace FinanceManager.UserControls
             panelIncome.BackColor = UiHelper.BgLight;
             panelExpense.BackColor = UiHelper.BgLight;
             panelRemain.BackColor = UiHelper.BgLight;
+
+            // ===== 币种筛选（放最后，避免初始化时触发事件导致NRE）=====
+            comboBoxMoney.Items.AddRange(new[] { "全部", "CNY", "USD", "EUR", "JPY", "GBP", "HKD" });
+            comboBoxMoney.SelectedItem = App.CurrentUserCurrency ?? "CNY";
         }
 
         /// <summary>根据饼图范围选择，切换日/月/季度控件的显示和启用状态</summary>
@@ -175,10 +179,13 @@ namespace FinanceManager.UserControls
         /// <summary>加载饼图：查询分类统计 → 更新摘要卡片 → 绘制饼图 → 触发 AI 分析</summary>
         public async void ShowPieChart()
         {
+            try
+            {
             int year = int.TryParse(textBoxPieYear.Text, out var y) ? y : DateTime.Now.Year;
             int month = (int)(comboBoxPieMonth.SelectedItem ?? DateTime.Now.Month);
             int day = (int)(comboBoxPieDay.SelectedItem ?? DateTime.Now.Day);
             var scope = comboBoxPieScope.SelectedItem.ToString();
+            var currency = GetStatCurrency();
 
             DateTime from, to;
             GetPieDateRange(scope, year, month, day, out from, out to);
@@ -188,11 +195,11 @@ namespace FinanceManager.UserControls
                 new CategoryRepository(_connStr));
 
             var incomeList = (await statsService.GetCategoryStatisticsAsync(
-                App.CurrentUserId, 1, from, to)).ToList();
+                App.CurrentUserId, 1, from, to, currency)).ToList();
             var totalIncome = incomeList.Sum(c => c.Amount);
 
             var expenseList = (await statsService.GetCategoryStatisticsAsync(
-                App.CurrentUserId, 0, from, to)).ToList();
+                App.CurrentUserId, 0, from, to, currency)).ToList();
             var totalExpense = expenseList.Sum(c => c.Amount);
 
             labelSIncome.Text = $"¥ {totalIncome:N2}";
@@ -210,6 +217,12 @@ namespace FinanceManager.UserControls
 
             // 触发AI分析建议，传入收支分类明细
             LoadStatsAi(from, to, totalIncome, totalExpense, incomeList, expenseList);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"加载饼图数据失败：{ex.Message}", "错误",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /// <summary>根据范围类型（日/月/季/年/多年）计算查询的起止日期</summary>
@@ -233,8 +246,9 @@ namespace FinanceManager.UserControls
                     to = new DateTime(year + 1, 1, 1); break;
                 default: // 多年
                     var fy = int.TryParse(textBoxPieFromYear.Text, out var f) ? f : year - 2;
+                    var ty = int.TryParse(textBoxPieToYear.Text, out var t) ? t : year;
                     from = new DateTime(fy, 1, 1);
-                    to = new DateTime(year + 1, 1, 1); break;
+                    to = new DateTime(ty + 1, 1, 1); break;
             }
         }
 
@@ -326,7 +340,10 @@ namespace FinanceManager.UserControls
         /// <summary>加载条形图：根据范围类型自动计算起止日期</summary>
         public async void ShowBarChart()
         {
+            try
+            {
             var scope = comboBoxBarScope.SelectedItem.ToString();
+            var currency = GetStatCurrency();
             var now = DateTime.Today;
             DateTime from, to;
 
@@ -346,14 +363,20 @@ namespace FinanceManager.UserControls
                     to = new DateTime(now.Year + 1, 1, 1); break;
             }
 
-            await UpdateBarChart(chartBarIncome, scope, from, to, 1);
-            await UpdateBarChart(chartBarExpense, scope, from, to, 0);
+            await UpdateBarChart(chartBarIncome, scope, from, to, 1, currency);
+            await UpdateBarChart(chartBarExpense, scope, from, to, 0, currency);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"加载条形图数据失败：{ex.Message}", "错误",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /// <summary>加载条形图数据：按范围分段统计收支金额并绘制柱状图</summary>
         private bool _isUpdatingBar;
         private async Task UpdateBarChart(Chart chart, string scope,
-    DateTime from, DateTime to, int type)
+    DateTime from, DateTime to, int type, string currency = null)
         {
             if (_isUpdatingBar) return;
             _isUpdatingBar = true;
@@ -412,7 +435,7 @@ namespace FinanceManager.UserControls
             foreach (var p in periods)
             {
                 var catStats = await statsService.GetCategoryStatisticsAsync(
-                    App.CurrentUserId, type, p.From, p.To);
+                    App.CurrentUserId, type, p.From, p.To, currency);
                 foreach (var cs in catStats.Where(cs => cs.Amount > 0))
                 {
                     if (!catTotals.ContainsKey(cs.CategoryId))
@@ -442,7 +465,7 @@ namespace FinanceManager.UserControls
             foreach (var p in periods)
             {
                 var catStats = (await statsService.GetCategoryStatisticsAsync(
-                    App.CurrentUserId, type, p.From, p.To)).ToList();
+                    App.CurrentUserId, type, p.From, p.To, currency)).ToList();
                 decimal otherAmt = 0;
                 // 每个周期先给所有系列加 0 点，确保 X 轴对齐
                 foreach (var s in seriesMap.Values)
@@ -475,6 +498,20 @@ namespace FinanceManager.UserControls
         private void comboBoxSeason_SelectedIndexChanged(object sender, EventArgs e)
         {
             ShowPieChart(); // 切换季度时自动刷新饼图
+        }
+
+        /// <summary>统计页币种筛选：选中后自动刷新饼图和条形图</summary>
+        private void comboBoxMoney_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ShowPieChart();
+            ShowBarChart();
+        }
+
+        /// <summary>获取当前选中的币种：返回 null（全部）或货币代码</summary>
+        private string GetStatCurrency()
+        {
+            var sel = comboBoxMoney.SelectedItem?.ToString();
+            return (sel == "全部" || sel == null) ? null : sel;
         }
     }
 }

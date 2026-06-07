@@ -149,7 +149,7 @@ namespace FinanceManager.ViewModels
                 var record = new RecordEntity
                 {
                     Amount = Type == RecordType.Expense ? -Amount : Amount,
-                    Currency = "CNY",
+                    Currency = App.CurrentUserCurrency,
                     Type = Type,
                     CategoryId = SelectedCategoryId,
                     Date = Date,

@@ -11,12 +11,14 @@ namespace FinanceManager.Common
     {
         public static int CurrentUserId { get; set; }
         public static string CurrentUsername { get; set; } = string.Empty;
+        public static string CurrentUserCurrency { get; set; } = "CNY";
         public static bool IsLoggedIn => CurrentUserId > 0;
 
         public static void Logout()
         {
             CurrentUserId = 0;
             CurrentUsername = string.Empty;
+            CurrentUserCurrency = "CNY";
         }
     }
 }

@@ -151,9 +151,9 @@ namespace FinanceManager.Forms
                     new CategoryRepository(_connStr));
 
                 var incomeList = (await statsService.GetCategoryStatisticsAsync(
-                    App.CurrentUserId, 1, from, to)).ToList();
+                    App.CurrentUserId, 1, from, to, App.CurrentUserCurrency)).ToList();
                 var expenseList = (await statsService.GetCategoryStatisticsAsync(
-                    App.CurrentUserId, 0, from, to)).ToList();
+                    App.CurrentUserId, 0, from, to, App.CurrentUserCurrency)).ToList();
 
                 UpdateDashPieChart(chartIncome, "收入", incomeList, stats.TotalIncome);
                 UpdateDashPieChart(chartExpense, "支出", expenseList, stats.TotalExpense);

@@ -52,15 +52,16 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.comboBoxMoney = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(81, 34);
+            this.label1.Location = new System.Drawing.Point(81, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 15);
             this.label1.TabIndex = 0;
@@ -68,8 +69,7 @@
             // 
             // textBoxUsername
             // 
-            this.textBoxUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxUsername.Location = new System.Drawing.Point(181, 31);
+            this.textBoxUsername.Location = new System.Drawing.Point(181, 32);
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(203, 25);
             this.textBoxUsername.TabIndex = 1;
@@ -77,9 +77,8 @@
             // 
             // buttonSaveName
             // 
-            this.buttonSaveName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonSaveName.AutoSize = true;
-            this.buttonSaveName.Location = new System.Drawing.Point(413, 31);
+            this.buttonSaveName.Location = new System.Drawing.Point(413, 32);
             this.buttonSaveName.Name = "buttonSaveName";
             this.buttonSaveName.Size = new System.Drawing.Size(75, 25);
             this.buttonSaveName.TabIndex = 2;
@@ -89,7 +88,6 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.linkLabelDeepSeek);
             this.panel1.Controls.Add(this.buttonAISettings);
@@ -101,7 +99,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.checkBoxAI);
-            this.panel1.Location = new System.Drawing.Point(84, 355);
+            this.panel1.Location = new System.Drawing.Point(84, 393);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(404, 306);
             this.panel1.TabIndex = 3;
@@ -200,7 +198,6 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.labelStatus);
             this.panel2.Controls.Add(this.buttonCheck);
@@ -211,7 +208,7 @@
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(84, 82);
+            this.panel2.Location = new System.Drawing.Point(84, 120);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(404, 257);
             this.panel2.TabIndex = 4;
@@ -300,12 +297,32 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "修改密码";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(96, 78);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(82, 15);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "币种选择：";
+            // 
+            // comboBoxMoney
+            // 
+            this.comboBoxMoney.FormattingEnabled = true;
+            this.comboBoxMoney.Location = new System.Drawing.Point(181, 75);
+            this.comboBoxMoney.Name = "comboBoxMoney";
+            this.comboBoxMoney.Size = new System.Drawing.Size(121, 23);
+            this.comboBoxMoney.TabIndex = 6;
+            this.comboBoxMoney.SelectedIndexChanged += new System.EventHandler(this.comboBoxMoney_SelectedIndexChanged);
+            // 
             // SettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(633, 691);
+            this.ClientSize = new System.Drawing.Size(596, 774);
+            this.Controls.Add(this.comboBoxMoney);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonSaveName);
@@ -351,5 +368,7 @@
         private System.Windows.Forms.TextBox textBoxEndPoint;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.LinkLabel linkLabelDeepSeek;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox comboBoxMoney;
     }
 }

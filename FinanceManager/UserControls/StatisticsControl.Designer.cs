@@ -81,6 +81,8 @@
             this.comboBoxPieScope = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxMoney = new System.Windows.Forms.ComboBox();
             this.panel12.SuspendLayout();
             this.panel17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartBarExpense)).BeginInit();
@@ -256,20 +258,22 @@
             // 
             this.panel11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel11.BackColor = System.Drawing.Color.Transparent;
-            this.panel11.Controls.Add(this.comboBoxSeason);
             this.panel11.Controls.Add(this.buttonPieCheck);
+            this.panel11.Controls.Add(this.comboBoxMoney);
+            this.panel11.Controls.Add(this.comboBoxSeason);
+            this.panel11.Controls.Add(this.label1);
             this.panel11.Controls.Add(this.label23);
-            this.panel11.Controls.Add(this.labelMulYear);
             this.panel11.Controls.Add(this.panel16);
             this.panel11.Controls.Add(this.panelRemain);
+            this.panel11.Controls.Add(this.labelMulYear);
             this.panel11.Controls.Add(this.panelExpense);
             this.panel11.Controls.Add(this.panelIncome);
+            this.panel11.Controls.Add(this.textBoxPieFromYear);
             this.panel11.Controls.Add(this.comboBoxPieDay);
+            this.panel11.Controls.Add(this.textBoxPieToYear);
             this.panel11.Controls.Add(this.comboBoxPieMonth);
             this.panel11.Controls.Add(this.label25);
             this.panel11.Controls.Add(this.label24);
-            this.panel11.Controls.Add(this.textBoxPieToYear);
-            this.panel11.Controls.Add(this.textBoxPieFromYear);
             this.panel11.Controls.Add(this.textBoxPieYear);
             this.panel11.Controls.Add(this.labelMSingleYear);
             this.panel11.Controls.Add(this.comboBoxPieScope);
@@ -281,9 +285,10 @@
             // 
             // comboBoxSeason
             // 
+            this.comboBoxSeason.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBoxSeason.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSeason.FormattingEnabled = true;
-            this.comboBoxSeason.Location = new System.Drawing.Point(176, 77);
+            this.comboBoxSeason.Location = new System.Drawing.Point(176, 78);
             this.comboBoxSeason.Name = "comboBoxSeason";
             this.comboBoxSeason.Size = new System.Drawing.Size(100, 23);
             this.comboBoxSeason.TabIndex = 11;
@@ -292,7 +297,7 @@
             // buttonPieCheck
             // 
             this.buttonPieCheck.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonPieCheck.Location = new System.Drawing.Point(339, 116);
+            this.buttonPieCheck.Location = new System.Drawing.Point(410, 111);
             this.buttonPieCheck.Name = "buttonPieCheck";
             this.buttonPieCheck.Size = new System.Drawing.Size(114, 48);
             this.buttonPieCheck.TabIndex = 10;
@@ -305,7 +310,7 @@
             this.label23.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label23.AutoSize = true;
             this.label23.BackColor = System.Drawing.Color.Transparent;
-            this.label23.Location = new System.Drawing.Point(175, 133);
+            this.label23.Location = new System.Drawing.Point(185, 128);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(22, 15);
             this.label23.TabIndex = 9;
@@ -316,7 +321,7 @@
             this.labelMulYear.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelMulYear.AutoSize = true;
             this.labelMulYear.BackColor = System.Drawing.Color.Transparent;
-            this.labelMulYear.Location = new System.Drawing.Point(24, 128);
+            this.labelMulYear.Location = new System.Drawing.Point(33, 128);
             this.labelMulYear.Name = "labelMulYear";
             this.labelMulYear.Size = new System.Drawing.Size(52, 15);
             this.labelMulYear.TabIndex = 8;
@@ -463,7 +468,7 @@
             this.comboBoxPieDay.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBoxPieDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPieDay.FormattingEnabled = true;
-            this.comboBoxPieDay.Location = new System.Drawing.Point(450, 77);
+            this.comboBoxPieDay.Location = new System.Drawing.Point(450, 78);
             this.comboBoxPieDay.Name = "comboBoxPieDay";
             this.comboBoxPieDay.Size = new System.Drawing.Size(75, 23);
             this.comboBoxPieDay.TabIndex = 5;
@@ -473,7 +478,7 @@
             this.comboBoxPieMonth.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBoxPieMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPieMonth.FormattingEnabled = true;
-            this.comboBoxPieMonth.Location = new System.Drawing.Point(330, 77);
+            this.comboBoxPieMonth.Location = new System.Drawing.Point(330, 78);
             this.comboBoxPieMonth.Name = "comboBoxPieMonth";
             this.comboBoxPieMonth.Size = new System.Drawing.Size(73, 23);
             this.comboBoxPieMonth.TabIndex = 5;
@@ -483,7 +488,7 @@
             this.label25.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label25.AutoSize = true;
             this.label25.BackColor = System.Drawing.Color.Transparent;
-            this.label25.Location = new System.Drawing.Point(407, 80);
+            this.label25.Location = new System.Drawing.Point(407, 81);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(37, 15);
             this.label25.TabIndex = 4;
@@ -494,7 +499,7 @@
             this.label24.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label24.AutoSize = true;
             this.label24.BackColor = System.Drawing.Color.Transparent;
-            this.label24.Location = new System.Drawing.Point(287, 80);
+            this.label24.Location = new System.Drawing.Point(287, 81);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(37, 15);
             this.label24.TabIndex = 4;
@@ -503,7 +508,7 @@
             // textBoxPieToYear
             // 
             this.textBoxPieToYear.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxPieToYear.Location = new System.Drawing.Point(210, 124);
+            this.textBoxPieToYear.Location = new System.Drawing.Point(219, 124);
             this.textBoxPieToYear.Name = "textBoxPieToYear";
             this.textBoxPieToYear.Size = new System.Drawing.Size(91, 25);
             this.textBoxPieToYear.TabIndex = 3;
@@ -511,7 +516,7 @@
             // textBoxPieFromYear
             // 
             this.textBoxPieFromYear.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxPieFromYear.Location = new System.Drawing.Point(82, 124);
+            this.textBoxPieFromYear.Location = new System.Drawing.Point(91, 124);
             this.textBoxPieFromYear.Name = "textBoxPieFromYear";
             this.textBoxPieFromYear.Size = new System.Drawing.Size(84, 25);
             this.textBoxPieFromYear.TabIndex = 3;
@@ -519,7 +524,7 @@
             // textBoxPieYear
             // 
             this.textBoxPieYear.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxPieYear.Location = new System.Drawing.Point(66, 75);
+            this.textBoxPieYear.Location = new System.Drawing.Point(66, 76);
             this.textBoxPieYear.Name = "textBoxPieYear";
             this.textBoxPieYear.Size = new System.Drawing.Size(89, 25);
             this.textBoxPieYear.TabIndex = 3;
@@ -529,7 +534,7 @@
             this.labelMSingleYear.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelMSingleYear.AutoSize = true;
             this.labelMSingleYear.BackColor = System.Drawing.Color.Transparent;
-            this.labelMSingleYear.Location = new System.Drawing.Point(24, 80);
+            this.labelMSingleYear.Location = new System.Drawing.Point(24, 81);
             this.labelMSingleYear.Name = "labelMSingleYear";
             this.labelMSingleYear.Size = new System.Drawing.Size(37, 15);
             this.labelMSingleYear.TabIndex = 2;
@@ -540,7 +545,7 @@
             this.comboBoxPieScope.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBoxPieScope.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPieScope.FormattingEnabled = true;
-            this.comboBoxPieScope.Location = new System.Drawing.Point(74, 34);
+            this.comboBoxPieScope.Location = new System.Drawing.Point(83, 31);
             this.comboBoxPieScope.Name = "comboBoxPieScope";
             this.comboBoxPieScope.Size = new System.Drawing.Size(92, 23);
             this.comboBoxPieScope.TabIndex = 1;
@@ -551,7 +556,7 @@
             this.label22.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label22.AutoSize = true;
             this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.label22.Location = new System.Drawing.Point(24, 37);
+            this.label22.Location = new System.Drawing.Point(33, 34);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(52, 15);
             this.label22.TabIndex = 0;
@@ -568,6 +573,27 @@
             this.label21.Size = new System.Drawing.Size(129, 37);
             this.label21.TabIndex = 5;
             this.label21.Text = "收支统计";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(194, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 15);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "币种选择：";
+            // 
+            // comboBoxMoney
+            // 
+            this.comboBoxMoney.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBoxMoney.FormattingEnabled = true;
+            this.comboBoxMoney.Location = new System.Drawing.Point(282, 31);
+            this.comboBoxMoney.Name = "comboBoxMoney";
+            this.comboBoxMoney.Size = new System.Drawing.Size(121, 23);
+            this.comboBoxMoney.TabIndex = 13;
+            this.comboBoxMoney.SelectedIndexChanged += new System.EventHandler(this.comboBoxMoney_SelectedIndexChanged);
             // 
             // StatisticsControl
             // 
@@ -644,5 +670,7 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.ComboBox comboBoxSeason;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBoxMoney;
     }
 }

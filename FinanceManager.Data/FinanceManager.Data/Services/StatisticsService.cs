@@ -1,4 +1,4 @@
-﻿using FinanceManager.Common.Helpers;
+using FinanceManager.Common.Helpers;
 using FinanceManager.Domain.Enums;
 using FinanceManager.Domain.models;
 using FinanceManager.Domain.Repositories;
@@ -23,15 +23,14 @@ namespace FinanceManager.Data.Services
             _categoryRepo = categoryRepo;
         }
 
-        public async Task<MonthlyStatistics> GetMonthlyStatisticsAsync(int userId, int year, int month)
+        public async Task<MonthlyStatistics> GetMonthlyStatisticsAsync(int userId, int year, int month, string currency = null)
         {
             var start = DateHelper.StartOfMonth(year, month);
             var end = DateHelper.EndOfMonth(year, month);
-            // 仓储方法参数是 int，显式转换
             var totalIncome = await _recordRepo.GetSumByTypeAndDateRangeAsync(
-                userId, (int)RecordType.Income, start, end);
+                userId, (int)RecordType.Income, start, end, currency);
             var totalExpense = await _recordRepo.GetSumByTypeAndDateRangeAsync(
-                userId, (int)RecordType.Expense, start, end);
+                userId, (int)RecordType.Expense, start, end, currency);
             return new MonthlyStatistics
             {
                 Year = year,
@@ -42,17 +41,16 @@ namespace FinanceManager.Data.Services
         }
 
         public async Task<IEnumerable<DailyStatistics>> GetDailyStatisticsAsync(
-            int userId, int year, int month)
+            int userId, int year, int month, string currency = null)
         {
             var start = DateHelper.StartOfMonth(year, month);
             var end = DateHelper.EndOfMonth(year, month);
-            var records = await _recordRepo.GetByDateRangeAsync(userId, start, end);
+            var records = await _recordRepo.GetByDateRangeAsync(userId, start, end, currency);
             return records
                 .GroupBy(r => r.Date.Date)
                 .Select(g => new DailyStatistics
                 {
                     Date = g.Key,
-                    // r.Type 现在是 RecordType，直接比较
                     Income = g.Where(r => r.Type == RecordType.Income).Sum(r => r.Amount),
                     Expense = Math.Abs(g.Where(r => r.Type == RecordType.Expense).Sum(r => r.Amount))
                 })
@@ -60,29 +58,29 @@ namespace FinanceManager.Data.Services
         }
 
         public async Task<IEnumerable<MonthlyStatistics>> GetYearlyStatisticsAsync(
-            int userId, int year)
+            int userId, int year, string currency = null)
         {
             var results = new List<MonthlyStatistics>();
             for (int month = 1; month <= 12; month++)
             {
-                results.Add(await GetMonthlyStatisticsAsync(userId, year, month));
+                results.Add(await GetMonthlyStatisticsAsync(userId, year, month, currency));
             }
             return results;
         }
 
         public async Task<IEnumerable<CategoryStatistics>> GetCategoryStatisticsAsync(
-            int userId, int type, DateTime startDate, DateTime endDate)
+            int userId, int type, DateTime startDate, DateTime endDate, string currency = null)
         {
             var categories = await _categoryRepo.GetByTypeAsync(userId, type);
             var totalAmount = await _recordRepo.GetSumByTypeAndDateRangeAsync(
-                userId, type, startDate, endDate);
+                userId, type, startDate, endDate, currency);
             var absTotal = Math.Abs(totalAmount);
 
             var results = new List<CategoryStatistics>();
             foreach (var cat in categories)
             {
                 var amount = await _recordRepo.GetSumByCategoryAndTypeAndDateRangeAsync(
-                    userId, cat.Id, type, startDate, endDate);
+                    userId, cat.Id, type, startDate, endDate, currency);
                 results.Add(new CategoryStatistics
                 {
                     CategoryId = cat.Id,
@@ -97,9 +95,9 @@ namespace FinanceManager.Data.Services
         }
 
         public async Task<IEnumerable<TrendData>> GetTrendDataAsync(
-            int userId, DateTime startDate, DateTime endDate)
+            int userId, DateTime startDate, DateTime endDate, string currency = null)
         {
-            var records = await _recordRepo.GetByDateRangeAsync(userId, startDate, endDate);
+            var records = await _recordRepo.GetByDateRangeAsync(userId, startDate, endDate, currency);
             return records
                 .GroupBy(r => r.Date.Date)
                 .Select(g => new TrendData

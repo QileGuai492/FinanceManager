@@ -9,10 +9,10 @@ namespace FinanceManager.Domain.Services
 {
     public interface IStatisticsService
     {
-        Task<MonthlyStatistics> GetMonthlyStatisticsAsync(int userId, int year, int month);
-        Task<IEnumerable<DailyStatistics>> GetDailyStatisticsAsync(int userId, int year, int month);
-        Task<IEnumerable<MonthlyStatistics>> GetYearlyStatisticsAsync(int userId, int year);
-        Task<IEnumerable<CategoryStatistics>> GetCategoryStatisticsAsync(int userId, int type, DateTime startDate, DateTime endDate);
-        Task<IEnumerable<TrendData>> GetTrendDataAsync(int userId, DateTime startDate, DateTime endDate);
+        Task<MonthlyStatistics> GetMonthlyStatisticsAsync(int userId, int year, int month, string currency = null);
+        Task<IEnumerable<DailyStatistics>> GetDailyStatisticsAsync(int userId, int year, int month, string currency = null);
+        Task<IEnumerable<MonthlyStatistics>> GetYearlyStatisticsAsync(int userId, int year, string currency = null);
+        Task<IEnumerable<CategoryStatistics>> GetCategoryStatisticsAsync(int userId, int type, DateTime startDate, DateTime endDate, string currency = null);
+        Task<IEnumerable<TrendData>> GetTrendDataAsync(int userId, DateTime startDate, DateTime endDate, string currency = null);
     }
 }

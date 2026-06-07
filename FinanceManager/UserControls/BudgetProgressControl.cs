@@ -70,6 +70,8 @@ namespace FinanceManager.UserControls
         /// <summary>刷新预算数据：加载当月收支 → 计算进度 → 加载预警和 AI 建议</summary>
         public async void RefreshData()
         {
+            try
+            {
             int year = int.TryParse(textBoxYear.Text, out var y) ? y : DateTime.Now.Year;
             int month = (int)comboBoxMonth.SelectedItem;
 
@@ -78,7 +80,7 @@ namespace FinanceManager.UserControls
                 new FinanceManager.Data.Repositories.RecordRepository(_connStr),
                 new CategoryRepository(_connStr));
             var monthlyStats = await statsService.GetMonthlyStatisticsAsync(
-                App.CurrentUserId, year, month);
+                App.CurrentUserId, year, month, App.CurrentUserCurrency);
             if (monthlyStats == null) monthlyStats = new MonthlyStatistics();
 
             var spent = monthlyStats.TotalExpense;
@@ -166,6 +168,12 @@ namespace FinanceManager.UserControls
 
             // 加载AI建议
             await LoadAiSuggestion(year, month);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"加载预算数据失败：{ex.Message}", "错误",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /// <summary>加载分类预算预警：遍历各分类，超出 80% 显示警告，超出 100% 显示超支</summary>
@@ -227,7 +235,7 @@ namespace FinanceManager.UserControls
             return await new StatisticsService(
                 new FinanceManager.Data.Repositories.RecordRepository(_connStr),
                 new CategoryRepository(_connStr))
-                .GetCategoryStatisticsAsync(App.CurrentUserId, 0, startDate, endDate);
+                .GetCategoryStatisticsAsync(App.CurrentUserId, 0, startDate, endDate, App.CurrentUserCurrency);
         }
 
         /// <summary>加载 AI 预算建议：构建近 3 月历史数据 → 调用 AI 分析 → 显示建议</summary>
@@ -259,7 +267,7 @@ namespace FinanceManager.UserControls
                 var y = year;
                 if (m <= 0) { m += 12; y--; }
 
-                var ms = await statsService.GetMonthlyStatisticsAsync(App.CurrentUserId, y, m);
+                var ms = await statsService.GetMonthlyStatisticsAsync(App.CurrentUserId, y, m, App.CurrentUserCurrency);
                 var cs = await GetCategoryStatsForMonth(y, m);
 
                 if (ms != null)
@@ -334,56 +342,53 @@ namespace FinanceManager.UserControls
         /// <summary>"保存"按钮：校验金额 → 日度×当月天数/年度÷12 → 写入或更新数据库</summary>
         private async void buttonSaveBudget_Click(object sender, EventArgs e)
         {
-
+            if (!decimal.TryParse(textBoxBudget.Text, out var amt) || amt <= 0)
             {
-                if (!decimal.TryParse(textBoxBudget.Text, out var amt) || amt <= 0)
-                {
-                    MessageBox.Show("请输入有效预算金额"); return;
-                }
-
-                int year = int.TryParse(textBoxYear.Text, out var y) ? y : DateTime.Now.Year;
-                int month = (int)comboBoxMonth.SelectedItem;
-
-                if (radioButtonDaily.Checked)
-                {
-                    // 日预算 × 当月天数 = 月预算 存入
-                    var days = DateTime.DaysInMonth(year, month);
-                    amt = amt * days;
-                }
-                else if (radioButtonYearly.Checked)
-                {
-                    // 年度预算 ÷ 12 平均分配到每月
-                    amt = amt / 12;
-                }
-
-                // 保存当月预算
-                var budgetService = new BudgetService(
-                    new BudgetRepository(_connStr),
-                    new CategoryBudgetRepository(_connStr));
-
-                var existing = await budgetService.GetBudgetByYearMonthAsync(
-                    App.CurrentUserId, year, month);
-
-                if (existing != null)
-                {
-                    existing.Amount = amt;
-                    await budgetService.UpdateBudgetAsync(existing);
-                }
-                else
-                {
-                    await budgetService.AddBudgetAsync(new BudgetEntity
-                    {
-                        Amount = amt,
-                        Month = month,
-                        Year = year,
-                        UserId = App.CurrentUserId
-                    });
-                }
-
-                MessageBox.Show("预算保存成功");
-                textBoxBudget.Clear();
-                buttonLoadBudget_Click(null, null); // 刷新显示
+                MessageBox.Show("请输入有效预算金额"); return;
             }
+
+            int year = int.TryParse(textBoxYear.Text, out var y) ? y : DateTime.Now.Year;
+            int month = (int)comboBoxMonth.SelectedItem;
+
+            if (radioButtonDaily.Checked)
+            {
+                // 日预算 × 当月天数 = 月预算 存入
+                var days = DateTime.DaysInMonth(year, month);
+                amt = amt * days;
+            }
+            else if (radioButtonYearly.Checked)
+            {
+                // 年度预算 ÷ 12 平均分配到每月
+                amt = amt / 12;
+            }
+
+            // 保存当月预算
+            var budgetService = new BudgetService(
+                new BudgetRepository(_connStr),
+                new CategoryBudgetRepository(_connStr));
+
+            var existing = await budgetService.GetBudgetByYearMonthAsync(
+                App.CurrentUserId, year, month);
+
+            if (existing != null)
+            {
+                existing.Amount = amt;
+                await budgetService.UpdateBudgetAsync(existing);
+            }
+            else
+            {
+                await budgetService.AddBudgetAsync(new BudgetEntity
+                {
+                    Amount = amt,
+                    Month = month,
+                    Year = year,
+                    UserId = App.CurrentUserId
+                });
+            }
+
+            MessageBox.Show("预算保存成功");
+            textBoxBudget.Clear();
+            buttonLoadBudget_Click(null, null); // 刷新显示
         }
     }
 }

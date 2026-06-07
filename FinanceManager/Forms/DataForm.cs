@@ -71,6 +71,8 @@ namespace FinanceManager.Forms
         /// <summary>加载分类下拉列表：根据当前选中的类型筛选对应的分类项，首项插入"全部"</summary>
         private async void LoadFilterCategories()
         {
+            try
+            {
             List<CategoryEntity> cats;
 
             if (radioButtonAll.Checked)
@@ -88,11 +90,18 @@ namespace FinanceManager.Forms
             comboBoxCategory.DisplayMember = "Name";
             comboBoxCategory.ValueMember = "Id";
             comboBoxCategory.SelectedIndex = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"加载分类失败：{ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /// <summary>查询按钮：按 日期范围 → 类型 → 分类 逐层过滤，缓存结果并刷新表格</summary>
         private async void buttonCheck_Click(object sender, EventArgs e)
         {
+            try
+            {
             var records = (await new RecordService(
                 new FinanceManager.Data.Repositories.RecordRepository(_connStr))
                 .GetRecordsAsync(App.CurrentUserId)).ToList();
@@ -118,11 +127,18 @@ namespace FinanceManager.Forms
 
             _filteredRecords = records.OrderBy(r => r.Date).ToList();  // 按日期升序排列
             RefreshGrid();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"查询失败：{ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /// <summary>刷新 DataGridView：将 _filteredRecords 逐行填充到表格，行 Tag 存实体引用</summary>
         private async void RefreshGrid()
         {
+            try
+            {
             var catService = new CategoryService(new CategoryRepository(_connStr));
             gridRecords.Rows.Clear();
 
@@ -139,6 +155,11 @@ namespace FinanceManager.Forms
             }
 
             labelRecordCount.Text = $"共 {_filteredRecords.Count} 条记录";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"刷新表格失败：{ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /// <summary>导出按钮：将当前筛选结果导出为 UTF-8 CSV 文件（含分类名）</summary>
@@ -193,6 +214,8 @@ namespace FinanceManager.Forms
         /// <summary>导入按钮：读取 CSV 文件 → 逐行解析校验 → 匹配分类 → 写入数据库</summary>
         private async void buttonInput_Click(object sender, EventArgs e)
         {
+            try
+            {
             using (var dialog = new OpenFileDialog { Filter = "CSV文件|*.csv" })
             {
                 if (dialog.ShowDialog() != DialogResult.OK) return;
@@ -209,6 +232,11 @@ namespace FinanceManager.Forms
 
                 var dataRows = rows.Skip(1).ToList();
                 await ImportDataRows(dataRows);
+            }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"导入CSV失败：{ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -343,13 +371,13 @@ namespace FinanceManager.Forms
                     {
                         Date = date, Type = type, CategoryId = cat.Id,
                         Amount = type == RecordType.Expense ? -amt : amt,
-                        Currency = "CNY",
+                        Currency = App.CurrentUserCurrency,
                         Note = string.IsNullOrWhiteSpace(note) ? null : note,
                         UserId = App.CurrentUserId
                     });
                     success++;
                 }
-                catch { fail++; }
+                catch (Exception ex) { fail++; System.Diagnostics.Debug.WriteLine($"CSV导入行{success + fail}失败: {ex.Message}"); }
             }
 
             MessageBox.Show($"导入完成\n成功：{success} 条\n跳过：{fail} 条",

@@ -158,7 +158,7 @@ namespace FinanceManager.ViewModels
                 {
                     Name = TemplateName,
                     DefaultAmount = DefaultAmount,
-                    Currency = "CNY",
+                    Currency = App.CurrentUserCurrency,
                     Type = (RecordType)SelectedType,
                     CategoryId = SelectedCategoryId,
                     NoteTemplate = NoteTemplate,

@@ -99,7 +99,7 @@ namespace FinanceManager.Tests.Statistics
                 TotalExpense = 12000m
             };
             _statsServiceMock
-                .Setup(s => s.GetMonthlyStatisticsAsync(1, 2026, 6))
+                .Setup(s => s.GetMonthlyStatisticsAsync(1, 2026, 6, null))
                 .ReturnsAsync(stats);
 
             await _vm.LoadMonthlyAsync();
@@ -121,7 +121,7 @@ namespace FinanceManager.Tests.Statistics
                 TotalExpense = 15000m
             };
             _statsServiceMock
-                .Setup(s => s.GetMonthlyStatisticsAsync(1, 2026, 6))
+                .Setup(s => s.GetMonthlyStatisticsAsync(1, 2026, 6, null))
                 .ReturnsAsync(stats);
 
             await _vm.LoadMonthlyAsync();
@@ -146,7 +146,7 @@ namespace FinanceManager.Tests.Statistics
                 TotalExpense = 0m
             };
             _statsServiceMock
-                .Setup(s => s.GetMonthlyStatisticsAsync(1, 2026, 1))
+                .Setup(s => s.GetMonthlyStatisticsAsync(1, 2026, 1, null))
                 .ReturnsAsync(stats);
 
             await _vm.LoadMonthlyAsync();
@@ -165,7 +165,7 @@ namespace FinanceManager.Tests.Statistics
         public async Task LoadMonthlyAsync_ServiceThrows_SetsErrorMessage()
         {
             _statsServiceMock
-                .Setup(s => s.GetMonthlyStatisticsAsync(1, 2026, 6))
+                .Setup(s => s.GetMonthlyStatisticsAsync(1, 2026, 6, null))
                 .ThrowsAsync(new Exception("数据库连接超时"));
 
             await _vm.LoadMonthlyAsync();

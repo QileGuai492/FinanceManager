@@ -40,7 +40,9 @@ namespace FinanceManager.Forms
             labelStatus.Visible = false;
             textBoxUsername.Text = App.CurrentUsername;
 
-            LoadUserSettings();   // 加载 AI 开关状态
+            comboBoxMoney.Items.AddRange(new[] { "CNY", "USD", "EUR", "JPY", "GBP", "HKD" });
+
+            LoadUserSettings();   // 加载 AI 开关状态和默认货币
             LoadApiConfig();      // 加载 API 配置
         }
 
@@ -50,7 +52,16 @@ namespace FinanceManager.Forms
             var userService = new UserService(new UserRepository(_connStr));
             var user = await userService.GetUserByIdAsync(App.CurrentUserId);
             if (user != null)
+            {
+                checkBoxAI.CheckedChanged -= checkBoxAI_CheckedChanged;
                 checkBoxAI.Checked = user.AiSuggestionEnabled;
+                checkBoxAI.CheckedChanged += checkBoxAI_CheckedChanged;
+
+                comboBoxMoney.SelectedIndexChanged -= comboBoxMoney_SelectedIndexChanged;
+                comboBoxMoney.SelectedItem = user.Currency ?? "CNY";
+                comboBoxMoney.SelectedIndexChanged += comboBoxMoney_SelectedIndexChanged;
+                App.CurrentUserCurrency = user.Currency ?? "CNY";
+            }
         }
 
         /// <summary>加载 AI 配置：从本地配置文件读取 Endpoint、API Key、Model</summary>
@@ -232,6 +243,23 @@ namespace FinanceManager.Forms
                 buttonAISettings_Click(sender, e);
             }
             else return;
+        }
+
+        /// <summary>默认货币切换：立即写入数据库并更新全局状态</summary>
+        private async void comboBoxMoney_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxMoney.SelectedItem == null) return;
+            var currency = comboBoxMoney.SelectedItem.ToString();
+            if (currency == App.CurrentUserCurrency) return;
+
+            var userService = new UserService(new UserRepository(_connStr));
+            var user = await userService.GetUserByIdAsync(App.CurrentUserId);
+            if (user != null)
+            {
+                user.Currency = currency;
+                await userService.UpdateUserAsync(user);
+                App.CurrentUserCurrency = currency;
+            }
         }
     }
 }

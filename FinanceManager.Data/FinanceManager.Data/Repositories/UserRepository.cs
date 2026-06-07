@@ -94,7 +94,7 @@ namespace FinanceManager.Data.Repositories
                     cmd.CommandText = @"
                         UPDATE users
                         SET username = @u, email = @e, password = @p, currency = @c,
-                            ai_suggestion_enabled = @ai, created_at = @ca,
+                            ai_suggestion_enabled = @ai,
                             last_login_at = @ll, status = @s
                         WHERE id = @id";
                     cmd.Parameters.AddWithValue("@id", entity.Id);
@@ -103,7 +103,6 @@ namespace FinanceManager.Data.Repositories
                     cmd.Parameters.AddWithValue("@p", entity.Password);
                     cmd.Parameters.AddWithValue("@c", entity.Currency);
                     cmd.Parameters.AddWithValue("@ai", entity.AiSuggestionEnabled);
-                    cmd.Parameters.AddWithValue("@ca", entity.CreatedAt);
                     cmd.Parameters.AddWithValue("@ll", (object)entity.LastLoginAt ?? DBNull.Value);
                     cmd.Parameters.AddWithValue("@s", entity.Status);
                     cmd.ExecuteNonQuery();

@@ -117,7 +117,7 @@ namespace FinanceManager.Tests.Services
         {
             RecordRepoMock
                 .Setup(r => r.GetSumByTypeAndDateRangeAsync(1, 0,
-                    It.IsAny<DateTime>(), It.IsAny<DateTime>()))
+                    It.IsAny<DateTime>(), It.IsAny<DateTime>(), null))
                 .ReturnsAsync(3500m);
 
             var service = CreateService();
@@ -133,7 +133,7 @@ namespace FinanceManager.Tests.Services
         {
             RecordRepoMock
                 .Setup(r => r.GetSumByCategoryAndTypeAndDateRangeAsync(
-                    1, 3, 0, It.IsAny<DateTime>(), It.IsAny<DateTime>()))
+                    1, 3, 0, It.IsAny<DateTime>(), It.IsAny<DateTime>(), null))
                 .ReturnsAsync(800m); // 餐饮支出800元
 
             var service = CreateService();
@@ -149,7 +149,7 @@ namespace FinanceManager.Tests.Services
         {
             RecordRepoMock
                 .Setup(r => r.GetSumByCategoryAndTypeAndDateRangeAsync(
-                    1, 0, 0, It.IsAny<DateTime>(), It.IsAny<DateTime>()))
+                    1, 0, 0, It.IsAny<DateTime>(), It.IsAny<DateTime>(), null))
                 .ReturnsAsync(0m);
 
             var service = CreateService();

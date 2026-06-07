@@ -45,7 +45,7 @@ namespace FinanceManager.Data.Repositories
             });
         }
 
-        public Task<IEnumerable<RecordEntity>> GetByDateRangeAsync(int userId, DateTime startDate, DateTime endDate)
+        public Task<IEnumerable<RecordEntity>> GetByDateRangeAsync(int userId, DateTime startDate, DateTime endDate, string currency = null)
         {
             return Task.Run(() =>
             {
@@ -54,14 +54,19 @@ namespace FinanceManager.Data.Repositories
                     connection.Open();
 
                     var command = connection.CreateCommand();
-                    command.CommandText = @"
+                    var sql = @"
                     SELECT * FROM records
                     WHERE user_id = @userId
-                    AND [date] BETWEEN @startDate AND @endDate
-                    ORDER BY [date] DESC";
+                    AND [date] BETWEEN @startDate AND @endDate";
+                    if (currency != null)
+                        sql += " AND currency = @currency";
+                    sql += " ORDER BY [date] DESC";
+                    command.CommandText = sql;
                     command.Parameters.AddWithValue("@userId", userId);
                     command.Parameters.AddWithValue("@startDate", startDate.Date);
                     command.Parameters.AddWithValue("@endDate", endDate.Date);
+                    if (currency != null)
+                        command.Parameters.AddWithValue("@currency", currency);
 
                     using (var reader = command.ExecuteReader())
                     {
@@ -181,7 +186,7 @@ namespace FinanceManager.Data.Repositories
             });
         }
 
-        public Task<decimal> GetSumByTypeAndDateRangeAsync(int userId, int type, DateTime startDate, DateTime endDate)
+        public Task<decimal> GetSumByTypeAndDateRangeAsync(int userId, int type, DateTime startDate, DateTime endDate, string currency = null)
         {
             return Task.Run(() =>
             {
@@ -190,14 +195,19 @@ namespace FinanceManager.Data.Repositories
                     connection.Open();
 
                     var command = connection.CreateCommand();
-                    command.CommandText = @"
+                    var sql = @"
                     SELECT COALESCE(SUM(amount), 0) FROM records
                     WHERE user_id = @userId AND type = @type
                     AND [date] BETWEEN @startDate AND @endDate";
+                    if (currency != null)
+                        sql += " AND currency = @currency";
+                    command.CommandText = sql;
                     command.Parameters.AddWithValue("@userId", userId);
                     command.Parameters.AddWithValue("@type", type);
                     command.Parameters.AddWithValue("@startDate", startDate.Date);
                     command.Parameters.AddWithValue("@endDate", endDate.Date);
+                    if (currency != null)
+                        command.Parameters.AddWithValue("@currency", currency);
 
                     var result = command.ExecuteScalar();
                     return result != DBNull.Value ? Convert.ToDecimal(result) : 0m;
@@ -205,7 +215,7 @@ namespace FinanceManager.Data.Repositories
             });
         }
 
-        public Task<decimal> GetSumByCategoryAndTypeAndDateRangeAsync(int userId, int categoryId, int type, DateTime startDate, DateTime endDate)
+        public Task<decimal> GetSumByCategoryAndTypeAndDateRangeAsync(int userId, int categoryId, int type, DateTime startDate, DateTime endDate, string currency = null)
         {
             return Task.Run(() =>
             {
@@ -214,15 +224,20 @@ namespace FinanceManager.Data.Repositories
                     connection.Open();
 
                     var command = connection.CreateCommand();
-                    command.CommandText = @"
+                    var sql = @"
                     SELECT COALESCE(SUM(amount), 0) FROM records
                     WHERE user_id = @userId AND category_id = @categoryId AND type = @type
                     AND [date] BETWEEN @startDate AND @endDate";
+                    if (currency != null)
+                        sql += " AND currency = @currency";
+                    command.CommandText = sql;
                     command.Parameters.AddWithValue("@userId", userId);
                     command.Parameters.AddWithValue("@categoryId", categoryId);
                     command.Parameters.AddWithValue("@type", type);
                     command.Parameters.AddWithValue("@startDate", startDate.Date);
                     command.Parameters.AddWithValue("@endDate", endDate.Date);
+                    if (currency != null)
+                        command.Parameters.AddWithValue("@currency", currency);
 
                     var result = command.ExecuteScalar();
                     return result != DBNull.Value ? Convert.ToDecimal(result) : 0m;

@@ -40,7 +40,7 @@ namespace FinanceManager.Tests.Statistics
                 TotalExpense = 8000m
             };
             _statsServiceMock
-                .Setup(s => s.GetMonthlyStatisticsAsync(1, 2026, 6))
+                .Setup(s => s.GetMonthlyStatisticsAsync(1, 2026, 6, null))
                 .ReturnsAsync(stats);
 
             await _vm.LoadMonthlyAsync();
@@ -62,7 +62,7 @@ namespace FinanceManager.Tests.Statistics
                 TotalExpense = 12000m
             };
             _statsServiceMock
-                .Setup(s => s.GetMonthlyStatisticsAsync(1, 2026, 6))
+                .Setup(s => s.GetMonthlyStatisticsAsync(1, 2026, 6, null))
                 .ReturnsAsync(stats);
 
             await _vm.LoadMonthlyAsync();
@@ -77,7 +77,7 @@ namespace FinanceManager.Tests.Statistics
         public async Task MonthlyStats_LoadError_SetsErrorMessage()
         {
             _statsServiceMock
-                .Setup(s => s.GetMonthlyStatisticsAsync(1, 2026, 6))
+                .Setup(s => s.GetMonthlyStatisticsAsync(1, 2026, 6, null))
                 .ThrowsAsync(new System.Exception("数据库连接失败"));
 
             await _vm.LoadMonthlyAsync();

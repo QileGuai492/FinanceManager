@@ -80,6 +80,7 @@ namespace FinanceManager.ViewModels
                 {
                     App.CurrentUserId = user.Id;
                     App.CurrentUsername = user.Username;
+                    App.CurrentUserCurrency = user.Currency ?? "CNY";
                     IsLoggedIn = true;
                     ErrorMessage = string.Empty;
                 }
