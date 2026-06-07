@@ -273,7 +273,7 @@ namespace FinanceManager.UserControls
                     r.Date.ToString("yyyy-MM-dd"),
                     r.Type == RecordType.Expense ? "支出" : "收入",
                     cat?.Name ?? "-",
-                    Math.Abs(r.Amount).ToString("N2"),
+                    $"{CurrencyHelper.GetSymbol(r.Currency)}{Math.Abs(r.Amount):N2}",
                     r.Note ?? "")];
                 row.Tag = r;
             }

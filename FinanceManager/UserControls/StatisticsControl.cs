@@ -1,4 +1,5 @@
 ﻿using FinanceManager.Common;
+using FinanceManager.Common.Helpers;
 using FinanceManager.Data.Repositories;
 using FinanceManager.Data.Services;
 using FinanceManager.Domain.models;
@@ -202,9 +203,10 @@ namespace FinanceManager.UserControls
                 App.CurrentUserId, 0, from, to, currency)).ToList();
             var totalExpense = expenseList.Sum(c => c.Amount);
 
-            labelSIncome.Text = $"¥ {totalIncome:N2}";
-            labelSExpense.Text = $"¥ {totalExpense:N2}";
-            labelSRemain.Text = $"¥ {totalIncome - totalExpense:N2}";
+            var statSymbol = CurrencyHelper.GetSymbol(currency ?? App.CurrentUserCurrency);
+            labelSIncome.Text = $"{statSymbol}{totalIncome:N2}";
+            labelSExpense.Text = $"{statSymbol}{totalExpense:N2}";
+            labelSRemain.Text = $"{statSymbol}{totalIncome - totalExpense:N2}";
 
             var title = "单年";
             if (scope == "日") title = "单日";
@@ -212,8 +214,8 @@ namespace FinanceManager.UserControls
             else if (scope == "季") title = "单季";
             else if (scope == "多年") title = "多年";
 
-            UpdatePieChart(chartPieIncome, $"{title}收入占比", incomeList, totalIncome);
-            UpdatePieChart(chartPieExpense, $"{title}支出占比", expenseList, totalExpense);
+            UpdatePieChart(chartPieIncome, $"{title}收入占比", incomeList, totalIncome, statSymbol);
+            UpdatePieChart(chartPieExpense, $"{title}支出占比", expenseList, totalExpense, statSymbol);
 
             // 触发AI分析建议，传入收支分类明细
             LoadStatsAi(from, to, totalIncome, totalExpense, incomeList, expenseList);
@@ -255,7 +257,7 @@ namespace FinanceManager.UserControls
         // 加载数据后更新饼图显示
         /// <summary>更新饼图：Top5 分类 + 其他，设置图例和标签</summary>
         private void UpdatePieChart(Chart chart, string title,
-    List<CategoryStatistics> stats, decimal total)
+    List<CategoryStatistics> stats, decimal total, string currencySymbol = "¥")
         {
             chart.Titles.Clear();
             chart.Titles.Add(title);
@@ -284,7 +286,7 @@ namespace FinanceManager.UserControls
             foreach (var item in top5)
             {
                 var pt = s.Points.Add((double)item.Amount);
-                pt.LegendText = $"{item.CategoryName}  ¥{item.Amount:N0}";
+                pt.LegendText = $"{item.CategoryName}  {currencySymbol}{item.Amount:N0}";
                 pt.Label = $"{(item.Amount / total * 100):F1}%";
                 if (!string.IsNullOrEmpty(item.CategoryColor))
                     pt.Color = ColorTranslator.FromHtml(item.CategoryColor);

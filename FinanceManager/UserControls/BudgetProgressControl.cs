@@ -1,4 +1,5 @@
 ﻿using FinanceManager.Common;
+using FinanceManager.Common.Helpers;
 using FinanceManager.Data.Repositories;
 using FinanceManager.Data.Services;
 using FinanceManager.Domain.Entities;
@@ -128,8 +129,9 @@ namespace FinanceManager.UserControls
             }
 
             // 更新概览
-            labelBudget.Text = $"预算金额：¥ {budgetAmount:N2}";
-            labelSpent.Text = $"已支出：¥ {spent:N2}";
+            var budgetSymbol = CurrencyHelper.GetSymbol(App.CurrentUserCurrency);
+            labelBudget.Text = $"预算金额：{budgetSymbol}{budgetAmount:N2}";
+            labelSpent.Text = $"已支出：{budgetSymbol}{spent:N2}";
             labelSpent.ForeColor = spent > budgetAmount && budgetAmount > 0
                 ? Color.FromArgb(244, 67, 54) : Color.FromArgb(33, 33, 33);
 
@@ -143,8 +145,8 @@ namespace FinanceManager.UserControls
 
             var remain = budgetAmount - spent;
             labelRemain.Text = remain > 0
-                ? $"剩余：¥ {remain:N2}"
-                : $"超支：¥ {Math.Abs(remain):N2}";
+                ? $"剩余：{budgetSymbol}{remain:N2}"
+                : $"超支：{budgetSymbol}{Math.Abs(remain):N2}";
             labelRemain.ForeColor = remain >= 0
                 ? Color.FromArgb(76, 175, 80)
                 : Color.FromArgb(244, 67, 54);
@@ -160,7 +162,7 @@ namespace FinanceManager.UserControls
                 var daysLeft = radioButtonDaily.Checked ? 1
                     : DateTime.DaysInMonth(year, month) - today.Day + 1;
                 var daily = daysLeft > 0 ? remain / daysLeft : 0;
-                labelDailyAvg.Text = $"日均可用：¥ {Math.Max(0, daily):N2}";
+                labelDailyAvg.Text = $"日均可用：{budgetSymbol}{Math.Max(0, daily):N2}";
             }
 
             // 加载预警
@@ -209,8 +211,9 @@ namespace FinanceManager.UserControls
                     if (catPct >= 80)
                     {
                         var icon = catPct >= 100 ? "!!" : "⚠";
+                        var sym = CurrencyHelper.GetSymbol(App.CurrentUserCurrency);
                         gridWarn.Rows.Add(
-                            $"{icon} {cs.CategoryName} 已用 ¥{cs.Amount:N0} / 预算 ¥{allocAmt:N0}（{catPct:F0}%）");
+                            $"{icon} {cs.CategoryName} 已用 {sym}{cs.Amount:N0} / 预算 {sym}{allocAmt:N0}（{catPct:F0}%）");
                         hasWarning = true;
                     }
                 }
@@ -222,8 +225,9 @@ namespace FinanceManager.UserControls
             // 总预算预警
             if (totalBudget > 0 && totalSpent > totalBudget)
             {
+                var warnSym = CurrencyHelper.GetSymbol(App.CurrentUserCurrency);
                 gridWarn.Rows.Insert(0,
-                    $"!! 总预算已超支 ¥{totalSpent - totalBudget:N0}");
+                    $"!! 总预算已超支 {warnSym}{totalSpent - totalBudget:N0}");
             }
         }
 
@@ -314,15 +318,17 @@ namespace FinanceManager.UserControls
 
                 foreach (var c in result.Categories)
                 {
+                    var sugSym = CurrencyHelper.GetSymbol(App.CurrentUserCurrency);
                     gridSuggest.Rows.Add(c.CategoryName,
-                        $"¥ {c.Amount:N0}", c.Reason);
+                        $"{sugSym}{c.Amount:N0}", c.Reason);
                 }
             }
             else
             {
                 // AI不可用时回退提示
+                var fallbackSym = CurrencyHelper.GetSymbol(App.CurrentUserCurrency);
                 labelSuggestion.Text = $"AI服务不可用：{result.Error}\n\n" +
-                    $"建议参考金额：¥ {result.TotalBudget:N0}（近3月月均上浮5%）";
+                    $"建议参考金额：{fallbackSym}{result.TotalBudget:N0}（近3月月均上浮5%）";
                 gridSuggest.Rows.Clear();
             }
         }

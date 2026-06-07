@@ -149,7 +149,7 @@ namespace FinanceManager.Forms
                     r.Date.ToString("yyyy-MM-dd"),          // 列1：日期
                     r.Type == RecordType.Expense ? "支出" : "收入",  // 列2：类型
                     cat?.Name ?? "-",                       // 列3：分类名
-                    Math.Abs(r.Amount).ToString("N2"),      // 列4：金额（取绝对值）
+                    $"{CurrencyHelper.GetSymbol(r.Currency)}{Math.Abs(r.Amount):N2}",      // 列4：金额（带币种符号）
                     r.Note ?? ""                            // 列5：备注
                 )].Tag = r;  // Tag 存储实体引用，供后续操作使用
             }

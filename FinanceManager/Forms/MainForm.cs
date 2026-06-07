@@ -1,4 +1,5 @@
 using FinanceManager.Common;
+using FinanceManager.Common.Helpers;
 using FinanceManager.Data.Database;
 using FinanceManager.Data.Repositories;
 using FinanceManager.Data.Services;
@@ -136,9 +137,10 @@ namespace FinanceManager.Forms
                 var stats = _statsVM.MonthlyStats;
                 if (stats == null) return;
 
-                _lblIncomeValue.Text = $"¥ {stats.TotalIncome:N2}";
-                _lblExpenseValue.Text = $"¥ {stats.TotalExpense:N2}";
-                _lblBalanceValue.Text = $"¥ {stats.Balance:N2}";
+                var dashSymbol = CurrencyHelper.GetSymbol(App.CurrentUserCurrency);
+                _lblIncomeValue.Text = $"{dashSymbol}{stats.TotalIncome:N2}";
+                _lblExpenseValue.Text = $"{dashSymbol}{stats.TotalExpense:N2}";
+                _lblBalanceValue.Text = $"{dashSymbol}{stats.Balance:N2}";
                 _lblBalanceValue.ForeColor = stats.Balance < 0
                     ? Color.FromArgb(244, 67, 54)
                     : Color.FromArgb(33, 150, 243);
@@ -155,15 +157,15 @@ namespace FinanceManager.Forms
                 var expenseList = (await statsService.GetCategoryStatisticsAsync(
                     App.CurrentUserId, 0, from, to, App.CurrentUserCurrency)).ToList();
 
-                UpdateDashPieChart(chartIncome, "收入", incomeList, stats.TotalIncome);
-                UpdateDashPieChart(chartExpense, "支出", expenseList, stats.TotalExpense);
+                UpdateDashPieChart(chartIncome, "收入", incomeList, stats.TotalIncome, dashSymbol);
+                UpdateDashPieChart(chartExpense, "支出", expenseList, stats.TotalExpense, dashSymbol);
             }
             catch { }
         }
 
         /// <summary>更新仪表盘饼图</summary>
         private void UpdateDashPieChart(System.Windows.Forms.DataVisualization.Charting.Chart chart,
-            string title, System.Collections.Generic.IEnumerable<FinanceManager.Domain.models.CategoryStatistics> stats, decimal total)
+            string title, System.Collections.Generic.IEnumerable<FinanceManager.Domain.models.CategoryStatistics> stats, decimal total, string currencySymbol = "¥")
         {
             chart.Series.Clear();
             chart.Legends.Clear();
@@ -187,7 +189,7 @@ namespace FinanceManager.Forms
             foreach (var item in itemList)
             {
                 var pt = s.Points.Add((double)item.Amount);
-                pt.LegendText = $"{item.CategoryName} ¥{item.Amount:N0}";
+                pt.LegendText = $"{item.CategoryName} {currencySymbol}{item.Amount:N0}";
                 if (!string.IsNullOrEmpty(item.CategoryColor))
                     pt.Color = ColorTranslator.FromHtml(item.CategoryColor);
             }
