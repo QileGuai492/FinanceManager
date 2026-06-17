@@ -69,7 +69,7 @@
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label13.Location = new System.Drawing.Point(141, 228);
+            this.label13.Location = new System.Drawing.Point(147, 256);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(69, 20);
             this.label13.TabIndex = 26;
@@ -82,7 +82,7 @@
             this.panel6.Controls.Add(this.rdoCTIncome);
             this.panel6.Controls.Add(this.rdoCTExpense);
             this.panel6.Controls.Add(this.rdoCTAll);
-            this.panel6.Location = new System.Drawing.Point(216, 216);
+            this.panel6.Location = new System.Drawing.Point(222, 244);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(286, 48);
             this.panel6.TabIndex = 25;
@@ -136,7 +136,7 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label12.Location = new System.Drawing.Point(162, 287);
+            this.label12.Location = new System.Drawing.Point(168, 315);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(109, 20);
             this.label12.TabIndex = 24;
@@ -148,7 +148,7 @@
             this.comboBoxFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxFilter.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBoxFilter.FormattingEnabled = true;
-            this.comboBoxFilter.Location = new System.Drawing.Point(277, 284);
+            this.comboBoxFilter.Location = new System.Drawing.Point(283, 312);
             this.comboBoxFilter.Name = "comboBoxFilter";
             this.comboBoxFilter.Size = new System.Drawing.Size(121, 28);
             this.comboBoxFilter.TabIndex = 23;
@@ -169,16 +169,16 @@
             this.panelEditor.Controls.Add(this.label8);
             this.panelEditor.Controls.Add(this.textBoxMoney);
             this.panelEditor.Controls.Add(this.label7);
-            this.panelEditor.Location = new System.Drawing.Point(784, 228);
+            this.panelEditor.Location = new System.Drawing.Point(790, 256);
             this.panelEditor.Name = "panelEditor";
-            this.panelEditor.Size = new System.Drawing.Size(300, 352);
+            this.panelEditor.Size = new System.Drawing.Size(300, 390);
             this.panelEditor.TabIndex = 22;
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.rdoIncome);
             this.panel5.Controls.Add(this.rdoExpense);
-            this.panel5.Location = new System.Drawing.Point(95, 78);
+            this.panel5.Location = new System.Drawing.Point(95, 85);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(173, 46);
             this.panel5.TabIndex = 14;
@@ -214,7 +214,7 @@
             // 
             this.buttonCancel.AutoSize = true;
             this.buttonCancel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonCancel.Location = new System.Drawing.Point(174, 300);
+            this.buttonCancel.Location = new System.Drawing.Point(174, 328);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 30);
             this.buttonCancel.TabIndex = 11;
@@ -226,7 +226,7 @@
             // 
             this.buttonSave.AutoSize = true;
             this.buttonSave.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonSave.Location = new System.Drawing.Point(45, 296);
+            this.buttonSave.Location = new System.Drawing.Point(45, 324);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(75, 37);
             this.buttonSave.TabIndex = 10;
@@ -237,7 +237,7 @@
             // textBoxNote
             // 
             this.textBoxNote.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBoxNote.Location = new System.Drawing.Point(95, 230);
+            this.textBoxNote.Location = new System.Drawing.Point(95, 250);
             this.textBoxNote.Name = "textBoxNote";
             this.textBoxNote.Size = new System.Drawing.Size(173, 34);
             this.textBoxNote.TabIndex = 9;
@@ -247,7 +247,7 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label11.Location = new System.Drawing.Point(22, 244);
+            this.label11.Location = new System.Drawing.Point(22, 264);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(69, 20);
             this.label11.TabIndex = 8;
@@ -255,7 +255,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(95, 181);
+            this.dateTimePicker1.Location = new System.Drawing.Point(95, 198);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(173, 30);
             this.dateTimePicker1.TabIndex = 7;
@@ -265,7 +265,7 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label10.Location = new System.Drawing.Point(22, 188);
+            this.label10.Location = new System.Drawing.Point(22, 205);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(69, 20);
             this.label10.TabIndex = 6;
@@ -276,7 +276,7 @@
             this.comboBoxCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCategory.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBoxCategory.FormattingEnabled = true;
-            this.comboBoxCategory.Location = new System.Drawing.Point(95, 130);
+            this.comboBoxCategory.Location = new System.Drawing.Point(95, 143);
             this.comboBoxCategory.Name = "comboBoxCategory";
             this.comboBoxCategory.Size = new System.Drawing.Size(173, 35);
             this.comboBoxCategory.TabIndex = 5;
@@ -286,7 +286,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label9.Location = new System.Drawing.Point(22, 137);
+            this.label9.Location = new System.Drawing.Point(22, 150);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(69, 20);
             this.label9.TabIndex = 4;
@@ -297,7 +297,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label8.Location = new System.Drawing.Point(22, 87);
+            this.label8.Location = new System.Drawing.Point(22, 94);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(69, 20);
             this.label8.TabIndex = 3;
@@ -327,11 +327,11 @@
             // 
             this.gridRecord.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gridRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridRecord.Location = new System.Drawing.Point(93, 335);
+            this.gridRecord.Location = new System.Drawing.Point(99, 363);
             this.gridRecord.Name = "gridRecord";
             this.gridRecord.RowHeadersWidth = 51;
             this.gridRecord.RowTemplate.Height = 27;
-            this.gridRecord.Size = new System.Drawing.Size(580, 226);
+            this.gridRecord.Size = new System.Drawing.Size(580, 283);
             this.gridRecord.TabIndex = 21;
             this.gridRecord.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridRecord_CellContentDoubleClick);
             // 
@@ -339,7 +339,7 @@
             // 
             this.buttonDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonDelete.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonDelete.Location = new System.Drawing.Point(560, 262);
+            this.buttonDelete.Location = new System.Drawing.Point(566, 290);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(113, 45);
             this.buttonDelete.TabIndex = 20;
@@ -350,7 +350,7 @@
             // buttonNew
             // 
             this.buttonNew.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonNew.Location = new System.Drawing.Point(865, 117);
+            this.buttonNew.Location = new System.Drawing.Point(871, 145);
             this.buttonNew.Name = "buttonNew";
             this.buttonNew.Size = new System.Drawing.Size(126, 72);
             this.buttonNew.TabIndex = 19;
@@ -364,7 +364,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("微软雅黑", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(47, 16);
+            this.label6.Location = new System.Drawing.Point(18, 16);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(129, 37);
             this.label6.TabIndex = 18;
@@ -375,10 +375,10 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(65, 98);
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(70, 123);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(352, 24);
+            this.label1.Size = new System.Drawing.Size(392, 27);
             this.label1.TabIndex = 27;
             this.label1.Text = "AI智能添加（建议每次只输入一条记录）：";
             // 
@@ -386,7 +386,7 @@
             // 
             this.textBoxAI.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxAI.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBoxAI.Location = new System.Drawing.Point(69, 136);
+            this.textBoxAI.Location = new System.Drawing.Point(75, 164);
             this.textBoxAI.Name = "textBoxAI";
             this.textBoxAI.Size = new System.Drawing.Size(579, 34);
             this.textBoxAI.TabIndex = 28;
@@ -396,7 +396,7 @@
             this.buttonAI.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonAI.AutoSize = true;
             this.buttonAI.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonAI.Location = new System.Drawing.Point(670, 136);
+            this.buttonAI.Location = new System.Drawing.Point(676, 164);
             this.buttonAI.Name = "buttonAI";
             this.buttonAI.Size = new System.Drawing.Size(93, 34);
             this.buttonAI.TabIndex = 29;

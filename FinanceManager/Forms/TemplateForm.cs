@@ -60,6 +60,18 @@ namespace FinanceManager.Forms
             gridTemplate.Columns.Add("colCount", "次数");
             UiHelper.StyleDataGridView(gridTemplate);
 
+            // 按钮美化
+            UiHelper.StyleButton(buttonAdd, UiHelper.DeepBlue, Color.White);
+            UiHelper.BindHover(buttonAdd, UiHelper.DeepBlue, UiHelper.LightBlue);
+            UiHelper.StyleButton(buttonUse, UiHelper.SuccessGreen, Color.White);
+            UiHelper.BindHover(buttonUse, UiHelper.SuccessGreen, UiHelper.SuccessGreenHover);
+            UiHelper.StyleButton(buttonDelete, UiHelper.DangerRed, Color.White);
+            UiHelper.BindHover(buttonDelete, UiHelper.DangerRed, UiHelper.DangerRedHover);
+            UiHelper.StyleButton(buttonSave, UiHelper.DeepBlue, Color.White);
+            UiHelper.BindHover(buttonSave, UiHelper.DeepBlue, UiHelper.LightBlue);
+            UiHelper.StyleButton(buttonCancel, UiHelper.TextGray, Color.White);
+            UiHelper.BindHover(buttonCancel, UiHelper.TextGray, UiHelper.BorderGray);
+
             _ = RefreshGrid();  // 异步加载模板列表
         }
 

@@ -144,7 +144,7 @@ namespace FinanceManager.ViewModels
             try
             {
                 MonthlyStats = await _statsService.GetMonthlyStatisticsAsync(
-                    App.CurrentUserId, SelectedYear, SelectedMonth);
+                    App.CurrentUserId, SelectedYear, SelectedMonth, App.CurrentUserCurrency);
                 ErrorMessage = string.Empty;
             }
             catch (Exception ex) { ErrorMessage = ex.Message; }

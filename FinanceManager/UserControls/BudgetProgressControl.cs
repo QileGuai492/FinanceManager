@@ -22,6 +22,8 @@ namespace FinanceManager.UserControls
     {
         private readonly string _connStr;
         private BudgetViewModel _budgetVM;
+        private Panel _progressBg;
+        private Panel _progressFill;
 
         public BudgetProgressControl(string connStr)
         {
@@ -61,11 +63,41 @@ namespace FinanceManager.UserControls
             panel8.BackColor = UiHelper.BgLight;
             panel10.BackColor = UiHelper.BgLight;
 
+            // 概览卡片美化
+            panel8.BackColor = UiHelper.CardWhite;
+            UiHelper.MakeRound(panel8, 8, UiHelper.CardWhite);
+
             // 按钮美化
             UiHelper.StyleButton(buttonSaveBudget, UiHelper.DeepBlue, Color.White);
             UiHelper.BindHover(buttonSaveBudget, UiHelper.DeepBlue, UiHelper.LightBlue);
             UiHelper.StyleButton(buttonLoadBudget, UiHelper.DeepBlue, Color.White);
             UiHelper.BindHover(buttonLoadBudget, UiHelper.DeepBlue, UiHelper.LightBlue);
+
+            // 预算输入框placeholder
+            UiHelper.SetPlaceholder(textBoxBudget, "输入预算金额...");
+
+            // 预算概览字体
+            foreach (var lbl in new[] { labelBudget, labelSpent, labelRemain, labelDailyAvg, labelPercent, labelSuggestion })
+                lbl.Font = new Font("微软雅黑", 10f);
+
+            // 用自定义进度条替换原生ProgressBar
+            progBudget.Visible = false;
+            _progressBg = new Panel
+            {
+                Location = progBudget.Location,
+                Size = progBudget.Size,
+                BackColor = UiHelper.BorderGray
+            };
+            _progressFill = new Panel
+            {
+                Location = new Point(0, 0),
+                Size = new Size(progBudget.Width, progBudget.Height),
+                BackColor = UiHelper.SuccessGreen
+            };
+            _progressBg.Controls.Add(_progressFill);
+            panel8.Controls.Add(_progressBg);
+            _progressBg.BringToFront();
+            labelPercent.BringToFront();
         }
 
         /// <summary>刷新预算数据：加载当月收支 → 计算进度 → 加载预警和 AI 建议</summary>
@@ -133,23 +165,25 @@ namespace FinanceManager.UserControls
             labelBudget.Text = $"预算金额：{budgetSymbol}{budgetAmount:N2}";
             labelSpent.Text = $"已支出：{budgetSymbol}{spent:N2}";
             labelSpent.ForeColor = spent > budgetAmount && budgetAmount > 0
-                ? Color.FromArgb(244, 67, 54) : Color.FromArgb(33, 33, 33);
+                ? UiHelper.DangerRed : UiHelper.SpentNormal;
 
             var percent = budgetAmount > 0 ? (int)(spent / budgetAmount * 100) : 0;
             var remaining = Math.Max(0, 100 - Math.Min(percent, 100));
-            progBudget.Value = remaining;
-            progBudget.ForeColor = remaining <= 10
-                ? Color.FromArgb(244, 67, 54)
-                : Color.FromArgb(33, 150, 243);
+            // 自定义进度条
+            var fillWidth = (int)(_progressBg.Width * remaining / 100.0);
+            _progressFill.Width = fillWidth;
+            _progressFill.BackColor = remaining <= 10 ? UiHelper.DangerRed
+                : remaining <= 30 ? UiHelper.WarningOrange : UiHelper.SuccessGreen;
             labelPercent.Text = $"{remaining}%";
+            labelPercent.ForeColor = remaining <= 10 ? UiHelper.DangerRed : UiHelper.TextDark;
 
             var remain = budgetAmount - spent;
             labelRemain.Text = remain > 0
                 ? $"剩余：{budgetSymbol}{remain:N2}"
                 : $"超支：{budgetSymbol}{Math.Abs(remain):N2}";
             labelRemain.ForeColor = remain >= 0
-                ? Color.FromArgb(76, 175, 80)
-                : Color.FromArgb(244, 67, 54);
+                ? UiHelper.SuccessGreen
+                : UiHelper.DangerRed;
 
             // 日均可用
             if (radioButtonYearly.Checked)
@@ -195,7 +229,11 @@ namespace FinanceManager.UserControls
 
             gridWarn.Rows.Clear();
             gridWarn.Columns.Clear();
-            gridWarn.Columns.Add("colWarnMsg", "");
+            gridWarn.Columns.Add("colWarnStatus", "");
+            gridWarn.Columns.Add("colWarnCat", "分类");
+            gridWarn.Columns.Add("colWarnSpent", "已花");
+            gridWarn.Columns.Add("colWarnBudget", "预算");
+            gridWarn.Columns.Add("colWarnPct", "占比");
 
             bool hasWarning = false;
 
@@ -210,24 +248,37 @@ namespace FinanceManager.UserControls
                     var catPct = cs.Amount / allocAmt * 100;
                     if (catPct >= 80)
                     {
-                        var icon = catPct >= 100 ? "!!" : "⚠";
+                        var icon = catPct >= 100 ? "!!超支" : "⚠警告";
                         var sym = CurrencyHelper.GetSymbol(App.CurrentUserCurrency);
-                        gridWarn.Rows.Add(
-                            $"{icon} {cs.CategoryName} 已用 {sym}{cs.Amount:N0} / 预算 {sym}{allocAmt:N0}（{catPct:F0}%）");
+                        var row = gridWarn.Rows[gridWarn.Rows.Add(icon, cs.CategoryName,
+                            $"{sym}{cs.Amount:N0}", $"{sym}{allocAmt:N0}", $"{catPct:F0}%")];
+                        if (catPct >= 100)
+                        {
+                            row.DefaultCellStyle.BackColor = UiHelper.DangerBg;
+                            row.DefaultCellStyle.ForeColor = UiHelper.DangerRed;
+                        }
+                        else
+                        {
+                            row.DefaultCellStyle.BackColor = UiHelper.WarningBg;
+                            row.DefaultCellStyle.ForeColor = UiHelper.WarningOrange;
+                        }
                         hasWarning = true;
                     }
                 }
             }
 
             if (!hasWarning)
-                gridWarn.Rows.Add("所有分类均在预算范围内");
+                gridWarn.Rows.Add("✓", "所有分类均在预算范围内", "", "", "");
 
             // 总预算预警
             if (totalBudget > 0 && totalSpent > totalBudget)
             {
                 var warnSym = CurrencyHelper.GetSymbol(App.CurrentUserCurrency);
-                gridWarn.Rows.Insert(0,
-                    $"!! 总预算已超支 {warnSym}{totalSpent - totalBudget:N0}");
+                gridWarn.Rows.Insert(0, "!!", "总预算",
+                    $"{warnSym}{totalSpent:N0}", $"{warnSym}{totalBudget:N0}",
+                    $"{(totalSpent / totalBudget * 100):F0}%");
+                gridWarn.Rows[0].DefaultCellStyle.BackColor = UiHelper.DangerBg;
+                gridWarn.Rows[0].DefaultCellStyle.ForeColor = UiHelper.DangerRed;
             }
         }
 

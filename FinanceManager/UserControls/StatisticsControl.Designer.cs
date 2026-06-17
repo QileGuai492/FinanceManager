@@ -54,35 +54,35 @@
             this.chartBarIncome = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label27 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.comboBoxSeason = new System.Windows.Forms.ComboBox();
             this.buttonPieCheck = new System.Windows.Forms.Button();
+            this.comboBoxMoney = new System.Windows.Forms.ComboBox();
+            this.comboBoxSeason = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.labelMulYear = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
             this.chartPieExpense = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartPieIncome = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panelRemain = new System.Windows.Forms.Panel();
             this.labelSRemain = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
+            this.labelMulYear = new System.Windows.Forms.Label();
             this.panelExpense = new System.Windows.Forms.Panel();
             this.labelSExpense = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.panelIncome = new System.Windows.Forms.Panel();
             this.labelSIncome = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
+            this.textBoxPieFromYear = new System.Windows.Forms.TextBox();
             this.comboBoxPieDay = new System.Windows.Forms.ComboBox();
+            this.textBoxPieToYear = new System.Windows.Forms.TextBox();
             this.comboBoxPieMonth = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.textBoxPieToYear = new System.Windows.Forms.TextBox();
-            this.textBoxPieFromYear = new System.Windows.Forms.TextBox();
             this.textBoxPieYear = new System.Windows.Forms.TextBox();
             this.labelMSingleYear = new System.Windows.Forms.Label();
             this.comboBoxPieScope = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxMoney = new System.Windows.Forms.ComboBox();
             this.panel12.SuspendLayout();
             this.panel17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartBarExpense)).BeginInit();
@@ -142,26 +142,29 @@
             this.label29.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label29.AutoSize = true;
             this.label29.BackColor = System.Drawing.Color.Transparent;
-            this.label29.Location = new System.Drawing.Point(259, 162);
+            this.label29.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label29.Location = new System.Drawing.Point(265, 162);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(22, 15);
+            this.label29.Size = new System.Drawing.Size(29, 20);
             this.label29.TabIndex = 13;
             this.label29.Text = "至";
             // 
             // dtpBarTo
             // 
             this.dtpBarTo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dtpBarTo.Location = new System.Drawing.Point(301, 155);
+            this.dtpBarTo.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dtpBarTo.Location = new System.Drawing.Point(322, 155);
             this.dtpBarTo.Name = "dtpBarTo";
-            this.dtpBarTo.Size = new System.Drawing.Size(165, 25);
+            this.dtpBarTo.Size = new System.Drawing.Size(175, 30);
             this.dtpBarTo.TabIndex = 12;
             // 
             // dtpBarFrom
             // 
             this.dtpBarFrom.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dtpBarFrom.Location = new System.Drawing.Point(71, 155);
+            this.dtpBarFrom.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dtpBarFrom.Location = new System.Drawing.Point(55, 155);
             this.dtpBarFrom.Name = "dtpBarFrom";
-            this.dtpBarFrom.Size = new System.Drawing.Size(170, 25);
+            this.dtpBarFrom.Size = new System.Drawing.Size(178, 30);
             this.dtpBarFrom.TabIndex = 12;
             // 
             // label32
@@ -179,7 +182,8 @@
             // buttonBarCheck
             // 
             this.buttonBarCheck.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonBarCheck.Location = new System.Drawing.Point(232, 81);
+            this.buttonBarCheck.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonBarCheck.Location = new System.Drawing.Point(257, 81);
             this.buttonBarCheck.Name = "buttonBarCheck";
             this.buttonBarCheck.Size = new System.Drawing.Size(103, 44);
             this.buttonBarCheck.TabIndex = 10;
@@ -191,10 +195,11 @@
             // 
             this.comboBoxBarScope.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBoxBarScope.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBarScope.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBoxBarScope.FormattingEnabled = true;
-            this.comboBoxBarScope.Location = new System.Drawing.Point(91, 93);
+            this.comboBoxBarScope.Location = new System.Drawing.Point(113, 93);
             this.comboBoxBarScope.Name = "comboBoxBarScope";
-            this.comboBoxBarScope.Size = new System.Drawing.Size(112, 23);
+            this.comboBoxBarScope.Size = new System.Drawing.Size(112, 28);
             this.comboBoxBarScope.TabIndex = 8;
             // 
             // panel17
@@ -248,9 +253,10 @@
             this.label27.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label27.AutoSize = true;
             this.label27.BackColor = System.Drawing.Color.Transparent;
+            this.label27.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label27.Location = new System.Drawing.Point(38, 96);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(52, 15);
+            this.label27.Size = new System.Drawing.Size(69, 20);
             this.label27.TabIndex = 0;
             this.label27.Text = "粒度：";
             // 
@@ -283,20 +289,10 @@
             this.panel11.Size = new System.Drawing.Size(556, 538);
             this.panel11.TabIndex = 6;
             // 
-            // comboBoxSeason
-            // 
-            this.comboBoxSeason.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBoxSeason.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxSeason.FormattingEnabled = true;
-            this.comboBoxSeason.Location = new System.Drawing.Point(176, 78);
-            this.comboBoxSeason.Name = "comboBoxSeason";
-            this.comboBoxSeason.Size = new System.Drawing.Size(100, 23);
-            this.comboBoxSeason.TabIndex = 11;
-            this.comboBoxSeason.SelectedIndexChanged += new System.EventHandler(this.comboBoxSeason_SelectedIndexChanged);
-            // 
             // buttonPieCheck
             // 
             this.buttonPieCheck.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonPieCheck.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.buttonPieCheck.Location = new System.Drawing.Point(410, 111);
             this.buttonPieCheck.Name = "buttonPieCheck";
             this.buttonPieCheck.Size = new System.Drawing.Size(114, 48);
@@ -305,27 +301,52 @@
             this.buttonPieCheck.UseVisualStyleBackColor = true;
             this.buttonPieCheck.Click += new System.EventHandler(this.buttonPieCheck_Click);
             // 
+            // comboBoxMoney
+            // 
+            this.comboBoxMoney.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBoxMoney.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboBoxMoney.FormattingEnabled = true;
+            this.comboBoxMoney.Location = new System.Drawing.Point(330, 31);
+            this.comboBoxMoney.Name = "comboBoxMoney";
+            this.comboBoxMoney.Size = new System.Drawing.Size(121, 28);
+            this.comboBoxMoney.TabIndex = 13;
+            this.comboBoxMoney.SelectedIndexChanged += new System.EventHandler(this.comboBoxMoney_SelectedIndexChanged);
+            // 
+            // comboBoxSeason
+            // 
+            this.comboBoxSeason.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBoxSeason.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSeason.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboBoxSeason.FormattingEnabled = true;
+            this.comboBoxSeason.Location = new System.Drawing.Point(176, 78);
+            this.comboBoxSeason.Name = "comboBoxSeason";
+            this.comboBoxSeason.Size = new System.Drawing.Size(100, 28);
+            this.comboBoxSeason.TabIndex = 11;
+            this.comboBoxSeason.SelectedIndexChanged += new System.EventHandler(this.comboBoxSeason_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(215, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(109, 20);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "币种选择：";
+            // 
             // label23
             // 
             this.label23.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label23.AutoSize = true;
             this.label23.BackColor = System.Drawing.Color.Transparent;
-            this.label23.Location = new System.Drawing.Point(185, 128);
+            this.label23.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label23.Location = new System.Drawing.Point(206, 128);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(22, 15);
+            this.label23.Size = new System.Drawing.Size(29, 20);
             this.label23.TabIndex = 9;
             this.label23.Text = "至";
-            // 
-            // labelMulYear
-            // 
-            this.labelMulYear.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelMulYear.AutoSize = true;
-            this.labelMulYear.BackColor = System.Drawing.Color.Transparent;
-            this.labelMulYear.Location = new System.Drawing.Point(33, 128);
-            this.labelMulYear.Name = "labelMulYear";
-            this.labelMulYear.Size = new System.Drawing.Size(52, 15);
-            this.labelMulYear.TabIndex = 8;
-            this.labelMulYear.Text = "多年：";
             // 
             // panel16
             // 
@@ -378,6 +399,7 @@
             this.panelRemain.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelRemain.Controls.Add(this.labelSRemain);
             this.panelRemain.Controls.Add(this.label30);
+            this.panelRemain.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.panelRemain.Location = new System.Drawing.Point(362, 182);
             this.panelRemain.Name = "panelRemain";
             this.panelRemain.Size = new System.Drawing.Size(105, 108);
@@ -389,7 +411,7 @@
             this.labelSRemain.BackColor = System.Drawing.Color.Transparent;
             this.labelSRemain.Location = new System.Drawing.Point(20, 63);
             this.labelSRemain.Name = "labelSRemain";
-            this.labelSRemain.Size = new System.Drawing.Size(46, 15);
+            this.labelSRemain.Size = new System.Drawing.Size(59, 20);
             this.labelSRemain.TabIndex = 1;
             this.labelSRemain.Text = "￥NaN";
             // 
@@ -399,15 +421,28 @@
             this.label30.BackColor = System.Drawing.Color.Transparent;
             this.label30.Location = new System.Drawing.Point(22, 24);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(37, 15);
+            this.label30.Size = new System.Drawing.Size(49, 20);
             this.label30.TabIndex = 0;
             this.label30.Text = "结余";
+            // 
+            // labelMulYear
+            // 
+            this.labelMulYear.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelMulYear.AutoSize = true;
+            this.labelMulYear.BackColor = System.Drawing.Color.Transparent;
+            this.labelMulYear.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelMulYear.Location = new System.Drawing.Point(16, 128);
+            this.labelMulYear.Name = "labelMulYear";
+            this.labelMulYear.Size = new System.Drawing.Size(69, 20);
+            this.labelMulYear.TabIndex = 8;
+            this.labelMulYear.Text = "多年：";
             // 
             // panelExpense
             // 
             this.panelExpense.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelExpense.Controls.Add(this.labelSExpense);
             this.panelExpense.Controls.Add(this.label28);
+            this.panelExpense.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.panelExpense.Location = new System.Drawing.Point(210, 182);
             this.panelExpense.Name = "panelExpense";
             this.panelExpense.Size = new System.Drawing.Size(105, 108);
@@ -419,7 +454,7 @@
             this.labelSExpense.BackColor = System.Drawing.Color.Transparent;
             this.labelSExpense.Location = new System.Drawing.Point(20, 63);
             this.labelSExpense.Name = "labelSExpense";
-            this.labelSExpense.Size = new System.Drawing.Size(46, 15);
+            this.labelSExpense.Size = new System.Drawing.Size(59, 20);
             this.labelSExpense.TabIndex = 1;
             this.labelSExpense.Text = "￥NaN";
             // 
@@ -429,7 +464,7 @@
             this.label28.BackColor = System.Drawing.Color.Transparent;
             this.label28.Location = new System.Drawing.Point(22, 24);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(52, 15);
+            this.label28.Size = new System.Drawing.Size(69, 20);
             this.label28.TabIndex = 0;
             this.label28.Text = "总支出";
             // 
@@ -438,6 +473,7 @@
             this.panelIncome.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelIncome.Controls.Add(this.labelSIncome);
             this.panelIncome.Controls.Add(this.label26);
+            this.panelIncome.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.panelIncome.Location = new System.Drawing.Point(61, 182);
             this.panelIncome.Name = "panelIncome";
             this.panelIncome.Size = new System.Drawing.Size(105, 108);
@@ -449,7 +485,7 @@
             this.labelSIncome.BackColor = System.Drawing.Color.Transparent;
             this.labelSIncome.Location = new System.Drawing.Point(20, 63);
             this.labelSIncome.Name = "labelSIncome";
-            this.labelSIncome.Size = new System.Drawing.Size(46, 15);
+            this.labelSIncome.Size = new System.Drawing.Size(59, 20);
             this.labelSIncome.TabIndex = 1;
             this.labelSIncome.Text = "￥NaN";
             // 
@@ -459,28 +495,48 @@
             this.label26.BackColor = System.Drawing.Color.Transparent;
             this.label26.Location = new System.Drawing.Point(22, 24);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(52, 15);
+            this.label26.Size = new System.Drawing.Size(69, 20);
             this.label26.TabIndex = 0;
             this.label26.Text = "总收入";
+            // 
+            // textBoxPieFromYear
+            // 
+            this.textBoxPieFromYear.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxPieFromYear.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBoxPieFromYear.Location = new System.Drawing.Point(85, 124);
+            this.textBoxPieFromYear.Name = "textBoxPieFromYear";
+            this.textBoxPieFromYear.Size = new System.Drawing.Size(103, 30);
+            this.textBoxPieFromYear.TabIndex = 3;
             // 
             // comboBoxPieDay
             // 
             this.comboBoxPieDay.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBoxPieDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPieDay.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBoxPieDay.FormattingEnabled = true;
-            this.comboBoxPieDay.Location = new System.Drawing.Point(450, 78);
+            this.comboBoxPieDay.Location = new System.Drawing.Point(449, 78);
             this.comboBoxPieDay.Name = "comboBoxPieDay";
-            this.comboBoxPieDay.Size = new System.Drawing.Size(75, 23);
+            this.comboBoxPieDay.Size = new System.Drawing.Size(75, 28);
             this.comboBoxPieDay.TabIndex = 5;
+            // 
+            // textBoxPieToYear
+            // 
+            this.textBoxPieToYear.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxPieToYear.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBoxPieToYear.Location = new System.Drawing.Point(248, 124);
+            this.textBoxPieToYear.Name = "textBoxPieToYear";
+            this.textBoxPieToYear.Size = new System.Drawing.Size(102, 30);
+            this.textBoxPieToYear.TabIndex = 3;
             // 
             // comboBoxPieMonth
             // 
             this.comboBoxPieMonth.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBoxPieMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPieMonth.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBoxPieMonth.FormattingEnabled = true;
             this.comboBoxPieMonth.Location = new System.Drawing.Point(330, 78);
             this.comboBoxPieMonth.Name = "comboBoxPieMonth";
-            this.comboBoxPieMonth.Size = new System.Drawing.Size(73, 23);
+            this.comboBoxPieMonth.Size = new System.Drawing.Size(73, 28);
             this.comboBoxPieMonth.TabIndex = 5;
             // 
             // label25
@@ -488,9 +544,10 @@
             this.label25.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label25.AutoSize = true;
             this.label25.BackColor = System.Drawing.Color.Transparent;
+            this.label25.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label25.Location = new System.Drawing.Point(407, 81);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(37, 15);
+            this.label25.Size = new System.Drawing.Size(49, 20);
             this.label25.TabIndex = 4;
             this.label25.Text = "日：";
             // 
@@ -499,34 +556,20 @@
             this.label24.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label24.AutoSize = true;
             this.label24.BackColor = System.Drawing.Color.Transparent;
+            this.label24.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label24.Location = new System.Drawing.Point(287, 81);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(37, 15);
+            this.label24.Size = new System.Drawing.Size(49, 20);
             this.label24.TabIndex = 4;
             this.label24.Text = "月：";
-            // 
-            // textBoxPieToYear
-            // 
-            this.textBoxPieToYear.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxPieToYear.Location = new System.Drawing.Point(219, 124);
-            this.textBoxPieToYear.Name = "textBoxPieToYear";
-            this.textBoxPieToYear.Size = new System.Drawing.Size(91, 25);
-            this.textBoxPieToYear.TabIndex = 3;
-            // 
-            // textBoxPieFromYear
-            // 
-            this.textBoxPieFromYear.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxPieFromYear.Location = new System.Drawing.Point(91, 124);
-            this.textBoxPieFromYear.Name = "textBoxPieFromYear";
-            this.textBoxPieFromYear.Size = new System.Drawing.Size(84, 25);
-            this.textBoxPieFromYear.TabIndex = 3;
             // 
             // textBoxPieYear
             // 
             this.textBoxPieYear.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxPieYear.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBoxPieYear.Location = new System.Drawing.Point(66, 76);
             this.textBoxPieYear.Name = "textBoxPieYear";
-            this.textBoxPieYear.Size = new System.Drawing.Size(89, 25);
+            this.textBoxPieYear.Size = new System.Drawing.Size(89, 30);
             this.textBoxPieYear.TabIndex = 3;
             // 
             // labelMSingleYear
@@ -534,9 +577,10 @@
             this.labelMSingleYear.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelMSingleYear.AutoSize = true;
             this.labelMSingleYear.BackColor = System.Drawing.Color.Transparent;
+            this.labelMSingleYear.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelMSingleYear.Location = new System.Drawing.Point(24, 81);
             this.labelMSingleYear.Name = "labelMSingleYear";
-            this.labelMSingleYear.Size = new System.Drawing.Size(37, 15);
+            this.labelMSingleYear.Size = new System.Drawing.Size(49, 20);
             this.labelMSingleYear.TabIndex = 2;
             this.labelMSingleYear.Text = "年：";
             // 
@@ -544,10 +588,11 @@
             // 
             this.comboBoxPieScope.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBoxPieScope.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPieScope.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBoxPieScope.FormattingEnabled = true;
-            this.comboBoxPieScope.Location = new System.Drawing.Point(83, 31);
+            this.comboBoxPieScope.Location = new System.Drawing.Point(96, 31);
             this.comboBoxPieScope.Name = "comboBoxPieScope";
-            this.comboBoxPieScope.Size = new System.Drawing.Size(92, 23);
+            this.comboBoxPieScope.Size = new System.Drawing.Size(92, 28);
             this.comboBoxPieScope.TabIndex = 1;
             this.comboBoxPieScope.SelectedIndexChanged += new System.EventHandler(this.comboBoxPieScope_SelectedIndexChanged);
             // 
@@ -556,9 +601,10 @@
             this.label22.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label22.AutoSize = true;
             this.label22.BackColor = System.Drawing.Color.Transparent;
+            this.label22.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label22.Location = new System.Drawing.Point(33, 34);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(52, 15);
+            this.label22.Size = new System.Drawing.Size(69, 20);
             this.label22.TabIndex = 0;
             this.label22.Text = "范围：";
             // 
@@ -573,27 +619,6 @@
             this.label21.Size = new System.Drawing.Size(129, 37);
             this.label21.TabIndex = 5;
             this.label21.Text = "收支统计";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(194, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 15);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "币种选择：";
-            // 
-            // comboBoxMoney
-            // 
-            this.comboBoxMoney.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBoxMoney.FormattingEnabled = true;
-            this.comboBoxMoney.Location = new System.Drawing.Point(282, 31);
-            this.comboBoxMoney.Name = "comboBoxMoney";
-            this.comboBoxMoney.Size = new System.Drawing.Size(121, 23);
-            this.comboBoxMoney.TabIndex = 13;
-            this.comboBoxMoney.SelectedIndexChanged += new System.EventHandler(this.comboBoxMoney_SelectedIndexChanged);
             // 
             // StatisticsControl
             // 

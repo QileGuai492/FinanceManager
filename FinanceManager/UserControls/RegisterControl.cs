@@ -28,11 +28,27 @@ namespace FinanceManager.UserControls
             SignInlinkLabel.LinkClicked += SignInlinkLabel_LinkClicked;
         }
 
-        /// <summary>LoginForm 传入共享的 ViewModel</summary>
+        /// <summary>LoginForm 传入共享的 ViewModel，美化注册面板</summary>
         public void Init(UserViewModel viewModel)
         {
             _viewModel = viewModel;
-            this.BackColor = Color.White;
+            this.BackColor = UiHelper.CardWhite;
+
+            UiHelper.StyleButton(SignUp, UiHelper.DeepBlue, Color.White, 40);
+            UiHelper.BindHover(SignUp, UiHelper.DeepBlue, UiHelper.LightBlue);
+
+            SignInlinkLabel.Font = new Font("微软雅黑", 9f);
+            SignInlinkLabel.LinkColor = UiHelper.DeepBlue;
+
+            UiHelper.StyleTextBox(usernametextBox2);
+            UiHelper.StyleTextBox(passwordtextBox2);
+            UiHelper.StyleTextBox(checkpasswordtextBox);
+            UiHelper.StyleTextBox(emailtextBox);
+
+            checkpasswordtextBox.KeyDown += (s, ev) =>
+            {
+                if (ev.KeyCode == Keys.Enter) SignUp_Click(s, ev);
+            };
         }
 
 

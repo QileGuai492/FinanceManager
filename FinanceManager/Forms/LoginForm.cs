@@ -67,6 +67,20 @@ namespace FinanceManager.Forms
             linkLabelSignup.Font = new Font("微软雅黑", 9f);
             linkLabelSignup.LinkColor = UiHelper.DeepBlue;
 
+            // 输入框美化
+            UiHelper.StyleTextBox(textBoxUserName);
+            UiHelper.StyleTextBox(textBox1);
+            // 密码框回车触发登录
+            textBox1.KeyDown += (s, ev) =>
+            {
+                if (ev.KeyCode == Keys.Enter) buttonLogin_Click(s, ev);
+            };
+            // 用户框回车跳到密码框
+            textBoxUserName.KeyDown += (s, ev) =>
+            {
+                if (ev.KeyCode == Keys.Enter) { ev.SuppressKeyPress = true; textBox1.Focus(); }
+            };
+
             labelerror.Visible = false;
         }
 

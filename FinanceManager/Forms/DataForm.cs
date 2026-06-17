@@ -48,7 +48,6 @@ namespace FinanceManager.Forms
 
             dtpFrom.Value = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1); // 默认本月1日
             dtpTo.Value = DateTime.Today;    // 默认今天
-            comboBoxCategory.Enabled = false;
             gridRecords.AutoGenerateColumns = false;
             gridRecords.Columns.Add("colDate", "日期");
             gridRecords.Columns.Add("colType", "类型");
@@ -56,6 +55,21 @@ namespace FinanceManager.Forms
             gridRecords.Columns.Add("colAmount", "金额");
             gridRecords.Columns.Add("colNote", "备注");
             UiHelper.StyleDataGridView(gridRecords);
+
+            // 按钮美化
+            UiHelper.StyleButton(buttonCheck, UiHelper.DeepBlue, Color.White);
+            UiHelper.BindHover(buttonCheck, UiHelper.DeepBlue, UiHelper.LightBlue);
+            UiHelper.StyleButton(buttonOutput, UiHelper.SuccessGreen, Color.White);
+            UiHelper.BindHover(buttonOutput, UiHelper.SuccessGreen, UiHelper.SuccessGreenHover);
+            UiHelper.StyleButton(buttonInput, UiHelper.DeepBlue, Color.White);
+            UiHelper.BindHover(buttonInput, UiHelper.DeepBlue, UiHelper.LightBlue);
+            UiHelper.StyleButton(buttonTxt, UiHelper.DeepBlue, Color.White);
+            UiHelper.BindHover(buttonTxt, UiHelper.DeepBlue, UiHelper.LightBlue);
+            UiHelper.StyleButton(buttonDeleteAll, UiHelper.DangerRed, Color.White);
+            UiHelper.BindHover(buttonDeleteAll, UiHelper.DangerRed, UiHelper.DangerRedHover);
+
+            // 初始加载分类（设计器里 Checked=true 在事件绑定之前，错过了）
+            LoadFilterCategories();
         }
 
         /// <summary>类型筛选单选框切换：根据选中类型（全部/支出/收入）加载对应分类下拉</summary>
@@ -413,6 +427,5 @@ namespace FinanceManager.Forms
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
     }
 }

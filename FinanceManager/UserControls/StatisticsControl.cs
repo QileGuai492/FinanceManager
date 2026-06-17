@@ -73,11 +73,16 @@ namespace FinanceManager.UserControls
             SetupBarChart(chartBarIncome);
             SetupBarChart(chartBarExpense);
 
-            // 图表美化
+            // 图表美化：扁平风格，自定义柔和色板
             foreach (var chart in new[] { chartPieIncome, chartPieExpense, chartBarIncome, chartBarExpense })
             {
                 chart.BackColor = UiHelper.CardWhite;
-                chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.BrightPastel;
+                chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+                foreach (var area in chart.ChartAreas)
+                {
+                    area.Area3DStyle.Enable3D = false;
+                    area.BackColor = UiHelper.CardWhite;
+                }
             }
 
             // 查询按钮美化
@@ -93,6 +98,11 @@ namespace FinanceManager.UserControls
             panelIncome.BackColor = UiHelper.BgLight;
             panelExpense.BackColor = UiHelper.BgLight;
             panelRemain.BackColor = UiHelper.BgLight;
+
+            // AI分析区样式
+            labelStatsAi.BackColor = UiHelper.SelectionBg;
+            labelStatsAi.Padding = new Padding(12, 8, 12, 8);
+            labelStatsAi.Font = new Font("微软雅黑", 9f);
 
             // ===== 币种筛选（放最后，避免初始化时触发事件导致NRE）=====
             comboBoxMoney.Items.AddRange(new[] { "全部", "CNY", "USD", "EUR", "JPY", "GBP", "HKD" });
@@ -144,10 +154,11 @@ namespace FinanceManager.UserControls
             chart.ChartAreas.Add("area");
             chart.ChartAreas["area"].AxisX.Interval = 1;
             var ax = chart.ChartAreas["area"].AxisX;
+            ax.LabelStyle.IsStaggered = false;
             ax.ScrollBar.Enabled = true;
-            ax.ScrollBar.IsPositionedInside = false;
+            ax.ScrollBar.IsPositionedInside = true;
             ax.ScaleView.Size = 8;
-                        ax.LabelStyle.Interval = 1;
+            ax.LabelStyle.Interval = 1;
         }
 
         /// <summary>为统计卡片左侧添加颜色标识条</summary>
@@ -287,7 +298,8 @@ namespace FinanceManager.UserControls
             {
                 var pt = s.Points.Add((double)item.Amount);
                 pt.LegendText = $"{item.CategoryName}  {currencySymbol}{item.Amount:N0}";
-                pt.Label = $"{(item.Amount / total * 100):F1}%";
+                var pct = (double)(item.Amount / total * 100);
+                pt.Label = pct >= 5 ? $"{pct:F1}%" : "";
                 if (!string.IsNullOrEmpty(item.CategoryColor))
                     pt.Color = ColorTranslator.FromHtml(item.CategoryColor);
             }
@@ -491,6 +503,7 @@ namespace FinanceManager.UserControls
             chart.ChartAreas["area"].AxisX.Interval = 1;
 
             var ax = chart.ChartAreas["area"].AxisX;
+            ax.LabelStyle.IsStaggered = false;
             ax.ScrollBar.Enabled = true;
             ax.ScaleView.Size = 8;
                         }

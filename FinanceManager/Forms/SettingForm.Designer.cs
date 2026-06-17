@@ -101,13 +101,13 @@
             this.panel1.Controls.Add(this.checkBoxAI);
             this.panel1.Location = new System.Drawing.Point(84, 393);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(404, 306);
+            this.panel1.Size = new System.Drawing.Size(404, 325);
             this.panel1.TabIndex = 3;
             // 
             // linkLabelDeepSeek
             // 
             this.linkLabelDeepSeek.AutoSize = true;
-            this.linkLabelDeepSeek.Location = new System.Drawing.Point(9, 279);
+            this.linkLabelDeepSeek.Location = new System.Drawing.Point(9, 294);
             this.linkLabelDeepSeek.Name = "linkLabelDeepSeek";
             this.linkLabelDeepSeek.Size = new System.Drawing.Size(371, 15);
             this.linkLabelDeepSeek.TabIndex = 10;
@@ -118,7 +118,7 @@
             // buttonAISettings
             // 
             this.buttonAISettings.AutoSize = true;
-            this.buttonAISettings.Location = new System.Drawing.Point(142, 240);
+            this.buttonAISettings.Location = new System.Drawing.Point(142, 245);
             this.buttonAISettings.Name = "buttonAISettings";
             this.buttonAISettings.Size = new System.Drawing.Size(77, 25);
             this.buttonAISettings.TabIndex = 9;

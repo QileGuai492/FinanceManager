@@ -73,14 +73,24 @@ namespace FinanceManager.UserControls
             UiHelper.StyleButton(buttonNew, UiHelper.DeepBlue, Color.White);
             UiHelper.BindHover(buttonNew, UiHelper.DeepBlue, UiHelper.LightBlue);
             UiHelper.StyleButton(buttonSave, UiHelper.SuccessGreen, Color.White);
-            UiHelper.BindHover(buttonSave, UiHelper.SuccessGreen, Color.FromArgb(0x66, 0xBB, 0x6A));
+            UiHelper.BindHover(buttonSave, UiHelper.SuccessGreen, UiHelper.SuccessGreenHover);
             UiHelper.StyleButton(buttonCancel, UiHelper.TextGray, Color.White);
             UiHelper.BindHover(buttonCancel, UiHelper.TextGray, UiHelper.BorderGray);
             UiHelper.StyleButton(buttonDelete, UiHelper.DangerRed, Color.White);
-            UiHelper.BindHover(buttonDelete, UiHelper.DangerRed, Color.FromArgb(0xEF, 0x53, 0x50));
+            UiHelper.BindHover(buttonDelete, UiHelper.DangerRed, UiHelper.DangerRedHover);
 
             _ = LoadCategories(0);
             RefreshRecordGrid();
+
+            // 筛选事件绑定（绑完手动触发一次，因为设计器里的 CheckedChanged 在 Init 之前已经错过了）
+            rdoCTAll.CheckedChanged += FilterType_CheckedChanged;
+            rdoCTExpense.CheckedChanged += FilterType_CheckedChanged;
+            rdoCTIncome.CheckedChanged += FilterType_CheckedChanged;
+            comboBoxFilter.SelectedIndexChanged += comboBoxFilter_SelectedIndexChanged;
+            FilterType_CheckedChanged(rdoCTAll, EventArgs.Empty);
+
+            // AI输入框placeholder
+            UiHelper.SetPlaceholder(textBoxAI, "在此粘贴消费记录文字，如：午餐35元 昨天 打车28元...");
         }
 
         // ===== 编辑面板（新增/编辑/删除记账记录）=====
@@ -88,7 +98,7 @@ namespace FinanceManager.UserControls
         /// <summary>"新增"按钮：打开编辑面板，默认支出模式</summary>
         private void buttonNew_Click(object sender, EventArgs e)
         {
-            panelEditor.BackColor = Color.White;
+            panelEditor.BackColor = UiHelper.CardWhite;
             panelEditor.Visible = true;
             _editingRecord = null;
             textBoxMoney.Clear();
@@ -276,6 +286,8 @@ namespace FinanceManager.UserControls
                     $"{CurrencyHelper.GetSymbol(r.Currency)}{Math.Abs(r.Amount):N2}",
                     r.Note ?? "")];
                 row.Tag = r;
+                row.Cells["colAmount"].Style.ForeColor = r.Type == RecordType.Expense
+                    ? UiHelper.DangerRed : UiHelper.SuccessGreen;
             }
             }
             finally { _isFiltering = false; }

@@ -91,7 +91,7 @@
             this.buttonAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonAdd.AutoSize = true;
             this.buttonAdd.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonAdd.Location = new System.Drawing.Point(222, 391);
+            this.buttonAdd.Location = new System.Drawing.Point(157, 391);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(112, 39);
             this.buttonAdd.TabIndex = 2;
@@ -104,7 +104,7 @@
             this.buttonUse.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonUse.AutoSize = true;
             this.buttonUse.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonUse.Location = new System.Drawing.Point(358, 391);
+            this.buttonUse.Location = new System.Drawing.Point(370, 391);
             this.buttonUse.Name = "buttonUse";
             this.buttonUse.Size = new System.Drawing.Size(112, 39);
             this.buttonUse.TabIndex = 3;
@@ -117,7 +117,7 @@
             this.buttonDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonDelete.AutoSize = true;
             this.buttonDelete.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonDelete.Location = new System.Drawing.Point(500, 391);
+            this.buttonDelete.Location = new System.Drawing.Point(573, 391);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(112, 39);
             this.buttonDelete.TabIndex = 4;

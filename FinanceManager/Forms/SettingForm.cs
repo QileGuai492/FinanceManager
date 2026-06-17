@@ -42,6 +42,26 @@ namespace FinanceManager.Forms
 
             comboBoxMoney.Items.AddRange(new[] { "CNY", "USD", "EUR", "JPY", "GBP", "HKD" });
 
+            // 分区卡片美化
+            foreach (var pnl in new[] { panel1, panel2 })
+            {
+                pnl.BackColor = UiHelper.CardWhite;
+                UiHelper.MakeRound(pnl, 8, UiHelper.CardWhite);
+            }
+            // 分区标题（保持9pt避免AutoSize撑开遮挡后续控件）
+            foreach (var lbl in new[] { label1, label4, label10 })
+            {
+                lbl.Font = new Font("微软雅黑", 9f, FontStyle.Bold);
+                lbl.ForeColor = UiHelper.DeepBlue;
+            }
+            // 按钮美化
+            UiHelper.StyleButton(buttonSaveName, UiHelper.DeepBlue, Color.White, 30);
+            UiHelper.BindHover(buttonSaveName, UiHelper.DeepBlue, UiHelper.LightBlue);
+            UiHelper.StyleButton(buttonCheck, UiHelper.DeepBlue, Color.White, 30);
+            UiHelper.BindHover(buttonCheck, UiHelper.DeepBlue, UiHelper.LightBlue);
+            UiHelper.StyleButton(buttonAISettings, UiHelper.DeepBlue, Color.White, 30);
+            UiHelper.BindHover(buttonAISettings, UiHelper.DeepBlue, UiHelper.LightBlue);
+
             LoadUserSettings();   // 加载 AI 开关状态和默认货币
             LoadApiConfig();      // 加载 API 配置
         }
@@ -81,13 +101,13 @@ namespace FinanceManager.Forms
             if (string.IsNullOrWhiteSpace(newName))
             {
                 labelStatus.Text = "用户名不能为空";
-                labelStatus.ForeColor = Color.Red;
+                labelStatus.ForeColor = UiHelper.DangerRed;
                 labelStatus.Visible = true; return;
             }
             if (newName == App.CurrentUsername)
             {
                 labelStatus.Text = "用户名未改动";
-                labelStatus.ForeColor = Color.Gray;
+                labelStatus.ForeColor = UiHelper.TextGray;
                 labelStatus.Visible = true; return;
             }
 
@@ -99,7 +119,7 @@ namespace FinanceManager.Forms
             App.CurrentUsername = newName;
             labelStatus.Text = "用户名修改成功";
             labelStatus.Visible = true;
-            labelStatus.ForeColor = Color.Green;
+            labelStatus.ForeColor = UiHelper.SuccessGreen;
             MessageBox.Show("用户名保存成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -127,7 +147,7 @@ namespace FinanceManager.Forms
                 || string.IsNullOrWhiteSpace(confirmPwd))
             {
                 labelStatus.Text = "请填写所有密码字段";
-                labelStatus.ForeColor = Color.Red;
+                labelStatus.ForeColor = UiHelper.DangerRed;
                 labelStatus.Visible = true; return;
             }
 
@@ -135,7 +155,7 @@ namespace FinanceManager.Forms
             if (newPwd.Length < 6)
             {
                 labelStatus.Text = "新密码至少6位";
-                labelStatus.ForeColor = Color.Red;
+                labelStatus.ForeColor = UiHelper.DangerRed;
                 labelStatus.Visible = true; return;
             }
 
@@ -143,7 +163,7 @@ namespace FinanceManager.Forms
             if (newPwd != confirmPwd)
             {
                 labelStatus.Text = "两次输入的新密码不一致";
-                labelStatus.ForeColor = Color.Red;
+                labelStatus.ForeColor = UiHelper.DangerRed;
                 labelStatus.Visible = true; return;
             }
 
@@ -155,7 +175,7 @@ namespace FinanceManager.Forms
             if (!valid)
             {
                 labelStatus.Text = "原密码错误";
-                labelStatus.ForeColor = Color.Red;
+                labelStatus.ForeColor = UiHelper.DangerRed;
                 labelStatus.Visible = true; return;
             }
 
@@ -166,7 +186,7 @@ namespace FinanceManager.Forms
 
             labelStatus.Text = "密码修改成功";
             labelStatus.Visible = true;
-            labelStatus.ForeColor = Color.Green;
+            labelStatus.ForeColor = UiHelper.SuccessGreen;
             textBoxOrgin.Clear();
             textBoxNew.Clear();
             textBoxCheck.Clear();

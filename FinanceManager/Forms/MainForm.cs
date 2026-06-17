@@ -26,6 +26,8 @@ namespace FinanceManager.Forms
 
         /// <summary>当前显示的内容面板，用于切换页面时隐藏上一个</summary>
         private Control _currentPanel;
+        /// <summary>当前高亮的导航按钮</summary>
+        private Button _activeNavBtn;
 
         // ===== 数据层字段 =====
 
@@ -63,9 +65,9 @@ namespace FinanceManager.Forms
             var area = Screen.PrimaryScreen.WorkingArea;
             this.Location = new Point((area.Width - this.Width) / 2, (area.Height - this.Height) / 2 - 10);
             this.BackColor = UiHelper.BgLight;
-            this.AutoSize = true;
+            this.MinimumSize = new Size(960, 600);
             logo.Image = Properties.Resources.logo;
-            logo.SizeMode = PictureBoxSizeMode.StretchImage;
+            logo.SizeMode = PictureBoxSizeMode.Zoom;
 
             StyleNavBar();
             StyleDashboardCards();
@@ -107,6 +109,7 @@ namespace FinanceManager.Forms
 
             // ===== 初始化各个 Panel 的内容 =====
             ShowPanel(panelDashBoard);
+            SetActiveNav(btnDashboard);
             UiHelper.MakeGradient(panelDashBoard, UiHelper.SoftBlue, Color.White);
     RefreshDashboard();
         }
@@ -124,7 +127,10 @@ namespace FinanceManager.Forms
         private async void RefreshDashboard()
         {
             labelWelcome.Text = $"欢迎回来，{App.CurrentUsername}";
+            labelWelcome.Font = new Font("微软雅黑", 18f, FontStyle.Bold);
             labelDate.Text = $"今天是 {DateTime.Now:yyyy年MM月dd日}";
+            labelDate.Font = new Font("微软雅黑", 12f);
+            labelDate.TextAlign = ContentAlignment.MiddleRight;
             panelDashBoard.Dock = DockStyle.Fill;
 
             try
@@ -139,11 +145,14 @@ namespace FinanceManager.Forms
 
                 var dashSymbol = CurrencyHelper.GetSymbol(App.CurrentUserCurrency);
                 _lblIncomeValue.Text = $"{dashSymbol}{stats.TotalIncome:N2}";
+                _lblIncomeValue.Font = new Font("微软雅黑", 18f, FontStyle.Bold);
                 _lblExpenseValue.Text = $"{dashSymbol}{stats.TotalExpense:N2}";
+                _lblExpenseValue.Font = new Font("微软雅黑", 18f, FontStyle.Bold);
                 _lblBalanceValue.Text = $"{dashSymbol}{stats.Balance:N2}";
+                _lblBalanceValue.Font = new Font("微软雅黑", 18f, FontStyle.Bold);
                 _lblBalanceValue.ForeColor = stats.Balance < 0
-                    ? Color.FromArgb(244, 67, 54)
-                    : Color.FromArgb(33, 150, 243);
+                    ? UiHelper.DangerRed
+                    : UiHelper.BalanceBlue;
 
                 // 加载当月分类收支明细并更新饼图
                 var from = new DateTime(now.Year, now.Month, 1);
@@ -179,7 +188,11 @@ namespace FinanceManager.Forms
             chart.Legends.Add("L");
             chart.Legends["L"].Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
 
-            if (total <= 0) return;
+            if (total <= 0)
+            {
+                chart.Titles.Add("暂无数据");
+                return;
+            }
             var itemList = stats.Where(c => c.Amount > 0).OrderByDescending(c => c.Amount).Take(5).ToList();
             var top5Sum = itemList.Sum(i => i.Amount);
             if (stats.Count(c => c.Amount > 0) > 5)
@@ -199,25 +212,41 @@ namespace FinanceManager.Forms
         private void StyleNavBar()
         {
             panNav.BackColor = UiHelper.DeepBlue;
-            panNav.Width = 180;
+            panNav.Width = 150;
             logo.Height = 135;
 
+            var navBdrNormal = UiHelper.NavBorderNormal;
+            var navBdrActive = UiHelper.NavBorderActive;
             var navBtns = new[] { btnDashboard, btnRecord, btnStatistics, btnBudget, btnTemplate, btnData, btnSettings };
-            foreach (var btn in navBtns)
+            for (int i = 0; i < navBtns.Length; i++)
             {
+                var btn = navBtns[i];
                 panNav.Controls.Remove(btn);
                 btn.FlatStyle = FlatStyle.Flat;
-                btn.FlatAppearance.BorderSize = 0;
+                btn.FlatAppearance.BorderSize = 1;
+                btn.FlatAppearance.BorderColor = navBdrNormal;
                 btn.BackColor = UiHelper.DeepBlue;
                 btn.ForeColor = Color.White;
                 btn.Font = new Font("微软雅黑", 10f);
                 btn.TextAlign = ContentAlignment.MiddleCenter;
-                btn.Padding = new Padding(0, 0, 0, 0);
                 btn.Height = 48;
                 btn.Dock = DockStyle.Top;
                 btn.Cursor = Cursors.Hand;
                 btn.MouseEnter += (s, e) => { if (btn.Tag?.ToString() != "active") btn.BackColor = UiHelper.LightBlue; };
                 btn.MouseLeave += (s, e) => { if (btn.Tag?.ToString() != "active") btn.BackColor = UiHelper.DeepBlue; };
+                btn.MouseDown += (s, e) => {
+                    btn.BackColor = UiHelper.ActiveBlue;
+                    btn.FlatAppearance.BorderColor = navBdrActive;
+                    btn.FlatAppearance.BorderSize = 2;
+                };
+                btn.MouseUp += (s, e) => {
+                    if (btn.Tag?.ToString() != "active")
+                    {
+                        btn.BackColor = UiHelper.DeepBlue;
+                        btn.FlatAppearance.BorderColor = navBdrNormal;
+                        btn.FlatAppearance.BorderSize = 1;
+                    }
+                };
             }
             // 倒序加回：Dashboard 最后加 → Z序最高 → DockTop 下排最上面
             for (int i = navBtns.Length - 1; i >= 0; i--)
@@ -230,7 +259,7 @@ namespace FinanceManager.Forms
             btnLogout.FlatStyle = FlatStyle.Flat;
             btnLogout.FlatAppearance.BorderSize = 0;
             btnLogout.BackColor = UiHelper.DeepBlue;
-            btnLogout.ForeColor = Color.FromArgb(0xFF, 0xCD, 0xD2);
+            btnLogout.ForeColor = UiHelper.LogoutPink;
             btnLogout.Font = new Font("微软雅黑", 9f);
             btnLogout.Dock = DockStyle.Bottom;
             btnLogout.Height = 48;
@@ -238,18 +267,52 @@ namespace FinanceManager.Forms
             panNav.Controls.Add(btnLogout);
         }
 
-        /// <summary>美化仪表盘三张卡片：白底圆角 + 收入绿/支出红/结余蓝 + 金额大字体</summary>
+        /// <summary>美化仪表盘三张卡片：白底圆角 + 收入绿/支出红/结余蓝 + 左侧色条 + 金额大字体</summary>
         private void StyleDashboardCards()
         {
             foreach (var p in new[] { panel1, panel2, panel3 })
             {
-                p.BackColor = UiHelper.BgLight;
-                UiHelper.MakeRound(p, 8, UiHelper.BgLight);
+                p.BackColor = Color.Transparent;
             }
+            AddCardColorBar(panel1, UiHelper.SuccessGreen);
+            AddCardColorBar(panel2, UiHelper.DangerRed);
+            AddCardColorBar(panel3, UiHelper.DeepBlue);
             _lblIncomeValue.ForeColor = UiHelper.SuccessGreen;
             _lblExpenseValue.ForeColor = UiHelper.DangerRed;
             _lblBalanceValue.ForeColor = UiHelper.DeepBlue;
             labelWelcome.ForeColor = UiHelper.TextDark;
+            foreach (var lbl in new[] { label1, label2, label3 })
+                lbl.Font = new Font("微软雅黑", 14f);
+        }
+
+        /// <summary>为卡片面板顶部添加5px颜色标识条</summary>
+        private void AddCardColorBar(Panel card, Color color)
+        {
+            var bar = new Panel
+            {
+                Location = new Point(0, 0),
+                Size = new Size(card.Width, 5),
+                BackColor = color,
+                Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right
+            };
+            card.Controls.Add(bar);
+        }
+
+        /// <summary>高亮当前导航按钮：按下态（深背景+深色粗边框），前一个按钮弹起</summary>
+        private void SetActiveNav(Button btn)
+        {
+            if (_activeNavBtn != null)
+            {
+                _activeNavBtn.BackColor = UiHelper.DeepBlue;
+                _activeNavBtn.FlatAppearance.BorderColor = UiHelper.NavBorderNormal;
+                _activeNavBtn.FlatAppearance.BorderSize = 1;
+                _activeNavBtn.Tag = null;
+            }
+            btn.BackColor = UiHelper.ActiveBlue;
+            btn.FlatAppearance.BorderColor = UiHelper.NavBorderActive;
+            btn.FlatAppearance.BorderSize = 2;
+            btn.Tag = "active";
+            _activeNavBtn = btn;
         }
 
         // ===== 导航按钮 =====
@@ -257,12 +320,14 @@ namespace FinanceManager.Forms
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             ShowPanel(panelDashBoard);
+            SetActiveNav(btnDashboard);
         }
 
         private void btnRecord_Click(object sender, EventArgs e)
         {
             ShowPanel(recordControl);
             recordControl.RefreshData();
+            SetActiveNav(btnRecord);
         }
 
         private void btnStatistics_Click(object sender, EventArgs e)
@@ -270,12 +335,14 @@ namespace FinanceManager.Forms
             ShowPanel(statisticsControl);
             statisticsControl.ShowPieChart();
             statisticsControl.ShowBarChart();
+            SetActiveNav(btnStatistics);
         }
 
         private void btnBudget_Click(object sender, EventArgs e)
         {
             ShowPanel(budgetControl);
             budgetControl.RefreshData();
+            SetActiveNav(btnBudget);
         }
 
         private void btnTemplate_Click(object sender, EventArgs e)
@@ -307,10 +374,26 @@ namespace FinanceManager.Forms
                 form.ShowDialog();
             }
             labelWelcome.Text = $"欢迎回来，{App.CurrentUsername}";
-            
+            RefreshDashboard();
         }
 
        
+
+        /// <summary>键盘快捷键：Ctrl+1~7 切换导航页</summary>
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case Keys.Control | Keys.D1: btnDashboard_Click(null, null); return true;
+                case Keys.Control | Keys.D2: btnRecord_Click(null, null); return true;
+                case Keys.Control | Keys.D3: btnStatistics_Click(null, null); return true;
+                case Keys.Control | Keys.D4: btnBudget_Click(null, null); return true;
+                case Keys.Control | Keys.D5: btnTemplate_Click(null, null); return true;
+                case Keys.Control | Keys.D6: btnData_Click(null, null); return true;
+                case Keys.Control | Keys.D7: btnSettings_Click(null, null); return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
 
         // ===== 退出登录 =====
 

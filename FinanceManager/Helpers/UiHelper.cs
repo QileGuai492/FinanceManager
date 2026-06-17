@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
@@ -37,37 +38,85 @@ namespace FinanceManager.Helpers
         /// <summary>边框灰 #E0E0E0 — 分割线、边框</summary>
         public static readonly Color BorderGray = Color.FromArgb(0xE0, 0xE0, 0xE0);
 
+        // ===== 扩展色板 =====
+
+        /// <summary>余额蓝 #2196F3 — 结余正值</summary>
+        public static readonly Color BalanceBlue = Color.FromArgb(0x21, 0x96, 0xF3);
+        /// <summary>成功绿悬停 #66BB6A</summary>
+        public static readonly Color SuccessGreenHover = Color.FromArgb(0x66, 0xBB, 0x6A);
+        /// <summary>危险红悬停 #EF5350</summary>
+        public static readonly Color DangerRedHover = Color.FromArgb(0xEF, 0x53, 0x50);
+        /// <summary>导航激活边框 #0D1555</summary>
+        public static readonly Color NavBorderActive = Color.FromArgb(0x0D, 0x15, 0x55);
+        /// <summary>导航普通边框 #3F51B5（即LightBlue）</summary>
+        public static readonly Color NavBorderNormal = LightBlue;
+        /// <summary>退出按钮文字色 #FFCDD2（浅粉）</summary>
+        public static readonly Color LogoutPink = Color.FromArgb(0xFF, 0xCD, 0xD2);
+        /// <summary>选中行背景 #E8EAF6（浅紫蓝）</summary>
+        public static readonly Color SelectionBg = Color.FromArgb(0xE8, 0xEA, 0xF6);
+        /// <summary>已支出正常色 #212121</summary>
+        public static readonly Color SpentNormal = Color.FromArgb(0x21, 0x21, 0x21);
+        /// <summary>超支行背景 #FFEBEE（浅红）</summary>
+        public static readonly Color DangerBg = Color.FromArgb(0xFF, 0xEB, 0xEE);
+        /// <summary>警告行背景 #FFF8E1（浅黄）</summary>
+        public static readonly Color WarningBg = Color.FromArgb(0xFF, 0xF8, 0xE1);
+
+        // 存储每个按钮的"有效背景色"，供 Paint 事件读取
+        private static readonly Dictionary<Button, Color> _btnColors = new Dictionary<Button, Color>();
+
         // ===== 按钮样式 =====
 
         /// <summary>
-        /// 将按钮设置为扁平现代化风格
+        /// 将按钮设置为扁平风格 + 6px 抗锯齿圆角
         /// </summary>
-        /// <param name="btn">目标按钮控件</param>
-        /// <param name="backColor">背景色</param>
-        /// <param name="foreColor">文字颜色</param>
-        /// <param name="height">按钮高度，默认36px</param>
         public static void StyleButton(Button btn, Color backColor, Color foreColor, int height = 36)
         {
-            btn.FlatStyle = FlatStyle.Flat;              // 去掉3D边框
-            btn.FlatAppearance.BorderSize = 0;           // 无边框线
-            btn.BackColor = backColor;
+            btn.FlatStyle = FlatStyle.Flat;
+            btn.FlatAppearance.BorderSize = 0;
+            btn.BackColor = Color.Transparent;
             btn.ForeColor = foreColor;
+            btn.UseVisualStyleBackColor = false;
             btn.Font = new Font("微软雅黑", 10f);
             btn.Height = height;
-            btn.Cursor = Cursors.Hand;                   // 手型光标表示可点击
+            btn.Cursor = Cursors.Hand;
+
+            SetBtnColor(btn, backColor);
+
+            btn.Paint += (s, e) =>
+            {
+                var c = GetBtnColor(btn);
+                e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                var rect = new Rectangle(0, 0, btn.Width - 1, btn.Height - 1);
+                using (var path = GetRoundRect(rect, 6))
+                using (var brush = new SolidBrush(c))
+                    e.Graphics.FillPath(brush, path);
+                // Transparent背景时Button不绘文字，手动绘制
+                TextRenderer.DrawText(e.Graphics, btn.Text, btn.Font, btn.ClientRectangle,
+                    btn.ForeColor, TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
+            };
+        }
+
+        /// <summary>更新按钮的绘制颜色并触发重绘</summary>
+        private static void SetBtnColor(Button btn, Color c)
+        {
+            _btnColors[btn] = c;
+            btn.Invalidate();
+        }
+
+        /// <summary>获取按钮当前绘制颜色</summary>
+        private static Color GetBtnColor(Button btn)
+        {
+            return _btnColors.TryGetValue(btn, out var c) ? c : btn.BackColor;
         }
 
         /// <summary>
         /// 为按钮绑定鼠标悬停变色效果
         /// </summary>
-        /// <param name="btn">目标按钮</param>
-        /// <param name="normalColor">常规状态背景色</param>
-        /// <param name="hoverColor">鼠标悬停时背景色</param>
         public static void BindHover(Button btn, Color normalColor, Color hoverColor)
         {
-            btn.BackColor = normalColor;
-            btn.MouseEnter += (s, e) => btn.BackColor = hoverColor;
-            btn.MouseLeave += (s, e) => btn.BackColor = normalColor;
+            SetBtnColor(btn, normalColor);
+            btn.MouseEnter += (s, e) => SetBtnColor(btn, hoverColor);
+            btn.MouseLeave += (s, e) => SetBtnColor(btn, normalColor);
         }
 
         // ===== 面板圆角 =====
@@ -131,7 +180,7 @@ namespace FinanceManager.Helpers
                 BackColor = Color.White,
                 ForeColor = TextDark,
                 Font = new Font("微软雅黑", 9f),
-                SelectionBackColor = Color.FromArgb(0xE8, 0xEA, 0xF6),
+                SelectionBackColor = SelectionBg,
                 SelectionForeColor = TextDark,
                 Padding = new Padding(8, 0, 0, 0)
             };
@@ -143,7 +192,7 @@ namespace FinanceManager.Helpers
                 BackColor = Color.FromArgb(0xFA, 0xFA, 0xFA),
                 ForeColor = TextDark,
                 Font = new Font("微软雅黑", 9f),
-                SelectionBackColor = Color.FromArgb(0xE8, 0xEA, 0xF6),
+                SelectionBackColor = SelectionBg,
                 SelectionForeColor = TextDark,
                 Padding = new Padding(8, 0, 0, 0)
             };
@@ -159,6 +208,33 @@ namespace FinanceManager.Helpers
                 {
                     e.Graphics.FillRectangle(brush, control.ClientRectangle);
                 }
+            };
+        }
+
+        // ===== TextBox 样式 =====
+
+        /// <summary>统一 TextBox 高度36px、微软雅黑10pt、细边框</summary>
+        public static void StyleTextBox(TextBox textBox)
+        {
+            textBox.Height = 36;
+            textBox.Font = new Font("微软雅黑", 10f);
+            textBox.BorderStyle = BorderStyle.FixedSingle;
+        }
+
+        // ===== TextBox Placeholder =====
+
+        /// <summary>为 TextBox 设置占位提示文字（失焦显示，聚焦清除）</summary>
+        public static void SetPlaceholder(TextBox textBox, string placeholder)
+        {
+            textBox.Text = placeholder;
+            textBox.ForeColor = TextGray;
+            textBox.Enter += (s, e) =>
+            {
+                if (textBox.Text == placeholder) { textBox.Clear(); textBox.ForeColor = TextDark; }
+            };
+            textBox.Leave += (s, e) =>
+            {
+                if (string.IsNullOrWhiteSpace(textBox.Text)) { textBox.Text = placeholder; textBox.ForeColor = TextGray; }
             };
         }
 
